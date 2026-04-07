@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="./lib/noUiSlider/nouislider.min.css"/>
     <link rel="stylesheet" href="./lib/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="./lib/lightBox/glightbox.css"/>
-    <!--    <link rel="stylesheet" href="./fonts/fonts.css">-->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
@@ -67,7 +67,12 @@
     <div class="backdrop"></div>
 
     <main class="main  page page-article">
-        <section class="section-banner" style="background-image: url(assets/img/hiro-section2.png);">
+        <section class="section-banner">
+            <picture>
+                <source srcset="assets/img/banner-article-mob.png" media="(max-width: 767px)" />
+                <img class="section-banner__img" src="assets/img/banner-article.png" alt="">
+            </picture>
+
             <div class="container"></div>
         </section>
         <div class="container">

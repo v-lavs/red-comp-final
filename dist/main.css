@@ -1,5 +1,3 @@
-@charset "UTF-8";
-
 html,
 body {
   width: 100%;
@@ -917,6 +915,10 @@ input[type=radio]:checked + .filter-switch__btn {
   color: #E84923;
 }
 
+.breadcrumb {
+  padding-bottom: 65px;
+}
+
 .accordion {
   width: 100%;
 }
@@ -1310,9 +1312,14 @@ summary::marker {
   padding: 20px 0;
 }
 
+.footer_bottom .container {
+  align-items: center;
+}
+
 .social-list {
   display: flex;
   gap: 10px;
+  justify-content: space-between;
 }
 
 .social-list__item {
@@ -1333,6 +1340,10 @@ summary::marker {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.social .footer__title {
+  white-space: nowrap;
 }
 
 .contact__item {
@@ -1480,7 +1491,7 @@ summary::marker {
 
 .card_offers .card__detail {
   position: relative;
-  padding-left: 26px;
+  padding-left: 24px;
   margin-right: 20px;
 }
 
@@ -1489,8 +1500,8 @@ summary::marker {
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: auto;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   z-index: 1;
 }
 
@@ -1654,11 +1665,7 @@ summary::marker {
   padding-bottom: 43px;
 }
 
-.page .breadcrumb {
-  padding-bottom: 65px;
-}
-
-.page .page__title {
+.page__title {
   font-weight: 700;
   font-size: 36px;
   line-height: 40px;
@@ -1692,11 +1699,17 @@ summary::marker {
 
 .section-banner img,
 .section-banner iframe {
+  position: absolute;
   display: block;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 1;
 }
 
 .section-banner_anim {
@@ -1713,7 +1726,6 @@ summary::marker {
 .banner__thumb {
   width: 100%;
   height: 444px;
-  /* Фіксована висота, яку ви хочете */
   overflow: hidden;
   position: relative;
 }
@@ -1727,18 +1739,12 @@ summary::marker {
 }
 
 .svg-wrapper svg {
-  /* КЛЮЧОВИЙ МОМЕНТ: */
   width: 1441px;
-  /* Завжди рідна ширина */
   height: 444px;
-  /* Завжди рідна висота */
-  /* Центруємо SVG всередині контейнера, щоб він обрізався рівномірно */
   position: absolute;
   top: 50%;
   left: 50%;
-  /* Зміщуємо "точку фокусу" на ваш текст */
   transform: translate(-50%, -50%);
-  /* Вимикаємо будь-яке розтягування */
   vector-effect: non-scaling-stroke;
 }
 
@@ -2271,6 +2277,14 @@ address {
 }
 
 @media only screen and (max-width:1179px) {
+  .header .container {
+    max-width: 100%;
+  }
+
+  .footer .container {
+    max-width: 100%;
+  }
+
   .container {
     max-width: 960px;
     background-color: tomato;
@@ -2282,6 +2296,19 @@ address {
 }
 
 @media only screen and (max-width: 1023px) {
+  .footer__col.text {
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .footer_top .container {
+    flex-wrap: wrap;
+  }
+
+  .footer__col {
+    padding: 0 24px;
+  }
+
   .container {
     max-width: 991px;
     background-color: goldenrod;
@@ -2301,7 +2328,7 @@ address {
   }
 
   .section-hero__slogan {
-    font-size: 25px;
+    font-size: 24px;
   }
 
   .section-hero {
@@ -2332,22 +2359,83 @@ address {
   .section-hero .filter .choices__list--single .choices__item {
     font-size: 16px !important;
   }
-}
 
-@media (max-width: 991px) {
   .svg-wrapper svg {
     width: 150%;
-    /* робимо SVG ширшим */
     max-width: none;
-    /* знімаємо обмеження, якщо є */
     margin-left: -25%;
+  }
+
+  .section__title {
+    display: inline-block;
+    max-width: 200px;
   }
 }
 
 @media only screen and (max-width: 767px) {
+  .section {
+    padding-top: 63px;
+  }
+
+  .section__title {
+    font-size: 24px;
+    line-height: 1.37;
+    max-width: 100%;
+  }
+
+  .section__header {
+    margin-bottom: 24px;
+  }
+
+  .breadcrumb {
+    padding-top: 24px;
+    padding-bottom: 32px;
+    font-size: 12px;
+  }
+
+  .social {
+    margin: 0 auto;
+    padding-top: 20px;
+  }
+
+  .footer__col:not(.footer__col.social) {
+    margin-bottom: 60px;
+    flex-grow: 1;
+  }
+
+  .footer__col:nth-child(2),
+  .footer__col:nth-child(3) {
+    width: 50%;
+  }
+
+  .copyright {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+  }
+
+  .footer_top {
+    padding-top: 54px;
+    padding-bottom: 50px;
+  }
+
+  .footer_bottom .container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer__col {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   .container {
     max-width: 580px;
     background-color: hotpink;
+  }
+
+  .section-hero .filter {
+    margin-bottom: 50px;
   }
 
   .section-hero .btn_mob {
@@ -2367,7 +2455,6 @@ address {
   }
 
   .section-hero .part_left {
-    margin-bottom: 60px;
     padding: 0;
   }
 
@@ -2390,17 +2477,118 @@ address {
   .section-hero .btn_desk {
     display: none;
   }
+
+  .post-list {
+    padding-bottom: 32px;
+  }
+
+  .card_offers .card__body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .section-offers {
+    padding-top: 35px;
+  }
+
+  .section-hero {
+    padding-bottom: 35px;
+  }
+
+  .members__name,
+  .members__activity {
+    line-height: 32px;
+  }
+
+  .page__title {
+    font-size: 28px;
+    margin-bottom: 26px;
+  }
 }
 
 @media only screen and (max-width: 580px) {
+  .btn_call {
+    right: 16px;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+  }
+
+  .section-hero .card_service {
+    min-height: 185px;
+    padding-bottom: 22px;
+  }
+
+  .section-hero__slogan {
+    text-align: center;
+  }
+
+  .section-hero .filter {
+    padding: 50px 32px;
+  }
+
+  .home .filter-switch {
+    text-align: center;
+  }
+
+  .filter-switch__btn.btn {
+    margin-bottom: 24px;
+  }
+
+  .filter-switch__btn.btn:last-child {
+    margin-right: 0;
+  }
+
+  .card__thumb {
+    min-height: 244px;
+  }
+
+  .pagination__btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .pagination__nav-item {
+    height: 40px;
+  }
+
+  .header {
+    top: 18px;
+  }
+
+  .header__logo {
+    max-width: 111px;
+  }
+
+  .footer__col:nth-child(2),
+  .footer__col:nth-child(3) {
+    width: 100%;
+  }
+
   .container {
     max-width: 100%;
     padding: 0 16px;
     background-color: paleturquoise;
   }
 
+  .section-hero {
+    padding-top: 162px;
+  }
+
   .card_offers {
     max-width: 100%;
+  }
+
+  .post-list {
+    gap: 24px;
+  }
+
+  .page__title {
+    font-size: 24px;
+  }
+
+  .section-banner {
+    height: 452px;
   }
 }
 
