@@ -1,0 +1,36 @@
+@use "../utils/mixins";
+@use "../utils/variables";
+
+.breadcrumb{
+  padding: 40px 0;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0;
+  ul li{
+    position: relative;
+    display: inline-block;
+    padding-right: 14px;
+    line-height: 1;
+    margin-right: 10px;
+  }
+  li a {
+    display: inline-block;
+  }
+  li:not(:last-child):after{
+    position: absolute;
+    content: '';
+    display: inline-block;
+    background-image: url('../assets/img/svg/next.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    right: 0;
+    top: 50%;
+    transform: translate(50%, -50%);
+    width: 6px;
+    height: 9px;
+    z-index: 1;
+  }
+  li:last-child{
+    color: variables.$primary-color;
+  }
+}

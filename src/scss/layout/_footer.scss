@@ -1,0 +1,122 @@
+@use "../utils/mixins";
+@use "../utils/variables";
+@use "../components/menu";
+
+.footer {
+  color: #BBBBBB;
+
+  .menu {
+    color: #BBBBBB;
+  }
+
+  a {
+    display: inline-block;
+    transition: .35s;
+
+    &:hover,
+    &:focus {
+      color: variables.$primary-color;
+    }
+
+
+  }
+
+  &_top {
+    padding: 75px 0 66px;
+    background-color: #2C2C2C;
+    line-height: 1.85;
+
+    .menu {
+      flex-direction: column;
+      line-height: 1.85;
+
+      &__item {
+        margin-bottom: 4px;
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__col {
+    width: auto;
+    padding: 0 34px;
+
+    &.text {
+      max-width: 340px;
+      line-height: 1.85;
+      width: 100%;
+    }
+  }
+
+  .container {
+    justify-content: space-between;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    line-height: 1.34;
+    color: #EEEEEE;
+  }
+
+  &_bottom {
+    background-color: #272727;
+    padding: 20px 0;
+  }
+}
+
+.social-list {
+  display: flex;
+  gap: 10px;
+
+  &__item {
+    width: 41px;
+    height: 41px;
+    flex-shrink: 0;
+    background-color: #313131;
+    transition: background-color .35s;
+    border-radius: 4px;
+
+    &:hover,
+    &:focus {
+      background-color: rgb(232, 73, 35, .5);
+    }
+
+    svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.contact__item {
+  margin-bottom: 4px;
+}
+
+.copyright {
+  padding: 0 34px;
+}
+
+@include mixins.respond-to(variables.$xl) {
+
+}
+
+@include mixins.respond-to(variables.$screen-md) {
+
+}
+
+@include mixins.respond-to(variables.$md) {
+
+}
+
+@include mixins.respond-to(variables.$sm) {
+
+}
+
+@include mixins.respond-to(variables.$xs) {
+
+}
+
+@include mixins.respond-to(variables.$xxs) {
+
+}

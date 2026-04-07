@@ -1,0 +1,197 @@
+@use "../utils/mixins";
+@use "../utils/variables";
+
+.accordion {
+  width: 100%;
+}
+
+.accordion__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  height: 123px;
+  background-color: #FFFFFF;
+  padding: 16px 30px;
+  cursor: pointer;
+}
+
+.accordion__header-title {
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.1;
+  letter-spacing: -.6px;
+  color: #000000;
+
+}
+
+.accordion-collapse {
+  overflow: hidden;
+  height: 0;
+}
+
+.toggle-collapse-wrap {
+  width: 74px;
+}
+
+.toggle-collapse {
+  display: block;
+  width: 74px;
+  height: 41px;
+  background-image: url(../assets/img/svg/uzor3.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.show .toggle-collapse {
+  transform: rotate(-90deg);
+}
+
+.accordion__item {
+  border-bottom: 1px solid variables.$grey-04;
+}
+
+.accordion-collapse__content {
+  padding: 40px 0;
+}
+
+.accordion__item,
+.toggle-collapse,
+.accordion-collapse,
+.accordion-collapse-content {
+  transition: 0.3s;
+}
+
+.card-service {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  counter-increment: service-idx;
+  position: relative;
+  border: 1px solid variables.$grey-03;
+  padding: 76px 30px 30px;
+  border-radius: 8px;
+  color: #222222;
+  min-width: 0;
+  overflow: hidden;
+  min-height: 330px;
+  transition: background-color .35s;
+
+  &:hover {
+    background-color: rgba(232, 73, 35, .92);
+    border-color: rgba(232, 73, 35, .92);
+    color: #FFFFFF;
+    li:before,
+    h4 {
+      color: #FFFFFF;
+    }
+  }
+&:hover:before{
+  color: #FFFFFF;
+}
+  &:before {
+    content: counter(service-idx, decimal-leading-zero);
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 1.1;
+    color: variables.$primary-color;
+  }
+
+  h4 {
+    color: variables.$primary-color;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: auto;
+
+  }
+
+  p {
+    margin-top: 9px;
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  p,
+  ul {
+    font-size: 14px;
+    line-height: 1.3;
+  }
+
+  ul li {
+    margin-bottom: 0;
+  }
+}
+
+.card-large {
+  background-image: url(../assets/img/svg/uzor.svg);
+  background-repeat: no-repeat;
+  background-size: inherit;
+  background-position: 20% 10%;
+  min-height: 660px;
+
+  &.card-8 {
+    background-image: url(../assets/img/svg/uzor2.svg);
+    background-position: 80% 22%;
+  }
+}
+
+.bento-grid {
+  counter-reset: service-idx;
+  display: grid;
+  grid-template-columns: repeat(48, minmax(0, 1fr));
+  grid-auto-rows: minmax(100px, auto);
+  width: 100%;
+  gap: 7px;
+}
+
+.card-1 {
+  grid-area: 1 / 1 / 3 / 17;
+}
+
+.card-2 {
+  grid-area: 1 / 17 / 2 / 31;
+}
+
+.card-3 {
+  grid-area: 1 / 31 / 2 / 49;
+}
+
+.card-4 {
+  grid-area: 2 / 17 / 3 / 35;
+}
+
+.card-5 {
+  grid-area: 2 / 35 / 3 / 49;
+}
+
+.card-6 {
+  grid-area: 3 / 1 / 4 / 19;
+}
+
+.card-7 {
+  grid-area: 3/ 19 / 4 / 33;
+}
+
+.card-8 {
+  grid-area: 3 / 33 / 5 / 49;
+}
+
+.card-9 {
+  grid-area: 4 / 1 / 5 / 15;
+}
+
+.card-10 {
+  grid-area: 4 / 15 / 5 / 33;
+}
+
+
+
+

@@ -1,0 +1,40 @@
+@use "../utils/mixins";
+@use "../utils/variables";
+
+summary::marker{
+  display: none;
+}
+.share-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+
+.share-button {
+  list-style: none;
+  cursor: pointer;
+}
+.share-button::-webkit-details-marker {
+  display: none;
+}
+
+.share-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 100;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  box-shadow: 0 4px 14px 0 rgba(0,0,0,0.1);
+  padding: 10px;
+  margin-top: 5px;
+  min-width: 150px;
+  font-size: 14px;
+  text-align: left;
+}
+
+.share-menu li a {
+  color: #7A7A7A;
+  display: block;
+  padding: 12px 0 12px 22px;
+}

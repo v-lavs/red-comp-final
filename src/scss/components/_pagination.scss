@@ -1,0 +1,66 @@
+@use "../utils/mixins";
+@use "../utils/variables";
+
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  &__btn {
+    width: 49px;
+    height: 49px;
+    border-radius: 50%;
+    border: 1px solid variables.$primary-color;
+    color: variables.$primary-color;
+    opacity: .32;
+    font-size: 16px;
+    margin: 0 10px;
+    line-height: 1;
+    transition: .35s;
+
+    &:hover,
+    &.current {
+      background-color: variables.$primary-color;
+      color: #FFFFFF;
+      opacity: 1;
+    }
+  }
+
+  .dots {
+    display: flex;
+    align-items: flex-end;
+    font-size: 16px;
+    line-height: 1;
+    color: red;
+    border: none;
+    width: auto;
+    padding: 0;
+    opacity: 1;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    &:hover{
+      background-color: transparent;
+    }
+  }
+
+  &__nav-item,
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__nav-item {
+    width: 40px;
+    height: 49px;
+  }
+
+  &__nav_prev {
+    transform: rotate(180deg);
+  }
+
+  &__scale {
+    display: flex;
+    margin: 0 10px;
+  }
+}

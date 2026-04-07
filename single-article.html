@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!--зaкрыть индексацию -->
+    <meta name="googlebot" content="noindex, nofollow">
+    <meta name="robots" content="noindex">
+    <meta name="yandex" content="none">
+
+    <title>Стаття блогу</title>
+
+    <!--    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"/>
+    <link rel="stylesheet" href="./lib/noUiSlider/nouislider.min.css"/>
+    <link rel="stylesheet" href="./lib/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./lib/lightBox/glightbox.css"/>
+    <!--    <link rel="stylesheet" href="./fonts/fonts.css">-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="./dist/main.css">
+</head>
+
+<body>
+<div class="wrapper">
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="index.html" class="header__logo">
+                    <img src="assets/img/logo.svg" alt="">
+                </a>
+                <div class="header__nav">
+                    <button type="button" class="btn_close" aria-label="Закрити меню"></button>
+                    <ul class="menu">
+                        <li class="menu__item">
+                            <a href="index.html" class="menu__link">Головна</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="page-catalog.html" class="menu__link">Каталог</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="page-about.html" class="menu__link">Про нас</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="page-blog.html" class="menu__link">Блог</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="page-contacts.html" class="menu__link">Контакти</a>
+                        </li>
+                    </ul>
+                    <div class="header__lang">
+                        <a href="#" class="header__lang-link active">УКР</a>
+                    </div>
+                </div>
+                <button type="button" class="btn_burger" aria-label="Відкрити меню">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <div class="backdrop"></div>
+
+    <main class="main  page page-article">
+        <section class="section-banner" style="background-image: url(assets/img/hiro-section2.png);">
+            <div class="container"></div>
+        </section>
+        <div class="container">
+            <nav aria-label="Шлях до сторінки" class="breadcrumb">
+                <ul>
+                    <li><a href="index.html">Головна</a></li>
+                    <li><a href="page-blog.html">Блог</a></li>
+                    <li><span aria-current="page">Зміни в програмі ЄОселя</span></li>
+                </ul>
+            </nav>
+        </div>
+        <article class="blog-post">
+            <div class="container">
+                <div class="section__header">
+                    <div class="blog-post__date">17.03.2026</div>
+                    <h2 class="page__title">Зміни в програмі ЄОселя</h2>
+                </div>
+                <div class="blog-post__content dynamic-content">
+
+                    <p>Як відомо, ЄОселя - це державна програма кредитування житла, яка дає змогу певним категоріям
+                        громадян отримати пільгову іпотеку під низькі відсотки. У 2026 році в програмі відбулися суттєві
+                        зміни, які зробили умови отримання даного кредиту більш жорсткішими, насамперед це стосується
+                        обмеження на площу та вартість житла.</p>
+
+                    <p>Наразі, як відомо, загалом по програмі діють пільгові відсоткові ставки у 3 та 7 %. Вони
+                        надаються
+                        протягом 10 років дії кредиту, після чого терміну ставка зростає (до 6 і 10 відсотків
+                        відповідно).
+                        Щодо категорій громадян, які мають право на участь у цій програмі, то знижена ставка у 3
+                        відсотки
+                        надається військовослужбовцям, а також медичним, педагогічним працівникам і науковцям.</p>
+
+                    <p>Проте важливо, що саме у Львові та Львівській області є додаткова компенсація з місцевого
+                        бюджету,
+                        яка дозволяє купити нерухомість по цій програмі зі зниженими ставками (0 і 4 % відповідно).
+                        Таким
+                        чином наразі для військовослужбовців (як контрактної форми служби, так і мобілізованим) повністю
+                        компенсується ставка і вони мають змогу купити житло по безвідсотковому кредиту. Для ветеранів,
+                        учасників бойових дій, сімей загиблих - ставка з 7 знижується до 4 відсотків.</p>
+
+                    <p>Також додатковий механізм кредитування діє для мешканців Львова до 35 років, через
+                        Держмолодьжитло -
+                        їм також надається іпотека за пільговою ставкою 3 відсотки. До того ж наявні додаткові пільги
+                        для
+                        молодих сімей: за наявності однієї дитини, молода сім’я взагалі звільняється від відсотків,
+                        кредит
+                        стає безвідсотковим, якщо ж дітей більше, держава компенсує 25 відсотків всієї суми зобов’язань
+                        за
+                        кредитом. Також молоді люди до 25 років тепер мають право на перший внесок за житло у розмірі 10
+                        %
+                        (інші категорії мають оплачувати перший внесок від 20 %).</p>
+
+                    <p>Проте окрім нових пільгових умов важливо відзначити і більш жорсткі ліміти для видачі кредиту по
+                        програмі ЄОселя. Тепер сім’я з двох осіб не може отримати кредит, якщо вже володіє житлом більше
+                        52.5 кв.м. Додаткові 21 кв.м. надаються за дитину, третього та кожного наступного члена сім’ї.
+                        Також
+                        банки перевіряють, чи продавав громадянин нерухомість протягом останніх 3 років - кредит не
+                        надається, якщо площа проданої нерухомості разом з наявною перевищує вищезазначений ліміт.</p>
+
+                    <p>Наявні також нові суворіші обмеження по ціні та площі житла, яке хочуть придбати по програмі:
+                        максимальна площа квартири 115.5 кв.м., будинку 125.5 кв.м., максимальна вартість житла біля
+                        1200
+                        доларів за метр. Щодо віку нерухомості, то у Львові по програмі ЄОселя підходить лише
+                        нерухомість,
+                        введена в експлуатацію не старше 3 років тому. Проте у містах області для пільгових категорій є
+                        можливість купити житло без обмежень по віку.</p>
+
+                    <p>Загалом програма ЄОселя користувалася та користується дуже великим попитом, вона надає порівняно
+                        досить лояльні та доступні умови кредиту - як ми бачимо, у деяких випадках навіть безвідсоткові.
+                        Але
+                        великою проблемою, звісно, є ліміти на вартість, площу та вік доступної нерухомості - ринкові
+                        ціни
+                        на більшість квартир у новобудовах у Львові просто вищі, до того ж багато власників не дуже
+                        хочуть
+                        продавати нерухомість за цим механізмом (не хочуть отримувати гроші в гривні на банківський
+                        рахунок,
+                        віддаючи перевагу оплаті готівкою в доларах, незважаючи на те, що безготівкова оплата має багато
+                        переваг та стає дедалі більш популярнішою, дає можливість надати підтвердження доходів - це
+                        окрема
+                        тема для іншої нашої статті). Тому наразі стабільно бачимо, що попит купівлі житла за програмою
+                        ЄОселя переважає над пропозицією.</p>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="footer_top">
+            <div class="container d-flex">
+                <div class="footer__col text">
+                    <h4 class="footer__title">Compass Realty</h4>
+                    <div class="footer__text">
+                        Компанія Compass Realty прагне
+                        надавати високий рівень
+                        експертизи, обслуговування
+                        клієнтів та уваги до деталей у
+                        маркетингу та продажу розкішної
+                        нерухомості та об’єктів оренди.
+                    </div>
+                </div>
+                <div class="footer__col">
+                    <h4 class="footer__title">Меню</h4>
+                    <ul class="menu">
+                        <ul class="menu">
+                            <li class="menu__item">
+                                <a href="index.html" class="menu__link">Головна</a>
+                            </li>
+                            <li class="menu__item">
+                                <a href="page-catalog.html" class="menu__link">Каталог</a>
+                            </li>
+                            <li class="menu__item">
+                                <a href="page-about.html" class="menu__link">Про нас</a>
+                            </li>
+                            <li class="menu__item">
+                                <a href="page-blog.html" class="menu__link">Блог</a>
+                            </li>
+                            <li class="menu__item">
+                                <a href="page-contacts.html" class="menu__link">Контакти</a>
+                            </li>
+                        </ul>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4 class="footer__title">Контакти</h4>
+                    <ul class="contacts-list">
+                        <li class="contact__item">Львів, Україна</li>
+                        <li class="contact__item">
+                            <a href="tel:+380935089594">+38 (093) 508 95 94</a>
+                        </li>
+                        <li class="contact__item">
+                            <a href="tel:+380969527816">+38 (096) 952 78 16</a>
+                        </li>
+                        <li class="contact__item">
+                            <a href="mailto:oleksandr.compass@gmail.com">oleksandr.compass@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__col social">
+                    <h4 class="footer__title">Соціальні мережі</h4>
+                    <ul class="social-list">
+                        <li class="social-list__item">
+                            <a href="#"><img src="assets/img/svg/facebook.svg" alt="Facebook"></a>
+                        </li>
+                        <li class="social-list__item">
+                            <a href="#"><img src="assets/img/svg/telegram.svg" alt="Telegram"></a>
+                        </li>
+                        <li class="social-list__item">
+                            <a href="#"><img src="assets/img/svg/insta.svg" alt="Instagram"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <div class="container d-flex">
+                <div class="copyright">Compass. All Rights Reserved 2026.</div>
+                <ul class="menu">
+                    <li class="menu__item">
+                        <a href="#" class="menu__link">Terms of Use</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="#" class="menu__link">Privacy Policy</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+    </footer>
+</div>
+
+<!--<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+
+<script src="./lib/noUiSlider/nouislider.min.js"></script>
+<script src="./lib/swiper/swiper-bundle.min.js"></script>
+<script src="./lib/lightBox/glightbox.min.js"></script>
+<script src="dist/main.js"></script>
+</body>
+</html>

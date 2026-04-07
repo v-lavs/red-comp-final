@@ -1,0 +1,181 @@
+@use "../utils/mixins";
+@use "../utils/variables";
+
+body {
+  font: 400 16px variables.$main-font;
+  color: variables.$grey-04;
+  line-height: 1.87;
+  height: 100%;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.main {
+  flex: 1 1 auto;
+  
+}
+
+.d-flex {
+  display: flex;
+}
+
+.section{
+  padding-top: 122px;
+  &__title{
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: variables.$primary-color;
+    display: inline-block;
+  }
+  &__header{
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    position: relative;
+  }
+}
+.dynamic-content {
+  p {
+    margin-bottom: 16px;
+    line-height: 1.87;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+
+    &.alignleft {
+      float: left;
+      margin: 4px 15px 15px 0;
+    }
+
+    &.alignright {
+      float: right;
+      margin: 4px 0 15px 15px;
+    }
+
+    &.aligncenter {
+      display: block;
+      margin: 30px auto;
+      clear: both;
+    }
+
+    &.alignfull {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 30px 0;
+    }
+  }
+
+
+  h1, h2,
+  h3, h4, h5, h6 {
+  }
+
+  h3, h4, h5, h6 {
+  
+  }
+
+  h1, h2 {
+
+  }
+
+  h3 {
+  
+  }
+
+  h4 {
+   
+  }
+
+  ul, ol {
+    margin: 0 0 5px 0;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+
+  ol {
+    counter-reset: list;
+
+    li {
+      overflow-wrap: anywhere;
+      position: relative;
+      list-style: inherit;
+      padding-left: 35px;
+
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 8px;
+        counter-increment: list;
+        content: counter(list) '.';
+      }
+    }
+  }
+
+  ul {
+    li {
+      &:before {
+        content: ".";
+        display: block;
+        position: absolute;
+        left: 7px;
+        top: -8px;
+        font-size: 30px;
+        line-height: .5;
+        color: #000;
+      }
+    }
+  }
+
+  li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 5px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+
+    &:hover,
+    &:focus {
+      
+    }
+  }
+}
+
+
+@include mixins.respond-to(variables.$xl) {
+
+}
+
+@include mixins.respond-to(variables.$lg) {
+
+}
+
+@include mixins.respond-to(variables.$md) {
+
+}
+
+@include mixins.respond-to(variables.$sm) {
+
+}
+
+@include mixins.respond-to(variables.$xs) {
+
+}
+
+@include mixins.respond-to(variables.$xxs) {
+
+}

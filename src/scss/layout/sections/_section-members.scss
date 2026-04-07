@@ -1,0 +1,138 @@
+@use "../../utils/mixins";
+@use "../../utils/variables";
+.section-members{
+  overflow: hidden;
+  padding-bottom: 124px;
+  .swiper-pagination{
+    display: none;
+  }
+}
+.slider-members {
+  width: calc(100% + (100vw - 100%) / 2);
+}
+.members-nav {
+  display: flex;
+}
+.members {
+  position: relative;
+  width: 311px;
+  height: 453px;
+  border-radius: 25px;
+  overflow: hidden;
+  &:before,
+  &:after{
+    position: absolute;
+    content: '';
+    display: block;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    transition: opacity .35s;
+  }
+  &:before{
+    background-color: variables.$primary-color;
+    opacity: 0;
+  }
+  &:after{
+    background: linear-gradient(to top, rgb(0, 0, 0) 0%, rgba(15, 14, 14, 0) 65%);
+    opacity: 1;
+    pointer-events: none;
+  }
+  &:hover{
+    &:before{
+      opacity: 1;
+    }
+    &:after{
+      opacity: 0;
+    }
+    .members__overlay{
+      transition: .35s;
+      transform: translateY(0);
+    }
+  }
+}
+
+.members__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.members__overlay {
+  padding: 27px 22px 22px;
+  color: #FFFFFF;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  transition: .35s;
+  transform: translateY(74%);
+}
+
+.members__name,
+.members__activity {
+  width: 100%;
+  letter-spacing: -0.68px;
+  text-align: center;
+  line-height: 35px;
+  a{
+    display: inline-block;
+  }
+}
+
+.members__name {
+  font-weight: 700;
+  font-size: 18px;
+
+}
+
+.members__activity {
+  font-weight: 300;
+  font-size: 16px;
+
+  margin-bottom: 18px;
+}
+
+.members__contacts {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 35px;
+  letter-spacing: -0.68px;
+
+  a {
+    display: inline-block;
+    padding-left: 32px;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      content: url('../assets/img/svg/light_phone.svg');
+      display: block;
+      width: 20px;
+      height: 20px;
+      left: 0;
+      top: 14%;
+      z-index: 1;
+    }
+
+    &.mail:before {
+      content: url('../assets/img/svg/weui_email-outlined.svg');
+    }
+  }
+}
+
+.members__social {
+  position: absolute;
+  bottom: 22px;
+  left: 22px;
+
+  .icon {
+    width: 45px;
+    height: 45px;
+    margin-right: 20px;
+  }
+}

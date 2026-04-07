@@ -1,0 +1,81 @@
+@use "../../utils/mixins";
+@use "../../utils/variables";
+
+.post-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-bottom: 60px;
+
+}
+
+.card_offers {
+  width: 32%;
+  flex-grow: 1;
+
+  a {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .price {
+    font-weight: 700;
+    font-size: 16px;
+    color: variables.$grey-07;
+    margin-bottom: 16px;
+  }
+
+  .card__title {
+    color: variables.$primary-color;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .card__body {
+    padding: 0 12px 16px;
+  }
+
+  .card__footer {
+    display: flex;
+    padding: 0 12px;
+    margin-top: auto;
+  }
+
+  .card__detail {
+    position: relative;
+    padding-left: 26px;
+    margin-right: 20px;
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: auto;
+      height: 16px;
+      z-index: 1;
+    }
+  }
+
+  .location,
+  .label-wrap {
+    position: absolute;
+    font-size: 14px;
+    line-height: 1;
+    right: 0;
+    z-index: 1;
+  }
+}
+
+@include mixins.respond-to(variables.$xl) {
+  .card_offers:not(.swiper-slide) {
+    flex-basis: 241px;
+  }
+}
+
+@include mixins.respond-to(variables.$xs) {
+  .card_offers {
+    max-width: 100%;
+  }
+}

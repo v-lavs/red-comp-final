@@ -1,0 +1,50 @@
+@use "../utils/mixins";
+@use "../utils/variables";
+@use "../components/card";
+
+
+.blog-post {
+  margin-bottom: 30px;
+  a {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    height: 100%;
+    width: 100%;
+  }
+
+  .card__thumb {
+    width: 33.5%;
+    padding-top: 20.6%;
+    min-height: 153px;
+    margin-bottom: 0;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.1;
+    letter-spacing: 0;
+    color: variables.$primary-color;
+    margin-bottom: 28px;
+  }
+
+  .card__text {
+    padding: 14px 0;
+  }
+
+  .card__body {
+    width: 41.25%;
+    padding: 0 22px;
+  }
+  .card__footer{
+    margin-right: auto;
+    margin-left: auto;
+
+    font-size: 16px;
+    line-height: 1;
+    text-decoration: underline;
+    color: #000000;
+  }
+}
+

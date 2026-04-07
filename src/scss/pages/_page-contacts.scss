@@ -1,0 +1,63 @@
+@use "../utils/mixins";
+@use "../utils/variables";
+
+.section-contacts {
+  padding: 48px 0;
+}
+
+.form__grid-container {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 416px;
+  grid-template-areas:
+    "fields info"
+    "button info";
+}
+
+.field__group {
+  grid-area: fields;
+}
+
+.form__actions {
+  grid-area: button;
+  padding-top: 22px;
+}
+
+.form-sidebar__info {
+  padding: 47px 50px;
+  font-size: 14px;
+  color: #222222;
+  border: 1px solid variables.$primary-color;
+  border-radius: 10px;
+  a {
+    display: block;
+    transition: .35s;
+
+    &:hover {
+      color: variables.$primary-color;
+    }
+  }
+}
+
+.contacts-list__item {
+  display: flex;
+  margin-bottom: 12px;
+  align-items: baseline;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.contacts-list__title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 21.45px;
+  letter-spacing: 0;
+  color: #000000;
+  padding-right: 12px;
+}
+
+address {
+  font-style: normal;
+}

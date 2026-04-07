@@ -1,0 +1,27 @@
+@use "../utils/mixins";
+@use "../utils/variables";
+
+.menu{
+  display: flex;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+  letter-spacing: 0;
+  color: variables.$grey-07;
+
+  &__item{
+    margin-right: 24px;
+    transition: .35s;
+    &:hover,
+    &:focus{
+      color: variables.$primary-color;
+    }
+  }
+  &__link{
+    display: inline-block;
+    color: inherit;
+  }
+  &:not(.header.header_home){
+
+  }
+}

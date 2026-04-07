@@ -1,0 +1,36 @@
+@use "../utils/mixins";
+@use "../utils/variables";
+
+.slider__arrow_next,
+.slider__arrow_prev {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 49px;
+  height: 49px;
+  border: 1px solid variables.$secondary-color;
+  border-radius: 50%;
+  margin-left: 20px;
+  background-color: #FFFFFF;
+}
+
+.slider__arrow_prev {
+  transform: rotate(180deg);
+}
+.swiper-button-disabled{
+  border: 1px solid rgba(232, 73, 35, 0.32);
+}
+
+.swiper-nav{
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  .slider__arrow_next,
+  .slider__arrow_prev {
+    border-color: transparent;
+    margin: 0;
+  }
+  .swiper-button-disabled {
+    opacity: .32;
+  }
+}

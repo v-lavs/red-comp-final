@@ -1,0 +1,64 @@
+@use "../utils/mixins";
+@use "../utils/variables";
+
+@media print {
+  header, footer, nav, aside, .btn, .label, .location, .no-print {
+    display: none !important;
+  }
+  .main {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .swiper,
+  .swiper-container {
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .swiper-wrapper {
+    display: block !important;
+    height: auto !important;
+    transform: none !important;
+    width: 100% !important;
+  }
+
+
+  .swiper-slide {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    margin-bottom: 30px;
+    page-break-inside: avoid;
+
+    a, picture, div {
+      display: block !important;
+      width: 100% !important;
+      height: auto !important;
+      aspect-ratio: auto !important;
+      position: static !important;
+    }
+
+    img {
+      display: block !important;
+      width: 100% !important;
+      height: auto !important;
+      max-width: 100% !important;
+      object-fit: contain !important;
+      position: static !important;
+    }
+  }
+
+  .swiper-pagination,
+  .swiper-notification {
+    display: none !important;
+  }
+  .slider__arrow {
+    display: none !important;
+  }
+}

@@ -1,0 +1,108 @@
+@use "../utils/mixins";
+@use "../utils/variables";
+
+.catalog {
+  .breadcrumb {
+    padding: 48px 0;
+  }
+
+  .section-banner {
+    margin-bottom: 70px;
+  }
+
+  .filter {
+    display: block;
+    padding: 0 32px;
+  }
+
+  .filter-switch {
+    max-width: 100%;
+    padding-left: 32px;
+  }
+
+  .filter-switch__btn.btn {
+    background-color: variables.$primary-color;
+    color: #FFFFFF;
+    border: 1px solid transparent;
+    padding-left: 45px;
+    padding-right: 45px;
+    font-weight: 700;
+  }
+
+  input[type="radio"]:checked + .filter-switch__btn {
+    color: variables.$primary-color;
+    background-color: #FFFFFF;
+    border-color: variables.$primary-color;
+  }
+
+  .field__group {
+    &_details {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-column-gap: 0;
+      grid-row-gap: 0;
+    }
+
+    &_price {
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 48px;
+
+      .btn-submit {
+        margin-left: 70px;
+      }
+    }
+  }
+
+  .form__group {
+    max-width: 210px;
+    width: 100%;
+    margin-bottom: 24px;
+  }
+
+  .filter-price {
+    margin-bottom: 10px;
+  }
+}
+
+.filter-widget {
+  .search-input {
+    width: 100%;
+    max-width: 1210px;
+    height: 48px;
+    border-radius: 50px;
+    border: 1px solid #2C2C2C;
+    padding: 15px 15px 15px 52px;
+    color: #222222;
+  }
+
+  .search-wrap {
+    position: relative;
+    margin-bottom: 36px;
+  }
+
+  .search-icon {
+    background-image: url(../assets/img/svg/search.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 24px;
+    z-index: 1;
+    pointer-events: none;
+  }
+}
+
+.search-input:focus {
+  border: 1px solid rgba(232, 73, 35, 0.92);
+  outline: none;
+}
+
+.search-input:not(:placeholder-shown) + .search-icon {
+  opacity: 0;
+}

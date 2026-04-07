@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!--зaкрыть индексацию -->
+    <meta name="googlebot" content="noindex, nofollow">
+    <meta name="robots" content="noindex">
+    <meta name="yandex" content="none">
+
+    <title>Про нас</title>
+
+    <!--    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"/>
+    <link rel="stylesheet" href="./lib/noUiSlider/nouislider.min.css"/>
+    <link rel="stylesheet" href="./lib/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./lib/lightBox/glightbox.css"/>
+    <!--    fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="./dist/main.css">
+</head>
+
+<body>
+<div class="wrapper">
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="index.html" class="header__logo">
+                    <img src="assets/img/logo.svg" alt="">
+                </a>
+                <div class="header__nav">
+                    <button type="button" class="btn_close" aria-label="Закрити меню"></button>
+                    <ul class="menu">
+                        <li class="menu__item">
+                            <a href="index.html" class="menu__link">Головна</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="page-catalog.html" class="menu__link">Каталог</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="page-about.html" class="menu__link">Про нас</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="page-blog.html" class="menu__link">Блог</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="page-contacts.html" class="menu__link">Контакти</a>
+                        </li>
+                    </ul>
+                    <div class="header__lang">
+                        <a href="#" class="header__lang-link active">УКР</a>
+                    </div>
+                </div>
+                <button type="button" class="btn_burger" aria-label="Відкрити меню">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <div class="backdrop"></div>
+
+    <main class="main  page page-about">
+        <section class="section-banner" style="background-image: url(assets/img/hero-section1.png);">
+            <div class="container"></div>
+        </section>
+        <div class="container">
+            <nav aria-label="Шлях до сторінки" class="breadcrumb">
+                <ul>
+                    <li><a href="index.html">Головна</a></li>
+                    <li><span aria-current="page">Про нас</span></li>
+                </ul>
+            </nav>
+        </div>
+
+        <section class="section-about">
+            <div class="container">
+
+                <div class="block-intro">
+                    <p>Знайдіть свій дім разом із <strong class="color-red">Compass Realty</strong>.</p>
+                    <p>Ми не просто продаємо квартири - ми допомагаємо людям знайти місце , де починається нова
+                        історія.</p>
+                    <p><strong>Понад 5 років</strong> у Львові , тисячі щасливих родин</p>
+                    <p><strong class="color-red">Compass Realty</strong> - це точний орієнтир у світі нерухомості
+                        Львова.</p>
+                    <p>Ринок нерухомості складний . Ми знаємо його зсередини . Кожен наш ріелтор - це живий путівник по
+                        районах , цінах і юридичних нюансах. Ми беремо на себе всі клопоти , щоб Ви просто відчинили
+                        двері свого нового дому.</p>
+                </div>
+                <div class="section__header">
+                    <h2 class="page__title">Наші послуги</h2>
+                </div>
+
+                <div class="accordion accordion-services">
+                    <div class="accordion__item">
+                        <header class="accordion__header">
+                            <h3 class="accordion__header-title">Купівля житла </h3>
+                            <div class="toggle-collapse-wrap">
+                                <span class="toggle-collapse"></span>
+                            </div>
+                        </header>
+                        <div class="accordion-collapse">
+                            <div class="accordion-collapse__content">
+                                <div class="bento-grid">
+                                    <div class="card-1 card-service card-large card-1 dynamic-content">
+                                        <h4>Знайомство та діагностика потреб</h4>
+                                        <ul>
+                                            <li>Зустріч або онлайн-дзвінок</li>
+                                            <li>Узгоджуємо бюджет, район, параметри та пріоритети</li>
+                                            <li>Визначаємо терміни переїзду</li>
+                                            <li>Даємо реальну картину ринку у вашому сегменті</li>
+                                            <li>Відповідаємо на всі запитання — чесно, без прикрас</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="card-2 card-service card-small dynamic-content">
+                                        <h4>Персональний підбір об'єктів</h4>
+                                        <p>Ріелтор відбирає 5–10 варіантів, що реально відповідають запиту (включно
+                                            з непублічними).</p>
+                                        <ul>
+                                            <li>Власна база об’єктів</li>
+                                            <li> Моніторинг нових оголошень</li>
+                                            <li>Контакти з агентствами та продавцями</li>
+                                            <li>Доступ до об’єктів до виходу на ринок (часто дешевше)</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-3 card-service card-medium dynamic-content">
+                                        <h4>Організація та супровід переглядів</h4>
+                                        <ul>
+                                            <li>Організовуємо перегляди та супроводжуємо вас</li>
+                                            <li>Узгоджуємо зручний час</li>
+                                            <li>Виявляємо приховані недоліки</li>
+                                            <li>Оцінюємо вартість ремонту</li>
+                                            <li>Аналізуємо інфраструктуру та оточення</li>
+                                            <li> Фіксуємо стан об’єкта (аудіо/відео)</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="card-4 card-service card-medium dynamic-content">
+                                        <h4>Переговори та торг з продавцем</h4>
+                                        <ul>
+                                            <li>Торгуємось за вас без конфліктів</li>
+                                            <li>Аналізуємо реальну вартість (порівняння з аналогами)</li>
+                                            <li> Ведемо переговори від вашого імені або разом із вами</li>
+                                            <li> Досягаємо розумної знижки</li>
+                                            <li>Узгоджуємо додаткові умови (майно, терміни)</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-5 card-service card-small dynamic-content">
+                                        <h4>Юридична перевірка об'єкта</h4>
+                                        <ul>
+                                            <li>Перевірка права власності та історії угод</li>
+                                            <li> Арешти, іпотеки, заборони</li>
+                                            <li>Перевірка продавця (дієздатність, борги)</li>
+                                            <li>Комунальні заборгованості</li>
+                                            <li> Зареєстровані особи (вкл. неповнолітніх)</li>
+                                            <li>Оцінка ризиків і варіанти рішень</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="card-6 card-service card-medium dynamic-content">
+                                        <h4>Попередній договір та аванс</h4>
+                                        <ul>
+                                            <li>Фіксуємо домовленості письмово</li>
+                                            <li> Складаємо/перевіряємо попередній договір</li>
+                                            <li>Прописуємо штрафні санкції</li>
+                                            <li> Визначаємо аванс/завдаток</li>
+                                            <li>Фіксуємо дату угоди та ключові умови</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-7 card-service card-small dynamic-content">
+                                        <h4>Підготовка документів та іпотека</h4>
+                                        <ul>
+                                            <li> Збираємо пакет документів з обох сторін</li>
+                                            <li> Формуємо чек-лист і контролюємо довідки/витяги/техпаспорт</li>
+                                            <li> Допомагаємо з іпотекою (банк, подача заявки)</li>
+                                            <li> Підбираємо нотаріуса, координуємо сторони</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="card-8 card-service card-large dynamic-content">
+                                        <h4>Після переїзду</h4>
+                                        <ul>
+                                            <li>Підтримка після угоди</li>
+                                            <li>Рекомендуємо перевірених майстрів</li>
+                                            <li>Допомагаємо з переоформленням комунальних</li>
+                                            <li>Консультуємо по податках</li>
+                                            <li> Безкоштовна оцінка через рік</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="card-9 card-service card-small dynamic-content">
+                                        <h4>Нотаріальне оформлення угоди</h4>
+                                        <ul>
+                                            <li>Супровід у день угоди (присутність ріелтора)</li>
+                                            <li>Фінальна перевірка договору</li>
+                                            <li>Контроль безпечної передачі коштів</li>
+                                            <li>Перевірка внесення в реєстр</li>
+                                            <li>Отримання виписки про право власності</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-10 card-service card-medium dynamic-content">
+                                        <h4>Передача квартири та підписання акту</h4>
+                                        <ul>
+                                            <li>Супровід після угоди</li>
+                                            <li>Складаємо акт прийому-передачі</li>
+                                            <li>Фіксуємо показники лічильників</li>
+                                            <li>Перевіряємо виконання домовленостей</li>
+                                            <li>Контролюємо передачу ключів</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion__item">
+                        <header class="accordion__header">
+                            <h4 class="accordion__header-title">Продаж нерухомості </h4>
+                            <div class="toggle-collapse-wrap">
+                                <span class="toggle-collapse"></span>
+                            </div>
+                        </header>
+                        <div class="accordion-collapse">
+                            <div class="accordion-collapse__content">
+                                <div class="bento-grid">
+                                    <div class="card-1 card-service card-large card-1 dynamic-content">
+                                        <h4>Оцінка нерухомості</h4>
+                                        <p>Чесно визначаємо реальну ринкову ціну — без завищень і занижень.</p>
+                                        <ul>
+                                            <li>Аналіз аналогів у районі</li>
+                                            <li>Аналіз реальних угод (не оголошень)</li>
+                                            <li>Оцінка об’єкта (стан, поверх, планування, інфраструктура)</li>
+                                            <li>Визначення стартової та мінімальної ціни</li>
+                                            <li>Прогноз термінів і ціни продажу</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="card-2 card-service card-small dynamic-content">
+                                        <h4>Стратегія продажу та договір із Компасом</h4>
+                                        <ul>
+                                            <li>Визначаємо цільового покупця</li>
+                                            <li>Обираємо канали просування</li>
+                                            <li>Прозорий договір (фіксована комісія)</li>
+                                            <li>Особистий менеджер</li>
+                                            <li>Рекомендації для підвищення ціни</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-3 card-service card-medium dynamic-content">
+                                        <h4>Передпродажна підготовка об'єкта</h4>
+                                        <ul>
+                                            <li>Квартира з хорошим виглядом продається швидше і дорожче.</li>
+                                            <li>Рекомендації: прибирання, меблі, косметика</li>
+                                            <li>Усунення дрібних недоліків</li>
+                                            <li>Зростання ціни завдяки підготовці</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="card-4 card-service card-medium dynamic-content">
+                                        <h4>Професійна фотозйомка та опис</h4>
+                                        <p>90% покупців шукають онлайн — якісна подача вирішує.</p>
+                                        <ul>
+                                            <li>Професійна фотозйомка</li>
+                                            <li>Продумані ракурси й світло</li>
+                                            <li>Опис, що продає</li>
+                                            <li>Відеоогляд</li>
+                                            <li>Без доплат за зйомку</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-5 card-service card-small dynamic-content">
+                                        <h4>Максимальне просування об'єкта</h4>
+                                        <p>Не чекаємо — активно просуваємо об’єкт.</p>
+                                        <ul>
+                                            <li>Портали (OLX, DOM.RIA, LUN, Rieltor.ua)</li>
+                                            <li>Соцмережі (таргет на Львів)</li>
+                                            <li>База покупців</li>
+                                            <li>Партнерська мережа ріелторів</li>
+                                            <li>Telegram-канали</li>
+                                            <li>Розсилка по компаніях</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="card-6 card-service card-medium dynamic-content">
+                                        <h4>Фільтрація покупців і організація показів</h4>
+                                        <ul>
+                                            <li>Приймаємо всі дзвінки та повідомлення</li>
+                                            <li>Кваліфікуємо покупців (бюджет, терміни, мотивація)</li>
+                                            <li>Організовуємо покази у зручний час</li>
+                                            <li>Презентуємо об’єкт на показах</li>
+                                            <li>Даємо зворотний зв’язок після кожного показу</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-7 card-service card-small dynamic-content">
+                                        <h4>Переговори з покупцем — захищаємо вашу ціну</h4>
+                                        <p>Максимальна ціна без зайвих ризиків — ведемо переговори професійно.</p>
+                                        <ul>
+                                            <li>Переговори від вашого імені або разом</li>
+                                            <li>Контроль межі торгу — ціна не опускається нижче ринку</li>
+                                            <li>Можливе підвищення ціни вище стартової</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="card-8 card-service card-large dynamic-content">
+                                        <h4>Підготовка документів та угода у нотаріуса</h4>
+                                        <ul>
+                                            <li>Чек-лист документів від продавця</li>
+                                            <li>Отримання витягів, довідок, техпаспорту</li>
+                                            <li>Перевірка договору купівлі-продажу</li>
+                                            <li>Присутність ріелтора на угоді</li>
+                                            <li>Контроль безпечного розрахунку</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="card-9 card-service card-small dynamic-content">
+                                        <h4>Передача квартири та завершення справ</h4>
+                                        <ul>
+                                            <li>Підписання акту прийому-передачі</li>
+                                            <li>Фіксація показників лічильників</li>
+                                            <li>Консультації з податків</li>
+                                            <li>Зняття об’єкта з комунальних рахунків</li>
+                                            <li>Підтримка при купівлі нового житла</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion__item">
+                        <header class="accordion__header">
+                            <h4 class="accordion__header-title">Здача житла в оренду</h4>
+                            <div class="toggle-collapse-wrap">
+                                <span class="toggle-collapse"></span>
+                            </div>
+                        </header>
+                        <div class="accordion-collapse">
+                            <div class="accordion-collapse__content">
+                                <div class="bento-grid">
+                                    <div class="card-1 card-service card-large card-1 dynamic-content">
+                                        <h4>Консультація та оцінка орендної ставки</h4>
+                                        <p>Оцінюємо реальну орендну ставку та потенціал вашої квартири.</p>
+                                        <ul>
+                                            <li>Аналіз аналогів у районі</li>
+                                            <li>Оцінка стану, меблів, техніки</li>
+                                            <li>Поради, як підвищити ставку на 10–20%</li>
+                                            <li>Визначення цільового орендаря</li>
+                                            <li>Прогноз термінів і ціни оренди</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="card-2 card-service card-small dynamic-content">
+                                        <h4>Підготовка квартири до здачі</h4>
+                                        <p>Доглянута квартира здається швидше і дорожче.</p>
+                                        <ul>
+                                            <li>Чек-лист: що прибрати, полагодити, докупити</li>
+                                            <li>Усунення дрібних проблем (кран, фарба, двері)</li>
+                                            <li>Поради щодо меблів і техніки</li>
+                                            <li>Генеральне прибирання через партнерів за потреби</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-3 card-service card-medium dynamic-content">
+                                        <h4>Фотозйомка та створення оголошення</h4>
+                                        <p>Фотозйомка та оголошення, що привертають увагу.</p>
+                                        <ul>
+                                            <li>Фото та текст показують атмосферу квартири, а не просто перелік кімнат
+                                            </li>
+                                            <li>Виділяємо переваги: нова техніка, тихий двір, паркінг, близько до
+                                                метро
+                                            </li>
+                                            <li>Фотозйомка включена у вартість, без додаткових витрат</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="card-4 card-service card-medium dynamic-content">
+                                        <h4>Розміщення та просування на всіх майданчиках</h4>
+                                        <p>Активне просування квартири на всіх каналах.</p>
+                                        <ul>
+                                            <li>Портали (OLX, DOM.RIA, LUN, Rieltor.ua) з підйомом у топ</li>
+                                            <li>Соцмережі (Instagram, Facebook) — таргет на орендарів у Львові</li>
+                                            <li>Telegram-канали з тисячами підписників</li>
+                                            <li>Власна база орендарів</li>
+                                            <li>Корпоративні партнери (IT, університети, переселенці)</li>
+                                            <li>Один менеджер відповідає на всі дзвінки та повідомлення</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-5 card-service card-small dynamic-content">
+                                        <h4>Ретельна перевірка кандидатів</h4>
+                                        <ul>
+                                            <li>Паспорт і ідентифікаційний код</li>
+                                            <li>Перевірка в списках проблемних орендарів та боржників</li>
+                                            <li>Соціальна перевірка: соцмережі, рекомендації попередніх власників</li>
+                                            <li>Особиста зустріч і оцінка “червоних прапорців”</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="card-6 card-service card-medium dynamic-content">
+                                        <h4>Організація переглядів і вибір орендаря</h4>
+                                        <ul>
+                                            <li>Узгоджуємо зручний час для вас і кандидатів</li>
+                                            <li>Покази лише відібраним кандидатам</li>
+                                            <li>Допомагаємо з рішенням і радимо найнадійнішого</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-7 card-service card-small dynamic-content">
+                                        <h4>Складання та підписання договору оренди</h4>
+                                        <p>Договір оренди — ваш захист. Більшість проблем виникає без нього або через
+                                            шаблон з інтернету. Ми готуємо документ, що реально захищає вас.</p>
+                                    </div>
+
+                                    <div class="card-8 card-service card-large dynamic-content">
+                                        <h4>Передача квартири та підтримка під час оренди</h4>
+                                        <ul>
+                                            <li>Акт та фотофіксація стану</li>
+                                            <li>Передача ключів та контроль застави</li>
+                                            <li>Підтримка та медіація під час оренди</li>
+                                            <li>Допомога з наступним орендарем</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion__item">
+                        <header class="accordion__header">
+                            <h4 class="accordion__header-title">Пошук житла для оренди</h4>
+                            <div class="toggle-collapse-wrap">
+                                <span class="toggle-collapse"></span>
+                            </div>
+                        </header>
+                        <div class="accordion-collapse">
+                            <div class="accordion-collapse__content">
+                                <div class="bento-grid">
+                                    <div class="card-1 card-service card-large card-1 dynamic-content">
+                                        <h4>Консультація — розуміємо, що вам справді потрібно</h4>
+                                        <ul>
+                                            <li>Визначаємо бюджет: комфортний та максимальний</li>
+                                            <li>Район, транспорт, близькість до роботи/навчання</li>
+                                            <li>Кімнати, поверх, меблі та техніка</li>
+                                            <li>Тварини, діти, індивідуальні побажання</li>
+                                            <li>Термін переїзду</li>
+                                            <li>Чесно про реальні варіанти на ринку Львова</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="card-2 card-service card-small dynamic-content">
+                                        <h4>Персональний підбір квартир</h4>
+                                        <ul>
+                                            <li>Особистий підбір 5–8 квартир під ваш запит</li>
+                                            <li>Власна база та моніторинг нових оголошень</li>
+                                            <li>Перевірка актуальності, відсів дублікатів і завищених цін</li>
+                                            <li>Доступ до варіантів до публікації через партнерську мережу</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-3 card-service card-medium dynamic-content">
+                                        <h4>Перевірка власника і юридична чистота</h4>
+                                        <ul>
+                                            <li>Перевірка власника через Державний реєстр прав</li>
+                                            <li>Звірка особи з документами</li>
+                                            <li>Контроль арештів, іпотек, судових обтяжень</li>
+                                            <li>Підтвердження згоди всіх власників на оренду</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="card-4 card-service card-medium dynamic-content">
+                                        <h4>Організація та супровід переглядів</h4>
+                                        <ul>
+                                            <li>Узгодження часу та кількох переглядів в один день</li>
+                                            <li>Перевірка сантехніки, електрики, вікон, замків</li>
+                                            <li>Оцінка меблів і техніки, відповідність оголошенню</li>
+                                            <li>Спілкування з сусідами/консьєржем для внутрішньої інформації</li>
+                                            <li>Контроль шуму, запахів, освітлення, мобільного зв’язку</li>
+                                            <li>Чесний аналіз плюсів і мінусів після перегляду</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-5 card-service card-small dynamic-content">
+                                        <h4>Переговори з орендодавцем</h4>
+                                        <ul>
+                                            <li>Аналіз ринкової ціни та можливості торгу</li>
+                                            <li>Переговори від вашого імені або разом із вами</li>
+                                            <li>Домовленість про комунальні, паркінг та інші умови</li>
+                                            <li>Узгодження застави та умов повернення</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="card-6 card-service card-medium dynamic-content">
+                                        <h4>Перевірка і підписання договору оренди</h4>
+                                        <ul>
+                                            <li>Перевірка та пояснення кожного пункту договору</li>
+                                            <li>Чітка орендна плата та дата платежу</li>
+                                            <li>Умови повернення застави</li>
+                                            <li>Оплата комунальних</li>
+                                            <li>Дострокове розірвання</li>
+                                            <li>Візити орендодавця за погодженням</li>
+                                            <li>Відповідальність за майно</li>
+                                            <li>Можливе підвищення орендної плати</li>
+                                            <li>Умови щодо тварин, гостей, реєстрації</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-7 card-service card-small dynamic-content">
+                                        <h4>Заселення, акт передачі і підтримка</h4>
+                                        <ul>
+                                            <li>Акт та фотофіксація стану</li>
+                                            <li>Показники лічильників, ключі під розпис</li>
+                                            <li>Консультації та медіація при конфліктах</li>
+                                            <li>Підбір нової квартири, гарантія підтримки при порушенні договору</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion__item">
+                        <header class="accordion__header">
+                            <h4 class="accordion__header-title">Послуги для інвесторів</h4>
+                            <div class="toggle-collapse-wrap">
+                                <span class="toggle-collapse"></span>
+                            </div>
+                        </header>
+                        <div class="accordion-collapse">
+                            <div class="accordion-collapse__content">
+                                <div class="bento-grid">
+                                    <div class="card-1 card-service card-large card-1 dynamic-content">
+                                        <h4>Весь спектр послуг</h4>
+                                        <ul>
+                                            <li>Купівля для перепродажу (фліппінг)</li>
+                                            <li>Купівля для здачі в оренду</li>
+                                            <li>Визначаємо терміни переїзду</li>
+                                            <li>Інвестиції в новобудови на етапі котловану (маємо підписані договори про співпрацю із забудовниками у Львові та Ужгороді)</li>
+                                            <li>Комерційна нерухомість</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion__item">
+                        <header class="accordion__header">
+                            <h4 class="accordion__header-title">Купівля та продаж комерційної нерухомості</h4>
+                            <div class="toggle-collapse-wrap">
+                                <span class="toggle-collapse"></span>
+                            </div>
+                        </header>
+                        <div class="accordion-collapse">
+                            <div class="accordion-collapse__content">
+                                <div class="bento-grid">
+                                    <div class="card-1 card-service card-large dynamic-content">
+                                        <h4>Для покупців:</h4>
+                                        <ul>
+                                            <li>Підбираємо об’єкти під чіткі бізнес-критерії: локація, площа, клас будівлі, інфраструктура та юридична чистота</li>
+                                            <li>Проводимо порівняльний аналіз ринку — ви платите справедливу ціну, а не ту, що хоче продавець</li>
+                                            <li>Перевіряємо правовстановлювальні документи, обтяження та ризики до підписання будь-яких угод</li>
+                                            <li>Ведемо переговори від вашого імені — економимо час, нерви та гроші</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-2 card-service card-small dynamic-content">
+                                        <h4>Для продавців</h4>
+                                        <ul>
+                                            <li>Готуємо об’єкт до продажу: оцінка, позиціонування, маркетингова стратегія</li>
+                                            <li>Виходимо на кваліфікованих покупців через власну базу та партнерську мережу</li>
+                                            <li>Закриваємо угоду у строки, що відповідають вашим фінансовим цілям</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion__item">
+                        <header class="accordion__header">
+                            <h4 class="accordion__header-title">Оренда комерційної нерухомості</h4>
+                            <div class="toggle-collapse-wrap">
+                                <span class="toggle-collapse"></span>
+                            </div>
+                        </header>
+                        <div class="accordion-collapse">
+                            <div class="accordion-collapse__content">
+                                <div class="bento-grid">
+                                    <div class="card-1 card-service card-large dynamic-content">
+                                        <h4>Для орендарів (бізнес):</h4>
+                                        <ul>
+                                            <li>Знаходимо приміщення, що відповідає операційним потребам бізнесу — трафік, паркінг, технічні умови, планування</li>
+                                            <li>Аналізуємо орендні ставки по ринку — ви не переплачуєте та знаєте реальну вартість кожного квадратного метра</li>
+                                            <li>Переглядаємо умови договору оренди до підписання: індексація, канікули, відповідальність сторін, умови виходу</li>
+                                            <li>Супроводжуємо від першого перегляду до передачі ключів</li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-2 card-service card-small dynamic-content">
+                                        <h4>Для власників (орендодавці):</h4>
+                                        <ul>
+                                            <li>Заповнюємо вакантні площі швидко та з перевіреними орендарями</li>
+                                            <li>Розробляємо комерційні умови, що захищають ваші інтереси на весь термін оренди</li>
+                                            <li>Мінімізуємо простій об’єкта між орендарями</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer_top">
+            <div class="container d-flex">
+                <div class="footer__col text">
+                    <h4 class="footer__title">Compass Realty</h4>
+                    <div class="footer__text">
+                        Компанія Compass Realty прагне
+                        надавати високий рівень
+                        експертизи, обслуговування
+                        клієнтів та уваги до деталей у
+                        маркетингу та продажу розкішної
+                        нерухомості та об’єктів оренди.
+                    </div>
+                </div>
+                <div class="footer__col">
+                    <h4 class="footer__title">Меню</h4>
+                    <ul class="menu">
+                        <ul class="menu">
+                            <li class="menu__item">
+                                <a href="index.html" class="menu__link">Головна</a>
+                            </li>
+                            <li class="menu__item">
+                                <a href="page-catalog.html" class="menu__link">Каталог</a>
+                            </li>
+                            <li class="menu__item">
+                                <a href="page-about.html" class="menu__link">Про нас</a>
+                            </li>
+                            <li class="menu__item">
+                                <a href="page-blog.html" class="menu__link">Блог</a>
+                            </li>
+                            <li class="menu__item">
+                                <a href="page-contacts.html" class="menu__link">Контакти</a>
+                            </li>
+                        </ul>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4 class="footer__title">Контакти</h4>
+                    <ul class="contacts-list">
+                        <li class="contact__item">Львів, Україна</li>
+                        <li class="contact__item">
+                            <a href="tel:+380935089594">+38 (093) 508 95 94</a>
+                        </li>
+                        <li class="contact__item">
+                            <a href="tel:+380969527816">+38 (096) 952 78 16</a>
+                        </li>
+                        <li class="contact__item">
+                            <a href="mailto:oleksandr.compass@gmail.com">oleksandr.compass@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__col social">
+                    <h4 class="footer__title">Соціальні мережі</h4>
+                    <ul class="social-list">
+                        <li class="social-list__item">
+                            <a href="#"><img src="assets/img/svg/facebook.svg" alt="Facebook"></a>
+                        </li>
+                        <li class="social-list__item">
+                            <a href="#"><img src="assets/img/svg/telegram.svg" alt="Telegram"></a>
+                        </li>
+                        <li class="social-list__item">
+                            <a href="#"><img src="assets/img/svg/insta.svg" alt="Instagram"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <div class="container d-flex">
+                <div class="copyright">Compass. All Rights Reserved 2026.</div>
+                <ul class="menu">
+                    <li class="menu__item">
+                        <a href="#" class="menu__link">Terms of Use</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="#" class="menu__link">Privacy Policy</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</div>
+
+
+<!--<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+
+<script src="./lib/noUiSlider/nouislider.min.js"></script>
+<script src="./lib/swiper/swiper-bundle.min.js"></script>
+<script src="./lib/lightBox/glightbox.min.js"></script>
+<script src="dist/main.js"></script>
+
+</body>
+</html>
