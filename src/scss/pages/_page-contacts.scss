@@ -29,6 +29,7 @@
   color: #222222;
   border: 1px solid variables.$primary-color;
   border-radius: 10px;
+
   a {
     display: block;
     transition: .35s;
@@ -60,4 +61,28 @@
 
 address {
   font-style: normal;
+}
+
+@include mixins.respond-to(variables.$sm) {
+  .form__grid-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .form-sidebar__info{
+    order: -1;
+    font-size: 16px;
+    padding: 20px;
+  }
+
+  .section-contacts {
+    padding-top: 0;
+  }
+  .page-contacts {
+    .btn-submit{
+      width: 100%;
+    }
+    .label-form {
+      flex-basis: 100%;
+    }
+  }
 }

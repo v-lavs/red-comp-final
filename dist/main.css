@@ -2512,6 +2512,29 @@ address {
     font-size: 28px;
     margin-bottom: 26px;
   }
+
+  .form__grid-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-sidebar__info {
+    order: -1;
+    font-size: 16px;
+    padding: 20px;
+  }
+
+  .section-contacts {
+    padding-top: 0;
+  }
+
+  .page-contacts .btn-submit {
+    width: 100%;
+  }
+
+  .page-contacts .label-form {
+    flex-basis: 100%;
+  }
 }
 
 @media only screen and (max-width: 580px) {
