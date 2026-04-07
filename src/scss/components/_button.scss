@@ -88,3 +88,11 @@
     padding: 14px;
   }
 }
+@include mixins.respond-to(variables.$xs) {
+  .btn_call {
+    right: 16px;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+  }
+}

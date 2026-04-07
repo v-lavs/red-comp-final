@@ -17,16 +17,17 @@ body {
 
 .main {
   flex: 1 1 auto;
-  
+
 }
 
 .d-flex {
   display: flex;
 }
 
-.section{
+.section {
   padding-top: 122px;
-  &__title{
+
+  &__title {
     font-weight: 400;
     font-size: 30px;
     line-height: 1.1;
@@ -34,13 +35,15 @@ body {
     color: variables.$primary-color;
     display: inline-block;
   }
-  &__header{
+
+  &__header {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 50px;
     position: relative;
   }
 }
+
 .dynamic-content {
   p {
     margin-bottom: 16px;
@@ -81,7 +84,7 @@ body {
   }
 
   h3, h4, h5, h6 {
-  
+
   }
 
   h1, h2 {
@@ -89,16 +92,17 @@ body {
   }
 
   h3 {
-  
+
   }
 
   h4 {
-   
+
   }
 
   ul, ol {
     margin: 0 0 5px 0;
-    &:last-child{
+
+    &:last-child {
       margin-bottom: 0;
     }
   }
@@ -141,7 +145,8 @@ body {
     position: relative;
     padding-left: 20px;
     margin-bottom: 5px;
-    &:last-child{
+
+    &:last-child {
       margin-bottom: 0;
     }
   }
@@ -150,7 +155,7 @@ body {
 
     &:hover,
     &:focus {
-      
+
     }
   }
 }
@@ -169,7 +174,17 @@ body {
 }
 
 @include mixins.respond-to(variables.$sm) {
-
+  .section {
+    padding-top: 63px;
+  }
+  .section__title {
+    font-size: 24px;
+    line-height: 1.37;
+    max-width: 100%;
+  }
+  .section__header {
+    margin-bottom: 24px;
+  }
 }
 
 @include mixins.respond-to(variables.$xs) {

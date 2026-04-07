@@ -44,7 +44,7 @@
 
   .card__detail {
     position: relative;
-    padding-left: 26px;
+    padding-left: 24px;
     margin-right: 20px;
 
     img {
@@ -52,8 +52,8 @@
       left: 0;
       top: 50%;
       transform: translateY(-50%);
-      width: auto;
-      height: 16px;
+      width: 20px;
+      height: 20px;
       z-index: 1;
     }
   }
@@ -73,9 +73,26 @@
     flex-basis: 241px;
   }
 }
-
+@include mixins.respond-to(variables.$sm) {
+  .post-list{
+    padding-bottom: 32px;
+  }
+  .card_offers .card__body{
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .section-offers{
+    padding-top: 35px;
+  }
+  .section-hero {
+    padding-bottom: 35px;
+  }
+}
 @include mixins.respond-to(variables.$xs) {
   .card_offers {
     max-width: 100%;
+  }
+  .post-list{
+    gap: 24px;
   }
 }

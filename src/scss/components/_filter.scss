@@ -80,6 +80,7 @@ input[type="radio"]:checked + .filter-switch__btn {
   border-radius: 50px;
   margin-right: 8px;
   line-height: 1;
+
   button {
     display: flex;
     align-items: center;
@@ -167,5 +168,28 @@ input[type="radio"]:checked + .filter-switch__btn {
   .home .filter,
   .home .filter-switch {
     max-width: 1211px;
+  }
+}
+
+@include mixins.respond-to(variables.$xs) {
+  .section-hero .card_service {
+    min-height: 185px;
+    padding-bottom: 22px;
+  }
+  .section-hero__slogan {
+    text-align: center;
+  }
+  .section-hero .filter {
+    padding: 50px 32px;
+  }
+  .home .filter-switch {
+    text-align: center;
+  }
+  .filter-switch__btn.btn {
+    margin-bottom: 24px;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }

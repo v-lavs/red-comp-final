@@ -1,26 +1,32 @@
 @use "../../utils/mixins";
 @use "../../utils/variables";
-.section-members{
+
+.section-members {
   overflow: hidden;
   padding-bottom: 124px;
-  .swiper-pagination{
+
+  .swiper-pagination {
     display: none;
   }
 }
+
 .slider-members {
   width: calc(100% + (100vw - 100%) / 2);
 }
+
 .members-nav {
   display: flex;
 }
+
 .members {
   position: relative;
   width: 311px;
   height: 453px;
   border-radius: 25px;
   overflow: hidden;
+
   &:before,
-  &:after{
+  &:after {
     position: absolute;
     content: '';
     display: block;
@@ -30,23 +36,28 @@
     top: 0;
     transition: opacity .35s;
   }
-  &:before{
+
+  &:before {
     background-color: variables.$primary-color;
     opacity: 0;
   }
-  &:after{
+
+  &:after {
     background: linear-gradient(to top, rgb(0, 0, 0) 0%, rgba(15, 14, 14, 0) 65%);
     opacity: 1;
     pointer-events: none;
   }
-  &:hover{
-    &:before{
+
+  &:hover {
+    &:before {
       opacity: 1;
     }
-    &:after{
+
+    &:after {
       opacity: 0;
     }
-    .members__overlay{
+
+    .members__overlay {
       transition: .35s;
       transform: translateY(0);
     }
@@ -79,7 +90,8 @@
   letter-spacing: -0.68px;
   text-align: center;
   line-height: 35px;
-  a{
+
+  a {
     display: inline-block;
   }
 }
@@ -134,5 +146,12 @@
     width: 45px;
     height: 45px;
     margin-right: 20px;
+  }
+}
+
+
+@include mixins.respond-to(variables.$sm) {
+  .members__name, .members__activity {
+    line-height: 32px;
   }
 }

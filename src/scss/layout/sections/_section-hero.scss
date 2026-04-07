@@ -120,7 +120,7 @@
 
 @include mixins.respond-to(variables.$md) {
   .section-hero__slogan {
-    font-size: 22px;
+    font-size: 24px;
   }
   .section-hero {
     padding-top: 50vh;
@@ -154,6 +154,9 @@
 
 @include mixins.respond-to(variables.$sm) {
   .section-hero {
+    .filter{
+      margin-bottom: 50px;
+    }
     .btn_mob {
       display: inline-block;
       margin: 50px auto 0;
@@ -171,7 +174,6 @@
     }
 
     .part_left {
-      margin-bottom: 60px;
       padding: 0;
     }
 
@@ -194,4 +196,10 @@
   .section-hero .btn_desk {
     display: none;
   }
+}
+
+@include mixins.respond-to(variables.$xs) {
+.section-hero{
+  padding-top: 162px;
+}
 }

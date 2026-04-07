@@ -89,3 +89,9 @@
     color: #FFFFFF;
   }
 }
+
+@include mixins.respond-to(variables.$xs) {
+  .card__thumb{
+    min-height: 244px;
+  }
+}
