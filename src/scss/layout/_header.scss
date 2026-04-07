@@ -107,3 +107,9 @@
 .btn_burger {
   display: none;
 }
+
+@include mixins.respond-to(variables.$lg) {
+  .header .container{
+    max-width: 100%;
+  }
+}
