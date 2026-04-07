@@ -2216,6 +2216,14 @@ address {
   color: #000000;
 }
 
+.blog-post .read-more {
+  cursor: pointer;
+}
+
+.blog-post .card__text {
+  padding: 0;
+}
+
 .block-intro {
   border: 1px solid #E84923;
   border-radius: 10px;
@@ -2589,6 +2597,24 @@ address {
 
   .section-banner {
     height: 452px;
+  }
+
+  .blog-post a {
+    flex-direction: column;
+  }
+
+  .blog-post .card__footer {
+    margin-left: 12px;
+  }
+
+  .blog-post .card__body {
+    width: 100%;
+    padding: 0 12px;
+  }
+
+  .blog-post .card__thumb {
+    width: 318px;
+    height: 260px;
   }
 }
 
