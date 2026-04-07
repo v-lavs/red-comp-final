@@ -34,3 +34,13 @@
     color: variables.$primary-color;
   }
 }
+.breadcrumb {
+  padding-bottom: 65px;
+}
+@include mixins.respond-to(variables.$sm) {
+  .breadcrumb {
+    padding-top: 24px;
+    padding-bottom: 32px;
+    font-size: 12px;
+  }
+}

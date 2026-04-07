@@ -5,11 +5,7 @@
 .page {
   padding-bottom: 43px;
 
-  .breadcrumb {
-    padding-bottom: 65px;
-  }
-
-  .page__title {
+ &__title {
     font-weight: 700;
     font-size: 36px;
     line-height: 40px;
@@ -142,12 +138,17 @@
   }
 }
 
+@include mixins.respond-to(variables.$sm) {
+.page__title{
+  font-size: 28px;
+  margin-bottom: 26px;
+}
+}
 @include mixins.respond-to(variables.$xs) {
-  .svg-wrapper{
-    //display: none;
+  .page__title{
+    font-size: 24px;
   }
-  .banner__thumb{
+  .section-banner{
     height: 452px;
-    //background-image: url(../assets/img/-mob);
   }
 }
