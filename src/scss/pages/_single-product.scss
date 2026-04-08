@@ -252,5 +252,10 @@
   color: #000;
 }
 
+@include mixins.respond-to(variables.$md){
+  .slider-product .swiper-slide a {
+    padding-top: 60%;
+  }
+}
 
 

@@ -2545,6 +2545,10 @@ address {
     padding: 24px 0 32px;
   }
 
+  .slider-product .swiper-slide a {
+    padding-top: 60%;
+  }
+
   .accordion__header-title {
     font-size: 26px;
   }
