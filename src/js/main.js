@@ -3,7 +3,7 @@
  */
 
 'use strict'
-//OPEN MOB-MENU
+//MOB-MENU
 const btnBurger = document.querySelector('.btn_burger');
 const nav = document.querySelector('.header__nav');
 const btnClose = document.querySelector('.btn_close');
