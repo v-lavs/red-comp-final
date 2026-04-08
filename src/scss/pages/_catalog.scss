@@ -38,10 +38,9 @@
   .field__group {
     &_details {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-      grid-column-gap: 0;
-      grid-row-gap: 0;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      grid-row-gap: 24px;
+      grid-column-gap: 24px;
     }
 
     &_price {
@@ -49,16 +48,17 @@
       align-items: flex-end;
       padding-bottom: 48px;
 
-      .btn-submit {
-        margin-left: 70px;
-      }
+
     }
+  }
+
+  .btn-submit {
+    margin-left: 70px;
   }
 
   .form__group {
     max-width: 210px;
     width: 100%;
-    margin-bottom: 24px;
   }
 
   .filter-price {
@@ -105,4 +105,32 @@
 
 .search-input:not(:placeholder-shown) + .search-icon {
   opacity: 0;
+}
+
+@include mixins.respond-to(variables.$lg) {
+  .catalog .btn-submit {
+    margin-left: 25px;
+  }
+}
+
+@include mixins.respond-to(variables.$md) {
+  .catalog {
+    .btn-submit {
+      margin-left: 0;
+    }
+
+    .form__group {
+      max-width: 280px;
+      width: 100%;
+    }
+
+    .breadcrumb {
+      padding: 24px 0 32px;
+    }
+  }
+}
+@include mixins.respond-to(variables.$xs) {
+  .swiper-slide.card_offers{
+    max-width: 100%;
+  }
 }

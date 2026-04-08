@@ -79,6 +79,7 @@ input[type="radio"]:checked + .filter-switch__btn {
   color: variables.$grey-07;
   border-radius: 50px;
   margin-right: 8px;
+  margin-bottom: 8px;
   line-height: 1;
 
   button {
@@ -171,25 +172,62 @@ input[type="radio"]:checked + .filter-switch__btn {
   }
 }
 
+@include mixins.respond-to(variables.$md) {
+  .catalog .filter-switch {
+    text-align: center;
+    padding-left: 0;
+  }
+}
+@include mixins.respond-to(variables.$sm) {
+.catalog .btn-submit{
+  width: 100%;
+}
+}
 @include mixins.respond-to(variables.$xs) {
   .section-hero .card_service {
     min-height: 185px;
     padding-bottom: 22px;
   }
+
   .section-hero__slogan {
     text-align: center;
   }
-  .section-hero .filter {
-    padding: 50px 32px;
-  }
+
   .home .filter-switch {
     text-align: center;
   }
+
   .filter-switch__btn.btn {
     margin-bottom: 24px;
+    line-height: 1;
 
     &:last-child {
       margin-right: 0;
     }
   }
+
+  .form {
+    font-size: 16px;
+
+    label {
+      margin-bottom: 2px;
+      line-height: 30px;
+    }
+  }
+
+  .section-hero .filter,
+  .catalog .field__group_details {
+    display: block;
+  }
+
+  .section-hero .form__group {
+    width: 100%;
+  }
+
+  .section-hero .form__group,
+  .catalog .form__group {
+    max-width: 100%;
+    margin-bottom: 12px;
+  }
+
 }

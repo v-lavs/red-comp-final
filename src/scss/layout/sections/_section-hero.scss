@@ -132,12 +132,12 @@
 
     .filter {
       flex-wrap: wrap;
-      justify-content: flex-start;
+      justify-content: space-around;
       gap: 16px;
     }
 
     .form__group {
-      width: 39%;
+      width: 45%;
       max-width: 100%;
     }
 
@@ -156,6 +156,7 @@
   .section-hero {
     .filter{
       margin-bottom: 50px;
+      padding: 50px 36px;
     }
     .btn_mob {
       display: inline-block;
@@ -179,6 +180,7 @@
 
     .filter .btn {
       width: 100%;
+      margin-top: 30px;
     }
 
     .service {

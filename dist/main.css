@@ -374,7 +374,7 @@ body.disable-scroll {
   box-shadow: none;
   cursor: pointer;
   top: -7px;
-  right: -17px;
+  right: -8px;
 }
 
 #priceSlider .noUi-handle:before,
@@ -457,6 +457,7 @@ input[type=radio]:checked + .filter-switch__btn {
   color: #222222;
   border-radius: 50px;
   margin-right: 8px;
+  margin-bottom: 8px;
   line-height: 1;
 }
 
@@ -1723,7 +1724,7 @@ summary::marker {
   position: relative;
   height: 443px;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   overflow: hidden;
 }
@@ -1828,10 +1829,9 @@ summary::marker {
 
 .catalog .field__group_details {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 0;
-  grid-row-gap: 0;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  grid-row-gap: 24px;
+  grid-column-gap: 24px;
 }
 
 .catalog .field__group_price {
@@ -1840,14 +1840,13 @@ summary::marker {
   padding-bottom: 48px;
 }
 
-.catalog .field__group_price .btn-submit {
+.catalog .btn-submit {
   margin-left: 70px;
 }
 
 .catalog .form__group {
   max-width: 210px;
   width: 100%;
-  margin-bottom: 24px;
 }
 
 .catalog .filter-price {
@@ -2342,6 +2341,10 @@ address {
   .section-hero .filter .choices__list--single .choices__item {
     font-size: 14px !important;
   }
+
+  .catalog .btn-submit {
+    margin-left: 25px;
+  }
 }
 
 @media only screen and (max-width: 1023px) {
@@ -2383,9 +2386,18 @@ address {
     padding: 14px;
   }
 
+  .catalog .filter-switch {
+    text-align: center;
+    padding-left: 0;
+  }
+
   .btn_close,
   .btn_burger {
     display: block;
+  }
+
+  .header {
+    top: 24px;
   }
 
   .header__nav {
@@ -2439,12 +2451,12 @@ address {
 
   .section-hero .filter {
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: space-around;
     gap: 16px;
   }
 
   .section-hero .form__group {
-    width: 39%;
+    width: 45%;
     max-width: 100%;
   }
 
@@ -2467,6 +2479,19 @@ address {
     display: inline-block;
     max-width: 200px;
   }
+
+  .catalog .btn-submit {
+    margin-left: 0;
+  }
+
+  .catalog .form__group {
+    max-width: 280px;
+    width: 100%;
+  }
+
+  .catalog .breadcrumb {
+    padding: 24px 0 32px;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -2482,6 +2507,10 @@ address {
 
   .section__header {
     margin-bottom: 24px;
+  }
+
+  .catalog .btn-submit {
+    width: 100%;
   }
 
   .breadcrumb {
@@ -2533,6 +2562,7 @@ address {
 
   .section-hero .filter {
     margin-bottom: 50px;
+    padding: 50px 36px;
   }
 
   .section-hero .btn_mob {
@@ -2557,6 +2587,7 @@ address {
 
   .section-hero .filter .btn {
     width: 100%;
+    margin-top: 30px;
   }
 
   .section-hero .service {
@@ -2643,20 +2674,41 @@ address {
     text-align: center;
   }
 
-  .section-hero .filter {
-    padding: 50px 32px;
-  }
-
   .home .filter-switch {
     text-align: center;
   }
 
   .filter-switch__btn.btn {
     margin-bottom: 24px;
+    line-height: 1;
   }
 
   .filter-switch__btn.btn:last-child {
     margin-right: 0;
+  }
+
+  .form {
+    font-size: 16px;
+  }
+
+  .form label {
+    margin-bottom: 2px;
+    line-height: 30px;
+  }
+
+  .section-hero .filter,
+  .catalog .field__group_details {
+    display: block;
+  }
+
+  .section-hero .form__group {
+    width: 100%;
+  }
+
+  .section-hero .form__group,
+  .catalog .form__group {
+    max-width: 100%;
+    margin-bottom: 12px;
   }
 
   .card__thumb {
@@ -2715,6 +2767,10 @@ address {
 
   .section-banner {
     height: 452px;
+  }
+
+  .swiper-slide.card_offers {
+    max-width: 100%;
   }
 
   .blog-post a {
