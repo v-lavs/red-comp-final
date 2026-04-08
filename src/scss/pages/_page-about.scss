@@ -12,3 +12,35 @@
     color: variables.$primary-color;
   }
 }
+
+@include mixins.respond-to(variables.$lg) {
+
+}
+
+@include mixins.respond-to(variables.$md) {
+.accordion__header-title {
+  font-size: 26px;
+}
+  .accordion__header {
+    height: 106px;
+  }
+  .toggle-collapse-wrap{
+    width: 65px;
+  }
+
+  .toggle-collapse {
+    width: 65px;
+    height: 35px;
+  }
+}
+
+
+@include mixins.respond-to(variables.$sm) {
+  .block-intro {
+    padding: 24px;
+    margin-bottom: 35px;
+  }
+}
+@include mixins.respond-to(variables.$xs) {
+
+}

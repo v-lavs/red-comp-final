@@ -1036,8 +1036,7 @@ input[type=radio]:checked + .filter-switch__btn {
 }
 
 .card-service p {
-  margin-top: 9px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .card-service p:last-child {
@@ -1048,6 +1047,7 @@ input[type=radio]:checked + .filter-switch__btn {
 .card-service ul {
   font-size: 14px;
   line-height: 1.3;
+  margin-top: 10px;
 }
 
 .card-service ul li {
@@ -2348,6 +2348,50 @@ address {
 }
 
 @media only screen and (max-width: 1023px) {
+  .card-1 {
+    grid-area: 1/1/1/22;
+  }
+
+  .card-2 {
+    grid-area: 1/22/1/49;
+  }
+
+  .card-3 {
+    grid-area: 2/1/2/28;
+  }
+
+  .card-4 {
+    grid-area: 2/28/2/49;
+  }
+
+  .card-5 {
+    grid-area: 3/1/3/22;
+  }
+
+  .card-6 {
+    grid-area: 3/22/3/49;
+  }
+
+  .card-7 {
+    grid-area: 4/1/4/28;
+  }
+
+  .card-8 {
+    grid-area: 4/28/4/49;
+  }
+
+  .card-9 {
+    grid-area: 5/1/5/22;
+  }
+
+  .card-10 {
+    grid-area: 5/22/5/49;
+  }
+
+  .card-large {
+    min-height: 300px;
+  }
+
   .footer__col.text {
     max-width: 100%;
     margin-bottom: 40px;
@@ -2389,6 +2433,14 @@ address {
   .catalog .filter-switch {
     text-align: center;
     padding-left: 0;
+  }
+
+  .bento-grid {
+    display: block;
+  }
+
+  .card-service {
+    margin-bottom: 8px;
   }
 
   .btn_close,
@@ -2492,6 +2544,23 @@ address {
   .catalog .breadcrumb {
     padding: 24px 0 32px;
   }
+
+  .accordion__header-title {
+    font-size: 26px;
+  }
+
+  .accordion__header {
+    height: 106px;
+  }
+
+  .toggle-collapse-wrap {
+    width: 65px;
+  }
+
+  .toggle-collapse {
+    width: 65px;
+    height: 35px;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -2517,6 +2586,27 @@ address {
     padding-top: 24px;
     padding-bottom: 32px;
     font-size: 12px;
+  }
+
+  .toggle-collapse-wrap {
+    width: 50px;
+  }
+
+  .toggle-collapse {
+    width: 48px;
+    height: 24px;
+  }
+
+  .accordion__header-title {
+    font-size: 20px;
+  }
+
+  .accordion__header {
+    height: 90px;
+  }
+
+  .accordion-collapse__content {
+    padding: 8px 0;
   }
 
   .social {
@@ -2654,6 +2744,11 @@ address {
 
   .page-contacts .label-form {
     flex-basis: 100%;
+  }
+
+  .block-intro {
+    padding: 24px;
+    margin-bottom: 35px;
   }
 }
 
