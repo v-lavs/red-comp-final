@@ -11,6 +11,7 @@
 
 .card_offers {
   width: 32%;
+  max-width: 421px;
   flex-grow: 1;
 
   a {
@@ -69,9 +70,7 @@
 }
 
 @include mixins.respond-to(variables.$xl) {
-  .card_offers:not(.swiper-slide) {
-    flex-basis: 241px;
-  }
+
 }
 @include mixins.respond-to(variables.$sm) {
   .post-list{
@@ -90,7 +89,9 @@
 }
 @include mixins.respond-to(variables.$xs) {
   .card_offers {
-    max-width: 100%;
+    max-width: 421px;
+    width: 100%;
+    margin: 0 auto;
   }
   .post-list{
     gap: 24px;

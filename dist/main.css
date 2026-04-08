@@ -1457,6 +1457,7 @@ summary::marker {
 
 .card_offers {
   width: 32%;
+  max-width: 421px;
   flex-grow: 1;
 }
 
@@ -2265,10 +2266,6 @@ address {
     width: 21%;
     max-width: 210px;
   }
-
-  .card_offers:not(.swiper-slide) {
-    flex-basis: 241px;
-  }
 }
 
 @media only screen and (max-width: 1279px) {
@@ -2606,8 +2603,14 @@ address {
     padding-top: 162px;
   }
 
+  .section-hero .card_service {
+    flex-basis: 100%;
+  }
+
   .card_offers {
-    max-width: 100%;
+    max-width: 421px;
+    width: 100%;
+    margin: 0 auto;
   }
 
   .post-list {
@@ -2636,7 +2639,8 @@ address {
   }
 
   .blog-post .card__thumb {
-    width: 318px;
+    max-width: 318px;
+    width: 100%;
     height: 260px;
   }
 }
