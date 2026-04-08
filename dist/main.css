@@ -116,6 +116,10 @@ body {
   height: 100%;
 }
 
+body.disable-scroll {
+  overflow: hidden;
+}
+
 .wrapper {
   min-height: 100%;
   display: flex;
@@ -1224,31 +1228,71 @@ summary::marker {
   padding: 0;
 }
 
-.header.header_home.is-pinned .header__inner {
+.btn_burger {
+  background-image: url(../assets/img/svg/symbols_menu.svg);
+  background-size: contain;
+  filter: invert(1);
+}
+
+.header_home .btn_burger {
+  filter: invert(0);
+}
+
+.header_home.is-pinned .btn_burger {
+  filter: invert(1);
+}
+
+.header_home.is-pinned .header__inner {
   background-color: #FFFFFF;
   padding: 16px 24px;
 }
 
-.header.header_home.is-pinned .header__logo {
+.header_home.is-pinned .header__logo {
   max-width: 128px;
 }
 
-.header.header_home.is-pinned .header__logo .fill-grey {
+.header_home.is-pinned .header__logo .fill-grey {
   fill: #222222;
 }
 
-.header.header_home.is-pinned .header__logo .remove-fill {
+.header_home.is-pinned .header__logo .remove-fill {
   fill: #E84923;
   stroke: #E84923;
 }
 
-.header.header_home.is-pinned .header__lang,
-.header.header_home.is-pinned .menu {
+.header_home.is-pinned .header__lang,
+.header_home.is-pinned .menu {
   color: #222222;
+}
+
+.btn_close {
+  background-image: url(../assets/img/svg/cancel.svg);
+  background-size: 20px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
 }
 
 .btn_close,
 .btn_burger {
+  display: none;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.backdrop {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  z-index: 10;
   display: none;
 }
 
@@ -2321,10 +2365,58 @@ address {
 }
 
 @media only screen and (max-width: 991px) {
+  .menu {
+    flex-direction: column;
+    width: 100%;
+    font-size: 20px;
+  }
+
+  .menu__item {
+    padding: 12px 0;
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+
   .btn_call {
     width: 60px;
     height: 60px;
     padding: 14px;
+  }
+
+  .btn_close,
+  .btn_burger {
+    display: block;
+  }
+
+  .header__nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    min-width: 390px;
+    background-color: #FFFFFF;
+    padding: 60px 30px 40px;
+    display: block;
+    height: 100%;
+    max-height: 100vh;
+    overflow: auto;
+    transform: translateX(-100%);
+    transition: 0.35s;
+    z-index: 15;
+  }
+
+  .header__nav.is-open {
+    transform: translateX(0);
+  }
+
+  .header.header_home .menu {
+    color: #222222;
+  }
+
+  .header__lang {
+    padding: 12px 0;
+    margin-top: 30px;
+    font-size: 20px;
   }
 
   .container {

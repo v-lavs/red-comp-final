@@ -1,7 +1,7 @@
 @use "../utils/mixins";
 @use "../utils/variables";
 
-.menu{
+.menu {
   display: flex;
   font-weight: 400;
   font-size: 16px;
@@ -9,19 +9,36 @@
   letter-spacing: 0;
   color: variables.$grey-07;
 
-  &__item{
+  &__item {
     margin-right: 24px;
     transition: .35s;
+
     &:hover,
-    &:focus{
+    &:focus {
       color: variables.$primary-color;
     }
   }
-  &__link{
+
+  &__link {
     display: inline-block;
     color: inherit;
   }
-  &:not(.header.header_home){
 
+  &:not(.header.header_home) {
+
+  }
+}
+
+@include mixins.respond-to(variables.$md) {
+  .menu {
+    flex-direction: column;
+    width: 100%;
+    font-size: 20px;
+
+    &__item {
+      padding: 12px 0;
+      margin-bottom: 10px;
+      margin-right: 0;
+    }
   }
 }

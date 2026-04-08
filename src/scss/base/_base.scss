@@ -6,6 +6,9 @@ body {
   color: variables.$grey-04;
   line-height: 1.87;
   height: 100%;
+  &.disable-scroll{
+    overflow: hidden;
+  }
 }
 
 .wrapper {

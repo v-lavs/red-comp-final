@@ -3,6 +3,28 @@
  */
 
 'use strict'
+//OPEN MOB-MENU
+const btnBurger = document.querySelector('.btn_burger');
+const nav = document.querySelector('.header__nav');
+const btnClose = document.querySelector('.btn_close');
+const backdrop = document.querySelector('.backdrop');
+const body = document.querySelector('body');
+
+
+btnBurger.addEventListener('click', (e) => {
+    e.preventDefault();
+    nav.classList.add('is-open');
+    backdrop.style.display = 'block';
+    body.classList.add('disable-scroll');
+});
+[btnClose, backdrop].forEach(function (element){
+    element.addEventListener('click', () => {
+        nav.classList.remove('is-open');
+        backdrop.style.display = 'none';
+        body.classList.remove('disable-scroll');
+    });
+});
+
 
 //HEADER-SCROLL
 window.addEventListener('scroll', () => {
@@ -163,17 +185,19 @@ const toggleItem = (item) => {
 
     if (item.classList.contains('show')) {
         acDescription.style.height = acDescription.scrollHeight + 'px';
-        setTimeout(() => { acDescription.style.height = '0'; }, 10);
+        setTimeout(() => {
+            acDescription.style.height = '0';
+        }, 10);
         item.classList.remove('show');
     } else {
         acDescription.style.height = acDescription.scrollHeight + 'px';
         item.classList.add('show');
 
-        acDescription.addEventListener('transitionend', function() {
+        acDescription.addEventListener('transitionend', function () {
             if (item.classList.contains('show')) {
                 acDescription.style.height = 'auto';
             }
-        }, { once: true });
+        }, {once: true});
     }
 };
 
