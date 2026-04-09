@@ -74,11 +74,22 @@ if (document.querySelector('.recently-viewed')) {
 if (document.querySelector('.slider-product')) {
 
     const swiperThumbnail = new Swiper(".slider-thumbnail", {
-        slidesPerView: 'auto',
-        freeMode: {
-            enabled: true,
-        },
-        watchSlidesProgress: true,
+
+        breakpoints: {
+            320: {
+                slidesPerView: 5,
+                spaceBetween: 8,
+            },
+            768: {
+                slidesPerView: 'auto',
+                watchSlidesProgress: true,
+                spaceBetween: 0,
+                freeMode: {
+                    enabled: true,
+                },
+            },
+
+        }
     });
 
     const swiperProduct = new Swiper(".slider-product", {
@@ -140,7 +151,6 @@ const priceFrom = document.getElementById('priceFrom');
 const priceTo = document.getElementById('priceTo');
 
 if (slider) {
-
     const minVal = parseInt(slider.dataset.min);
     const maxVal = parseInt(slider.dataset.max);
     const fromVal = parseInt(slider.dataset.from);

@@ -5,7 +5,7 @@
 .page {
   padding-bottom: 43px;
 
- &__title {
+  &__title {
     font-weight: 700;
     font-size: 36px;
     line-height: 40px;
@@ -37,6 +37,7 @@
     z-index: 1;
     pointer-events: none;
   }
+
   img,
   iframe {
     position: absolute;
@@ -55,12 +56,14 @@
 
 .section-banner_anim {
   background-color: variables.$primary-color;
+
   .line {
     transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     transform-box: fill-box;
     transform-origin: center;
     will-change: transform;
   }
+
   //
   //.banner__thumb {
   //  width: 100%;
@@ -136,24 +139,23 @@
     max-width: none;
     margin-left: -25%;
   }
-  .section__title{
+  .section__title {
     display: inline-block;
-    max-width: 200px;
-
   }
 }
 
 @include mixins.respond-to(variables.$sm) {
-.page__title{
-  font-size: 28px;
-  margin-bottom: 26px;
+  .page__title {
+    font-size: 28px;
+    margin-bottom: 26px;
+  }
 }
-}
+
 @include mixins.respond-to(variables.$xs) {
-  .page__title{
+  .page__title {
     font-size: 24px;
   }
-  .section-banner{
+  .section-banner {
     height: 452px;
   }
 }
