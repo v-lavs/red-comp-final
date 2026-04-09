@@ -76,7 +76,6 @@
   text-align: right;
   z-index: 1;
 }
-
 .label {
   padding: 3px 10px 5px;
   border-radius: 12px;
@@ -89,9 +88,8 @@
     color: #FFFFFF;
   }
 }
-
 @include mixins.respond-to(variables.$xs) {
   .card__thumb{
-    min-height: 244px;
+    padding-top: 77%;
   }
 }
