@@ -30,7 +30,7 @@
 }
 
 @include mixins.respond-to(variables.$md) {
-  .menu {
+ .header .menu {
     flex-direction: column;
     width: 100%;
     font-size: 20px;

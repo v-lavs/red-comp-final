@@ -2302,7 +2302,6 @@ address {
 @media only screen and (max-width: 1439px) {
   .container {
     max-width: 1180px;
-    background-color: rosybrown;
   }
 
   .section-hero .form__group {
@@ -2315,7 +2314,6 @@ address {
   .container {
     max-width: 1080px;
     padding: 0 32px;
-    background-color: lightgreen;
   }
 
   .section-hero .filter {
@@ -2335,7 +2333,6 @@ address {
 
   .container {
     max-width: 960px;
-    background-color: tomato;
   }
 
   .section-hero .filter .choices__list--single .choices__item {
@@ -2407,18 +2404,17 @@ address {
 
   .container {
     max-width: 991px;
-    background-color: goldenrod;
   }
 }
 
 @media only screen and (max-width: 991px) {
-  .menu {
+  .header .menu {
     flex-direction: column;
     width: 100%;
     font-size: 20px;
   }
 
-  .menu__item {
+  .header .menu__item {
     padding: 12px 0;
     margin-bottom: 10px;
     margin-right: 0;
@@ -2485,7 +2481,6 @@ address {
 
   .container {
     max-width: 768px;
-    background-color: wheat;
   }
 
   .section-hero__slogan {
@@ -2651,7 +2646,6 @@ address {
 
   .container {
     max-width: 580px;
-    background-color: hotpink;
   }
 
   .section-hero .filter {
@@ -2839,7 +2833,6 @@ address {
   .container {
     max-width: 100%;
     padding: 0 16px;
-    background-color: paleturquoise;
   }
 
   .section-hero {
