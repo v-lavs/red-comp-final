@@ -1742,8 +1742,8 @@ summary::marker {
 .section-banner {
   position: relative;
   height: 443px;
-  background-position: center;
-  background-size: contain;
+  background-position: center right;
+  background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden;
 }
@@ -2769,6 +2769,10 @@ address {
   .page__title {
     font-size: 28px;
     margin-bottom: 26px;
+  }
+
+  .section-banner {
+    background-size: 200% auto;
   }
 
   .product-specs {
