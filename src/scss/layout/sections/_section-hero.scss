@@ -219,8 +219,25 @@
 @include mixins.respond-to(variables.$xs) {
 .section-hero{
   padding-top: 162px;
+  padding-bottom: 62px;
 }
+  .section-hero .service {
+    justify-content: center;
+    max-width: 420px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .section-hero  .card_service{
-    flex-basis: 100%;
+    max-width: 270px;
+    width: 65%;
+    flex-basis: 290px;
+    margin-right: auto;
+
+    &:first-child,
+    &:last-child{
+      margin-left: auto;
+      margin-right: 0;
+    }
   }
 }
