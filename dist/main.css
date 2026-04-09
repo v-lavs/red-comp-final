@@ -1407,12 +1407,23 @@ summary::marker {
 }
 
 .section-hero {
+  position: relative;
   background-position: center 0;
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 1470px;
   padding-top: 64vh;
   padding-bottom: 178px;
+}
+
+.section-hero:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: linear-gradient(180deg, rgba(0, 60, 118, 0.4) 5.94%, rgba(102, 102, 102, 0) 39.82%), linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 }
 
 .section-hero__inner {
@@ -1449,6 +1460,10 @@ summary::marker {
 .section-hero .form__group {
   width: 20%;
   max-width: 210px;
+}
+
+.section-hero .container {
+  position: relative;
 }
 
 .service {
@@ -1904,6 +1919,7 @@ summary::marker {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 8px;
 }
 
 .product-header__row:first-child {
@@ -2975,6 +2991,7 @@ address {
   .action-bar {
     position: absolute;
     top: 0;
+    margin-left: 0;
   }
 
   .slider-product .slider__arrow_prev {
