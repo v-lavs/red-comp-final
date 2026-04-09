@@ -239,7 +239,7 @@ body.disable-scroll {
 }
 
 strong {
-  color: #000000 !important;
+  color: #000000;
 }
 
 .menu {
@@ -2170,7 +2170,7 @@ summary::marker {
 }
 
 .product-spec p strong {
-  color: #000;
+  color: #222222;
 }
 
 .action-bar {
@@ -2894,6 +2894,14 @@ address {
     margin-bottom: 12px;
   }
 
+  .label-form {
+    flex: 1 1 100%;
+  }
+
+  .input {
+    height: 48px;
+  }
+
   .card__thumb {
     padding-top: 77%;
   }
@@ -2985,7 +2993,8 @@ address {
   }
 
   .product-details {
-    padding: 24px;
+    padding: 0 24px;
+    margin-bottom: 32px;
   }
 
   .general-details {
@@ -3045,11 +3054,19 @@ address {
 
   .block-map {
     padding: 15px 24px 24px;
-    margin-bottom: 50px;
+    margin-bottom: 24px;
   }
 
   .section-product-details .btn_primary {
     width: 100%;
+  }
+
+  .viewing-form {
+    padding-top: 32px;
+  }
+
+  .viewing-form .product-details__title {
+    margin-bottom: 16px;
   }
 
   .blog-post a {

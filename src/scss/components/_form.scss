@@ -56,6 +56,14 @@
     flex: 1 1 100%;
   }
 }
+@include mixins.respond-to(variables.$xs){
+  .label-form{
+    flex: 1 1 100%;
+  }
+  .input {
+    height: 48px;
+  }
+}
 
 
 

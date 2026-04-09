@@ -254,7 +254,7 @@
 }
 
 .product-spec p strong {
-  color: #000;
+  color: #222222;
 }
 
 .action-bar {
@@ -356,11 +356,14 @@
     width: 100%;
   }
   .product-details {
-    padding: 24px;
+    padding: 0 24px;
+    margin-bottom: 32px;
+
   }
   .general-details {
     padding: 30px 24px;
   }
+
   .action-bar {
     position: absolute;
     top: 0;
@@ -403,10 +406,16 @@
   }
   .block-map {
     padding: 15px 24px 24px;
-    margin-bottom: 50px;
+    margin-bottom: 24px;
   }
   .section-product-details .btn_primary {
     width: 100%;
+  }
+  .viewing-form {
+    padding-top: 32px;
+    .product-details__title{
+      margin-bottom: 16px;
+    }
   }
 }
 
