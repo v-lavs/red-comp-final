@@ -12,39 +12,39 @@
 
   @include mixins.respond-to(variables.$xl){
     max-width: 1180px;
-    background-color: rosybrown;
+    //background-color: rosybrown;
   }
 
   @include mixins.respond-to(variables.$screen-lg){
     max-width: 1080px;
     padding: 0 32px;
-    background-color: lightgreen;
+    //background-color: lightgreen;
   }
 
   @include mixins.respond-to(variables.$lg){
     max-width: 960px;
-    background-color: tomato;
+    //background-color: tomato;
   }
 
   @include mixins.respond-to(variables.$screen-md){
     max-width: 991px;
-    background-color: goldenrod;
+    //background-color: goldenrod;
   }
 
   @include mixins.respond-to(variables.$md){
     max-width: 768px;
-    background-color: wheat;
+    //background-color: wheat;
   }
 
   @include mixins.respond-to(variables.$sm){
     max-width: 580px;
-    background-color: hotpink;
+    //background-color: hotpink;
   }
 
   @include mixins.respond-to(variables.$xs){
     max-width:100%;
     padding: 0 16px;
-    background-color: paleturquoise;
+    //background-color: paleturquoise;
   }
 }
 
