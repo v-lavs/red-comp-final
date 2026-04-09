@@ -34,3 +34,10 @@
     opacity: .32;
   }
 }
+
+@include mixins.respond-to(variables.$xs) {
+  .slider__arrow_next, .slider__arrow_prev{
+    width: 40px;
+    height: 40px;
+  }
+}
