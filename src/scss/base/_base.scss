@@ -163,7 +163,7 @@ body {
   }
 }
 strong{
-  color: #000000 !important;
+  color: #000000!important;
 }
 
 @include mixins.respond-to(variables.$xl) {
