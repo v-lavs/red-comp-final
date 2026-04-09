@@ -2656,6 +2656,10 @@ address {
     padding-bottom: 50px;
   }
 
+  .footer_bottom .menu__item a {
+    text-decoration: underline;
+  }
+
   .footer_bottom .container {
     flex-wrap: wrap;
     justify-content: center;
@@ -2981,13 +2985,13 @@ address {
     right: 7px;
   }
 
-  .slider__arrow_next,
-  .slider__arrow_prev {
+  .slider-product .slider__arrow_next,
+  .slider-product .slider__arrow_prev {
     background-color: transparent;
   }
 
-  .slider__arrow_next img,
-  .slider__arrow_prev img {
+  .slider-product .slider__arrow_next img,
+  .slider-product .slider__arrow_prev img {
     filter: brightness(0) invert(1);
   }
 

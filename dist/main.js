@@ -227,12 +227,10 @@ document.addEventListener('click', (event) => {
 if (document.querySelector('.glightbox')) {
     const lightbox = GLightbox({
         selector: '.glightbox',
-        descPosition: 'right',
         loop: true,
         zoomable: true,
-        autosize: false,
-        width: '75vw',
-        height: '90vh',
+        draggable: true,
+        touchNavigation: true,
     });
 }
 
