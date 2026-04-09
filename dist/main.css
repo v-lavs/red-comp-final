@@ -1926,6 +1926,7 @@ summary::marker {
   text-align: right;
   margin-left: 50px;
   color: #E84923;
+  white-space: nowrap;
 }
 
 .product-location {
@@ -2150,6 +2151,11 @@ summary::marker {
 
 .product-spec p strong {
   color: #000;
+}
+
+.action-bar {
+  margin-left: 30px;
+  flex-shrink: 0;
 }
 
 .section-contacts {
@@ -2561,6 +2567,10 @@ address {
     padding: 24px 30px 30px;
   }
 
+  .product-title {
+    margin-bottom: 8px;
+  }
+
   .accordion__header-title {
     font-size: 26px;
   }
@@ -2744,6 +2754,11 @@ address {
     gap: 24px;
   }
 
+  .action-bar .btn {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+
   .slider-thumbnail {
     margin: 0 8px;
   }
@@ -2752,6 +2767,11 @@ address {
     padding-left: 0;
     padding-right: 0;
     height: 78px;
+  }
+
+  .product-price,
+  .product-title {
+    font-size: 24px;
   }
 
   .form__grid-container {
@@ -2909,7 +2929,6 @@ address {
     font-size: 20px;
     line-height: 33px;
     width: 100%;
-    margin-bottom: 8px;
   }
 
   .product-header__row {
@@ -2921,18 +2940,12 @@ address {
   }
 
   .product-price {
-    font-size: 24px;
     margin-left: 0;
   }
 
   .action-bar {
     position: absolute;
     top: 0;
-  }
-
-  .action-bar .btn {
-    font-size: 12px;
-    padding: 8px 16px;
   }
 
   .slider-product .slider__arrow_prev {
