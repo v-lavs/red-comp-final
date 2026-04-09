@@ -235,34 +235,88 @@ if (document.querySelector('.glightbox')) {
 }
 
 //BANNER-ANIM
+// const lines = document.querySelectorAll('.line');
+//
+// document.addEventListener('mousemove', (e) => {
+//     const mouseX = e.clientX;
+//     const mouseY = e.clientY;
+//     lines.forEach(line => {
+//         const rect = line.getBoundingClientRect();
+//         const centerX = rect.left + rect.width / 2;
+//         const centerY = rect.top + rect.height / 2;
+//
+//         const dx = mouseX - centerX;
+//         const dy = mouseY - centerY;
+//         const distance = Math.sqrt(dx * dx + dy * dy);
+//
+//         if (distance < 20) return;
+//
+//         if (distance < 450) {
+//             let angle = Math.atan2(dy, dx) * (180 / Math.PI);
+//             const maxTilt = 35;
+//             const limitedAngle = Math.max(-maxTilt, Math.min(maxTilt, angle));
+//
+//             line.style.transform = `rotate(${limitedAngle}deg)`;
+//         } else {
+//             line.style.transform = `rotate(0deg)`;
+//         }
+//     });
+// });
+
 const lines = document.querySelectorAll('.line');
+let mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+const isTouch = window.matchMedia("(pointer: coarse)").matches;
 
-document.addEventListener('mousemove', (e) => {
-    const mouseX = e.clientX;
-    const mouseY = e.clientY;
-    lines.forEach(line => {
-        const rect = line.getBoundingClientRect();
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
+// Масив для збереження поточного кута кожної лінії (для плавності)
+const currentAngles = new Array(lines.length).fill(0);
+const baseAngles = [];
 
-        const dx = mouseX - centerX;
-        const dy = mouseY - centerY;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-
-        if (distance < 20) return;
-
-        if (distance < 450) {
-            let angle = Math.atan2(dy, dx) * (180 / Math.PI);
-            const maxTilt = 35;
-            const limitedAngle = Math.max(-maxTilt, Math.min(maxTilt, angle));
-
-            line.style.transform = `rotate(${limitedAngle}deg)`;
-        } else {
-            line.style.transform = `rotate(0deg)`;
-        }
-    });
+// Ініціалізація початкових кутів
+lines.forEach(line => {
+    const rect = line.getBoundingClientRect();
+    const angle = (rect.width || rect.height)
+        ? Math.atan2(rect.height, rect.width) * (180 / Math.PI)
+        : 0;
+    baseAngles.push(angle);
 });
 
+if (!isTouch) {
+    window.addEventListener('mousemove', e => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+    });
+}
+
+let time = 0;
+function animate() {
+    time += 0.02;
+
+    lines.forEach((line, i) => {
+        let targetAngle;
+
+        if (isTouch) {
+            // Мобільна версія: плавне погойдування
+            const swing = Math.sin(time * (0.5 + i * 0.08)) * 20;
+            targetAngle = baseAngles[i] + swing;
+        } else {
+            // Десктоп: слідування за курсором
+            const rect = line.getBoundingClientRect();
+            const dx = mouse.x - (rect.left + rect.width / 2);
+            const dy = mouse.y - (rect.top + rect.height / 2);
+            targetAngle = Math.atan2(dy, dx) * (180 / Math.PI);
+        }
+
+        // Плавність (LERP): 0.1 — це швидкість (чим менше, тим плавніше)
+        const diff = targetAngle - currentAngles[i];
+        currentAngles[i] += diff * 0.1;
+
+        line.style.transform = `rotate(${currentAngles[i]}deg)`;
+    });
+
+    requestAnimationFrame(animate);
+}
+
+animate();
 
 // $(document).ready(function () {
 //

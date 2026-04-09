@@ -206,57 +206,113 @@
 <script src="./lib/lightBox/glightbox.min.js"></script>
 
 
+<!--<script>-->
+<!--    const lines = document.querySelectorAll('.line');-->
+<!--    let mouse = {x: window.innerWidth/2, y: window.innerHeight/2};-->
+
+<!--    const isTouch = window.matchMedia("(pointer: coarse)").matches;-->
+
+<!--    // Desktop: слухаємо мишку-->
+<!--    if(!isTouch){-->
+<!--        window.addEventListener('mousemove', e => {-->
+<!--            mouse.x = e.clientX;-->
+<!--            mouse.y = e.clientY;-->
+<!--        });-->
+<!--    }-->
+
+<!--    // Зберігаємо базовий кут для моб-->
+<!--    const baseAngles = [];-->
+<!--    lines.forEach(line => {-->
+<!--        const bbox = line.getBBox();-->
+<!--        const angle = Math.atan2(bbox.height, bbox.width) * (180 / Math.PI);-->
+<!--        baseAngles.push(angle);-->
+<!--    });-->
+
+<!--    let time = 0;-->
+<!--    function animate() {-->
+<!--        time += 0.02;-->
+
+<!--        lines.forEach((line, i) => {-->
+
+<!--            if(isTouch){-->
+<!--                // мобільна версія: покачування-->
+<!--                const swing = Math.sin(time * (0.5 + i * 0.08)) * 20;-->
+<!--                const rotate = baseAngles[i] + swing;-->
+<!--                line.style.transform = `rotate(${rotate}deg)`;-->
+
+<!--            } else {-->
+<!--                // desktop: слідування за курсором-->
+<!--                const rect = line.getBoundingClientRect();-->
+<!--                const dx = mouse.x - (rect.left + rect.width/2);-->
+<!--                const dy = mouse.y - (rect.top + rect.height/2);-->
+<!--                const angle = Math.atan2(dy, dx) * (180 / Math.PI);-->
+<!--                line.style.transform = `rotate(${angle}deg)`;-->
+<!--            }-->
+
+<!--        });-->
+
+<!--        requestAnimationFrame(animate);-->
+<!--    }-->
+
+<!--    animate();-->
+<!--</script>-->
 <script>
     const lines = document.querySelectorAll('.line');
-    let mouse = {x: window.innerWidth/2, y: window.innerHeight/2};
-
+    let mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
     const isTouch = window.matchMedia("(pointer: coarse)").matches;
 
-    // Desktop: слухаємо мишку
-    if(!isTouch){
+    // Масив для збереження поточного кута кожної лінії (для плавності)
+    const currentAngles = new Array(lines.length).fill(0);
+    const baseAngles = [];
+
+    // Ініціалізація початкових кутів
+    lines.forEach(line => {
+        const rect = line.getBoundingClientRect();
+        const angle = (rect.width || rect.height)
+            ? Math.atan2(rect.height, rect.width) * (180 / Math.PI)
+            : 0;
+        baseAngles.push(angle);
+    });
+
+    if (!isTouch) {
         window.addEventListener('mousemove', e => {
             mouse.x = e.clientX;
             mouse.y = e.clientY;
         });
     }
 
-    // Зберігаємо базовий кут для моб
-    const baseAngles = [];
-    lines.forEach(line => {
-        const bbox = line.getBBox();
-        const angle = Math.atan2(bbox.height, bbox.width) * (180 / Math.PI);
-        baseAngles.push(angle);
-    });
-
     let time = 0;
     function animate() {
         time += 0.02;
 
         lines.forEach((line, i) => {
+            let targetAngle;
 
-            if(isTouch){
-                // мобільна версія: покачування
+            if (isTouch) {
+                // Мобільна версія: плавне погойдування
                 const swing = Math.sin(time * (0.5 + i * 0.08)) * 20;
-                const rotate = baseAngles[i] + swing;
-                line.style.transform = `rotate(${rotate}deg)`;
-
+                targetAngle = baseAngles[i] + swing;
             } else {
-                // desktop: слідування за курсором
+                // Десктоп: слідування за курсором
                 const rect = line.getBoundingClientRect();
-                const dx = mouse.x - (rect.left + rect.width/2);
-                const dy = mouse.y - (rect.top + rect.height/2);
-                const angle = Math.atan2(dy, dx) * (180 / Math.PI);
-                line.style.transform = `rotate(${angle}deg)`;
+                const dx = mouse.x - (rect.left + rect.width / 2);
+                const dy = mouse.y - (rect.top + rect.height / 2);
+                targetAngle = Math.atan2(dy, dx) * (180 / Math.PI);
             }
 
+            // Плавність (LERP): 0.1 — це швидкість (чим менше, тим плавніше)
+            const diff = targetAngle - currentAngles[i];
+            currentAngles[i] += diff * 0.1;
+
+            line.style.transform = `rotate(${currentAngles[i]}deg)`;
         });
 
         requestAnimationFrame(animate);
     }
 
     animate();
-</script>
 
+</script>
 <!--<script> const lines = document.querySelectorAll('.line'); // визначаємо чи це моб-->
 <!--const isTouch = window.matchMedia("(pointer: coarse)").matches; // позиції-->
 <!--let target = {x: window.innerWidth / 2, y: window.innerHeight / 2};-->
