@@ -1,0 +1,84 @@
+<!-- HTML -->
+<div class="banner-container">
+    <object id="banner-svg-object" type="image/svg+xml" data="assets/img/pattern-red.svg"></object>
+</div>
+
+<style>
+    .banner-container {
+        width: 100%;
+        max-width: 1200px; /* або як у дизайні */
+        margin: 0 auto;
+    }
+
+    #banner-svg-object {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+</style>
+
+<script>
+    const obj = document.getElementById('banner-svg-object');
+
+    // змінні для анімації
+    let mouse = {x: window.innerWidth/2, y: window.innerHeight/2};
+    const isTouch = window.matchMedia("(pointer: coarse)").matches;
+    let time = 0;
+
+    obj.addEventListener('load', () => {
+        const svgDoc = obj.contentDocument;
+        const lines = svgDoc.querySelectorAll('line');
+        const texts = svgDoc.querySelectorAll('text'); // якщо хочеш масштабувати текст
+
+        // базові кути для мобільних
+        const baseAngles = [];
+        lines.forEach(line => {
+            const bbox = line.getBBox();
+            const angle = Math.atan2(bbox.height, bbox.width) * (180 / Math.PI);
+            baseAngles.push(angle);
+        });
+
+        // слідкування за мишкою на десктопі
+        if(!isTouch){
+            window.addEventListener('mousemove', e => {
+                mouse.x = e.clientX;
+                mouse.y = e.clientY;
+            });
+        }
+
+        function animate() {
+            time += 0.02;
+
+            lines.forEach((line, i) => {
+                if(isTouch){
+                    // мобільна версія: покачування
+                    const swing = Math.sin(time * (0.5 + i * 0.08)) * 20;
+                    const rotate = baseAngles[i] + swing;
+                    line.setAttribute('transform', `rotate(${rotate})`);
+                } else {
+                    // desktop: слідування за курсором
+                    const rect = line.getBoundingClientRect();
+                    const dx = mouse.x - (rect.left + rect.width/2);
+                    const dy = mouse.y - (rect.top + rect.height/2);
+                    const angle = Math.atan2(dy, dx) * (180 / Math.PI); // градуси
+                    line.setAttribute('transform', `rotate(${angle})`);
+                }
+            });
+
+            // адаптивний текст для мобільних
+            if(isTouch){
+                const scale = window.innerWidth / 800; // 800 - базова ширина SVG
+                texts.forEach(t => t.setAttribute('transform', `scale(${scale})`));
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    });
+</script>
+
+
+    <p><u><a href="https://report.whistleb.com/cz/farmakinternational" class="footer-link">Etická linka</a></u></p>
+
+
