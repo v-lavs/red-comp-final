@@ -238,6 +238,10 @@ body.disable-scroll {
   margin-bottom: 0;
 }
 
+strong {
+  color: #000000 !important;
+}
+
 .menu {
   display: flex;
   font-weight: 400;
