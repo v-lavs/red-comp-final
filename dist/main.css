@@ -3073,6 +3073,10 @@ address {
     padding-top: 32px;
   }
 
+  .viewing-form__wrap {
+    padding-bottom: 32px;
+  }
+
   .viewing-form .product-details__title {
     margin-bottom: 16px;
   }

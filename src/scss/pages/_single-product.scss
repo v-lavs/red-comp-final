@@ -413,6 +413,9 @@
   }
   .viewing-form {
     padding-top: 32px;
+    &__wrap{
+      padding-bottom: 32px;
+    }
     .product-details__title{
       margin-bottom: 16px;
     }
