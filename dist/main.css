@@ -2478,6 +2478,10 @@ address {
     top: 24px;
   }
 
+  .header__logo {
+    max-width: 111px;
+  }
+
   .header__nav {
     position: fixed;
     left: 0;
@@ -2919,8 +2923,12 @@ address {
     top: 18px;
   }
 
+  .header__inner {
+    padding: 8px 16px;
+  }
+
   .header__logo {
-    max-width: 111px;
+    max-width: 86px;
   }
 
   .footer__col:nth-child(2),

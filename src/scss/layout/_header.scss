@@ -90,13 +90,16 @@
   .btn_burger {
     filter: invert(0);
   }
+
   .is-pinned {
 
   }
+
   &.is-pinned {
     .btn_burger {
       filter: invert(1);
     }
+
     .header__inner {
       background-color: #FFFFFF;
       padding: 16px 24px;
@@ -166,6 +169,11 @@
   }
   .header {
     top: 24px;
+
+    &__logo {
+      max-width: 111px;
+    }
+
     &__nav {
       position: fixed;
       left: 0;
@@ -205,8 +213,12 @@
   .header {
     top: 18px;
 
+    &__inner {
+      padding: 8px 16px;
+    }
+
     &__logo {
-      max-width: 111px;
+      max-width: 86px;
     }
   }
 }
