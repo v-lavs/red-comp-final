@@ -283,6 +283,18 @@
 }
 
 @include mixins.respond-to(variables.$sm) {
+  .product-specs  {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .product-spec {
+    width: 35%;
+    flex-grow: 1;
+  }
+  .spec_1 {
+    width: 100%;
+  }
   .action-bar {
     //display: none;
   }
@@ -313,6 +325,9 @@
   .product-price, .product-title {
     font-size: 24px;
   }
+  .general-details .product-spec{
+    flex-grow: 0;
+  }
 }
 
 @include mixins.respond-to(variables.$xs) {
@@ -335,6 +350,16 @@
   }
   .product-price {
     margin-left: 0;
+  }
+  .product-spec {
+    padding-right: 0;
+    width: 100%;
+  }
+  .product-details {
+    padding: 24px;
+  }
+  .general-details {
+    padding: 30px 24px;
   }
   .action-bar {
     position: absolute;
@@ -371,15 +396,6 @@
       padding-right: 0;
       height: 78px;
     }
-  }
-  .product-spec {
-    padding-right: 12px;
-  }
-  .product-details {
-    padding: 24px;
-  }
-  .general-details {
-    padding: 30px 24px;
   }
   .single-product .map {
     height: 297px;

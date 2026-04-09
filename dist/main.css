@@ -2749,6 +2749,21 @@ address {
     margin-bottom: 26px;
   }
 
+  .product-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .product-spec {
+    width: 35%;
+    flex-grow: 1;
+  }
+
+  .spec_1 {
+    width: 100%;
+  }
+
   .general-details .product-specs {
     justify-content: flex-start;
     gap: 24px;
@@ -2772,6 +2787,10 @@ address {
   .product-price,
   .product-title {
     font-size: 24px;
+  }
+
+  .general-details .product-spec {
+    flex-grow: 0;
   }
 
   .form__grid-container {
@@ -2943,6 +2962,19 @@ address {
     margin-left: 0;
   }
 
+  .product-spec {
+    padding-right: 0;
+    width: 100%;
+  }
+
+  .product-details {
+    padding: 24px;
+  }
+
+  .general-details {
+    padding: 30px 24px;
+  }
+
   .action-bar {
     position: absolute;
     top: 0;
@@ -2987,18 +3019,6 @@ address {
     padding-left: 0;
     padding-right: 0;
     height: 78px;
-  }
-
-  .product-spec {
-    padding-right: 12px;
-  }
-
-  .product-details {
-    padding: 24px;
-  }
-
-  .general-details {
-    padding: 30px 24px;
   }
 
   .single-product .map {
