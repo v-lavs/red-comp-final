@@ -10,7 +10,7 @@
     <meta name="robots" content="noindex">
     <meta name="yandex" content="none">
 
-    <title>Каталог</title>
+    <title>Каталог анім2</title>
 
     <!--    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
@@ -66,50 +66,46 @@
     </header>
     <div class="backdrop"></div>
     <style>
-        .section-banner_anim {
-            position: relative;
-            height: 444px;
-            width: 100%;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-        }
-
-        /* Налаштування кольорів через класи */
-        .red-theme { background: #d32f2f; --line-color: rgba(255,255,255,0.4); --active-color: #ffffff; }
-        .white-theme { background: #ffffff; --line-color: rgba(211,47,47,0.4); --active-color: #d32f2f; }
-
         .magnetic-grid {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            z-index: 1; display: grid; pointer-events: none;
+            z-index: 1;
+            display: grid;
+            /* Крок сітки робимо великим — 100px */
+            grid-template-columns: repeat(auto-fill, 100px);
+            grid-auto-rows: 100px;
         }
 
-        .line-wrapper { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; }
+        .line-wrapper {
+            display: flex; align-items: center; justify-content: center;
+            width: 100px; height: 100px;
+        }
 
         .line {
-            width: 4px; height: 40px;
-            background: var(--line-color); /* Беремо колір з CSS змінної */
-            border-radius: 2px;
+            /* Робимо їх помітними: товщина 4px, довжина 40px */
+            width: 4px;
+            height: 40px;
+            background: rgba(211, 47, 47, 0.6); /* Червоний для білого фону */
+            border-radius: 4px;
             will-change: transform;
         }
-
-
         .section-banner_anim .container {
-
-            padding-left: calc(50% + 65px);
-
-        }
-
-        .section-banner_anim h1{
+            display: flex;
+            justify-content: flex-end; /* Логотип їде вправо */
+            width: 100%;
+            padding-right: 10%; /* Відступ від правого краю */
             position: relative;
-            z-index: 1;
-            font-size: 35px;
-            max-width: 321px;
-            color: #FFFFFF;
-            background: #d32f2f;
-            display: inline-block;
+            z-index: 2;
         }
+        .section-banner_anim img{
+            width: 100%;
+            height: auto;
+        }
+        #target-logo {
+            cursor: pointer;
+            pointer-events: auto; /* Щоб лого можна було клікнути */
+        }
+
         @media screen and (max-width: 768px) {
             .section-banner_anim .container{
                 padding-left: 16px;
@@ -121,9 +117,17 @@
     </style>
     <main class="main  page catalog">
         <!-- Банер 2 (Білий) - якщо захочете додати згодом -->
-        <section class="section-banner_anim white-theme" style="margin-bottom: 120px;">
-            <div class="magnetic-grid"></div>
-            <div class="container"><div style="margin-top: 100px;position:relative;z-index: 1; max-width: 362px; width: 75%;  display:inline-block; background-color: #fff; padding: 10px 20px;" class="img-wrap"><img style="width: 100%;height: auto;" src="assets/img/logo.svg"  alt=""></div></div>
+        <section id="banner-white" class="section-banner_anim white-theme" style="background: #ffffff; margin-bottom: 120px; position: relative; height: 444px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+
+            <!-- Контейнер для великих ліній -->
+            <div class="magnetic-grid" data-line="rgba(211, 47, 47, 0.6)" data-active="#d32f2f"></div>
+
+            <div class="container" style="position: relative; z-index: 2; pointer-events: none;">
+                <!-- Ваше лого -->
+                <div id="target-logo" style="padding: 10px 20px; margin-top: 50px; width: 100%;  background: white; display: inline-block; max-width: 345px;" >
+                    <img src="assets/img/logo.svg" alt="">
+                </div>
+            </div>
         </section>
         <div class="catalog-filters">
             <div class="container">
@@ -930,152 +934,210 @@
 <script src="./lib/noUiSlider/nouislider.min.js"></script>
 <script src="./lib/swiper/swiper-bundle.min.js"></script>
 <!--<script>-->
-<!--    window.addEventListener('DOMContentLoaded', () => {-->
-<!--        const grids = document.querySelectorAll('.magnetic-grid');-->
-<!--        let mouse = { x: -1440, y: -444 };-->
+<!--    window.addEventListener('load', () => {-->
+<!--        const gridContainer = document.querySelector('.magnetic-grid');-->
+<!--        const logo = document.getElementById('target-logo');-->
+<!--        let linesData = [];-->
+<!--        let mouse = { x: -2000, y: -2000 };-->
 <!--        let isAuto = true;-->
 <!--        let time = 0;-->
 
-<!--        window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; isAuto = false; });-->
+<!--        function init() {-->
+<!--            gridContainer.innerHTML = '';-->
+<!--            linesData = [];-->
+<!--            const step = window.innerWidth < 768 ? 80 : 100;-->
+<!--            const cols = Math.ceil(window.innerWidth / step) + 1;-->
+<!--            const rows = Math.ceil(444 / step) + 1;-->
 
-<!--        grids.forEach(grid => {-->
-<!--            let lines = [];-->
-<!--            // Визначаємо кольори з CSS змінних секції-->
-<!--            const section = grid.closest('.section-banner_anim');-->
-<!--            const baseCol = getComputedStyle(section).getPropertyValue('&#45;&#45;line-color').trim();-->
-<!--            const activeCol = getComputedStyle(section).getPropertyValue('&#45;&#45;active-color').trim();-->
+<!--            const fragment = document.createDocumentFragment();-->
+<!--            for (let i = 0; i < cols * rows; i++) {-->
+<!--                const wrapper = document.createElement('div');-->
+<!--                wrapper.className = 'line-wrapper';-->
+<!--                wrapper.style.width = wrapper.style.height = step + 'px';-->
+<!--                const lineEl = document.createElement('div');-->
+<!--                lineEl.className = 'line';-->
+<!--                lineEl.style.background = gridContainer.getAttribute('data-line');-->
+<!--                wrapper.appendChild(lineEl);-->
+<!--                fragment.appendChild(wrapper);-->
+<!--                linesData.push({ el: lineEl, angle: 0 });-->
+<!--            }-->
+<!--            gridContainer.appendChild(fragment);-->
+<!--            gridContainer.style.gridTemplateColumns = `repeat(${cols}, ${step}px)`;-->
+<!--        }-->
 
-<!--            function init() {-->
-<!--                grid.innerHTML = '';-->
-<!--                lines = [];-->
-<!--                const step = 60;-->
-<!--                const cols = Math.ceil(window.innerWidth / step) + 1;-->
-<!--                const rows = Math.ceil(444 / step) + 1;-->
+<!--        const handleMove = (x, y) => {-->
+<!--            mouse.x = x;-->
+<!--            mouse.y = y;-->
+<!--            isAuto = false;-->
+<!--        };-->
 
-<!--                for (let i = 0; i < cols * rows; i++) {-->
-<!--                    const line = document.createElement('div');-->
-<!--                    line.className = 'line';-->
-<!--                    const wrap = document.createElement('div');-->
-<!--                    wrap.className = 'line-wrapper';-->
-<!--                    wrap.appendChild(line);-->
-<!--                    grid.appendChild(wrap);-->
-<!--                    lines.push({ el: line, angle: 0 });-->
-<!--                }-->
-<!--                grid.style.gridTemplateColumns = `repeat(${cols}, ${step}px)`;-->
+<!--        window.addEventListener('mousemove', e => handleMove(e.clientX, e.clientY));-->
+<!--        window.addEventListener('touchmove', e => handleMove(e.touches[0].clientX, e.touches[0].clientY), {passive: true});-->
+
+<!--        function animate() {-->
+<!--            const logoRect = logo.getBoundingClientRect();-->
+<!--            const logoX = logoRect.left + logoRect.width / 2;-->
+<!--            const logoY = logoRect.top + logoRect.height / 2;-->
+
+<!--            const baseColor = gridContainer.getAttribute('data-line');-->
+<!--            const activeColor = gridContainer.getAttribute('data-active');-->
+
+<!--            let activeX = mouse.x;-->
+<!--            let activeY = mouse.y;-->
+
+<!--            if (isAuto) {-->
+<!--                time += 0.005;-->
+<!--                // ТЕПЕР АВТОПІЛОТ КРУТИТЬСЯ НАВКОЛО ЛОГОТИПУ-->
+<!--                activeX = logoX + Math.cos(time) * 150; // Радіус кола навколо лого-->
+<!--                activeY = logoY + Math.sin(time * 0.8) * 150;-->
 <!--            }-->
 
-<!--            function animate() {-->
-<!--                if (isAuto) {-->
-<!--                    time += 0.008;-->
-<!--                    const r = section.getBoundingClientRect();-->
-<!--                    mouse.x = (window.innerWidth / 2) + Math.cos(time) * 300;-->
-<!--                    mouse.y = r.top + 222 + Math.sin(time * 0.8) * 100;-->
+<!--            linesData.forEach(line => {-->
+<!--                const rect = line.el.getBoundingClientRect();-->
+<!--                const lx = rect.left + rect.width / 2;-->
+<!--                const ly = rect.top + rect.height / 2;-->
+
+<!--                const distTarget = Math.hypot(activeX - lx, activeY - ly);-->
+<!--                const distLogo = Math.hypot(logoX - lx, logoY - ly);-->
+
+<!--                let tx, ty, isNear;-->
+<!--                // Якщо автопілот або миша близько — дивимось на них-->
+<!--                if (distTarget < 250) {-->
+<!--                    tx = activeX; ty = activeY; isNear = true;-->
+<!--                } else {-->
+<!--                    tx = logoX; ty = logoY; isNear = false;-->
 <!--                }-->
 
-<!--                lines.forEach(l => {-->
-<!--                    const r = l.el.getBoundingClientRect();-->
-<!--                    if (r.top > window.innerHeight || r.bottom < 0) return;-->
+<!--                const angle = Math.atan2(ty - ly, tx - lx) * (180 / Math.PI) + 90;-->
+<!--                line.angle += (angle - line.angle) * 0.1;-->
 
-<!--                    const dx = mouse.x - (r.left + r.width / 2);-->
-<!--                    const dy = mouse.y - (r.top + r.height / 2);-->
-<!--                    const d = Math.sqrt(dx*dx + dy*dy);-->
+<!--                const proximity = Math.max(0, 1 - (isNear ? distTarget : distLogo) / 350);-->
 
-<!--                    const angle = Math.atan2(dy, dx) * (180 / Math.PI) + 90;-->
-<!--                    l.angle += (angle - l.angle) * 0.15;-->
+<!--                line.el.style.transform = `rotate(${line.angle}deg) scaleY(${1 + proximity * 0.4})`;-->
+<!--                line.el.style.opacity = isNear ? 1 : (0.2 + proximity * 0.5);-->
+<!--                line.el.style.background = (isNear || distLogo < 150) ? activeColor : baseColor;-->
 
-<!--                    const prox = Math.max(0, 1 - d / 150);-->
-<!--                    l.el.style.transform = `rotate(${l.angle}deg) scaleY(${1 + prox * 0.4})`;-->
-<!--                    l.el.style.opacity = 0.25 + (prox * 0.75);-->
-<!--                    l.el.style.background = prox > 0.1 ? activeCol : baseCol;-->
-<!--                });-->
-<!--                requestAnimationFrame(animate);-->
-<!--            }-->
+<!--                // Ховаємо рисочки ПІД логотипом (враховуючи невеликий запас)-->
+<!--                if (lx > logoRect.left - 10 && lx < logoRect.right + 10 && ly > logoRect.top - 10 && ly < logoRect.bottom + 10) {-->
+<!--                    line.el.style.opacity = 0;-->
+<!--                }-->
+<!--            });-->
 
-<!--            init();-->
-<!--            animate();-->
-<!--            window.addEventListener('resize', init);-->
-<!--        });-->
+<!--            requestAnimationFrame(animate);-->
+<!--        }-->
+
+<!--        window.addEventListener('resize', init);-->
+<!--        init();-->
+<!--        animate();-->
 <!--    });-->
 <!--</script>-->
 <script>
-    window.addEventListener('DOMContentLoaded', () => {
-        const grids = document.querySelectorAll('.magnetic-grid');
-        let mouse = { x: -1440, y: -444 };
+    window.addEventListener('load', () => {
+        const gridContainer = document.querySelector('.magnetic-grid');
+        const logo = document.getElementById('target-logo');
+        let linesData = [];
+        let mouse = { x: -2000, y: -2000 };
         let isAuto = true;
         let time = 0;
 
-        window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; isAuto = false; });
+        function init() {
+            gridContainer.innerHTML = '';
+            linesData = [];
+            const step = window.innerWidth < 768 ? 70 : 90; // Оптимальний крок для "поля"
+            const cols = Math.ceil(window.innerWidth / step) + 1;
+            const rows = Math.ceil(444 / step) + 1;
 
-        grids.forEach(grid => {
-            let lines = [];
-            const section = grid.closest('.section-banner_anim');
-            const baseCol = getComputedStyle(section).getPropertyValue('--line-color').trim();
-            const activeCol = getComputedStyle(section).getPropertyValue('--active-color').trim();
-
-            // Перевіряємо, чи це біла тема
-            const isWhiteTheme = section.classList.contains('white-theme');
-
-            function init() {
-                grid.innerHTML = '';
-                lines = [];
-                // Для білої теми крок 100 (рідка сітка), для червоної — 60 (густа)
-                const step = isWhiteTheme ? 100 : 60;
-
-                const cols = Math.ceil(window.innerWidth / step) + 1;
-                const rows = Math.ceil(444 / step) + 1;
-
-                for (let i = 0; i < cols * rows; i++) {
-                    const line = document.createElement('div');
-                    line.className = 'line';
-                    const wrap = document.createElement('div');
-                    wrap.className = 'line-wrapper';
-
-                    // Встановлюємо розмір клітинки в залежності від кроку
-                    wrap.style.width = wrap.style.height = step + 'px';
-
-                    wrap.appendChild(line);
-                    grid.appendChild(wrap);
-                    lines.push({ el: line, angle: 0 });
-                }
-                grid.style.gridTemplateColumns = `repeat(${cols}, ${step}px)`;
+            for (let i = 0; i < cols * rows; i++) {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'line-wrapper';
+                wrapper.style.width = wrapper.style.height = step + 'px';
+                const lineEl = document.createElement('div');
+                lineEl.className = 'line';
+                wrapper.appendChild(lineEl);
+                gridContainer.appendChild(wrapper);
+                linesData.push({ el: lineEl, angle: 0, noise: Math.random() * 10 });
             }
+        }
 
-            function animate() {
-                if (isAuto) {
-                    time += 0.008;
-                    const r = section.getBoundingClientRect();
-                    mouse.x = (window.innerWidth / 2) + Math.cos(time) * 300;
-                    mouse.y = r.top + 222 + Math.sin(time * 0.8) * 100;
+        const handleMove = (x, y) => { mouse.x = x; mouse.y = y; isAuto = false; };
+        window.addEventListener('mousemove', e => handleMove(e.clientX, e.clientY));
+        window.addEventListener('touchmove', e => handleMove(e.touches.clientX, e.touches.clientY), {passive: true});
+
+        function animate() {
+            time += 0.02; // Швидкість потоку (можна міняти)
+            const logoRect = logo.getBoundingClientRect();
+            const logoX = logoRect.left + logoRect.width / 2;
+            const logoY = logoRect.top + logoRect.height / 2;
+            const baseColor = gridContainer.getAttribute('data-line');
+            const activeColor = gridContainer.getAttribute('data-active');
+
+            linesData.forEach(line => {
+                const rect = line.el.getBoundingClientRect();
+                const lx = rect.left + rect.width / 2;
+                const ly = rect.top + rect.height / 2;
+
+                const dxLogo = logoX - lx;
+                const dyLogo = logoY - ly;
+                const distLogo = Math.sqrt(dxLogo * dxLogo + dyLogo * dyLogo);
+
+                const dxMouse = mouse.x - lx;
+                const dyMouse = mouse.y - ly;
+                const distMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
+
+                // Вплив миші (яскравіша реакція)
+                const mouseInf = Math.max(0, 1 - distMouse / 200);
+
+                // Кут: миша перехоплює увагу рисочок сильніше
+                const targetAngle = Math.atan2(dyLogo, dxLogo) * (180 / Math.PI) + 90;
+                line.angle += (targetAngle - line.angle) * 0.15;
+
+                // ЕФЕКТ ПЕРЕТІКАННЯ БЕЗ ПУЛЬСАЦІЇ
+                // Створюємо постійний рух вперед по осі
+                const progress = (time + distLogo * 0.005) % 1;
+                const moveOffset = progress * -50; // Дистанція "пробігу" рисочки
+
+                // Прозорість тільки для того, щоб приховати момент "телепортації" рисочки назад
+                const edgeSoftness = Math.sin(progress * Math.PI);
+
+                // ЗАСТОСУВАННЯ ТРАНСФОРМАЦІЇ
+                // scaleY змінюється ТІЛЬКИ від миші, створюючи акцент
+                line.el.style.transform = `
+      rotate(${line.angle}deg)
+      translateY(${moveOffset}px)
+      scaleY(${1 + mouseInf * 1.5})
+      scaleX(${1 + mouseInf * 0.5})
+    `;
+
+                // Колір та яскравість
+                line.el.style.opacity = 0.2 + (edgeSoftness * 0.3) + (mouseInf * 0.5);
+
+                // Якщо миша поруч - колір змінюється миттєво і яскраво
+                line.el.style.background = mouseInf > 0.1 ? activeColor : baseColor;
+                if (mouseInf > 0.1) {
+                    line.el.style.boxShadow = `0 0 15px ${activeColor}`; // Додаємо світіння навколо миші
+                } else {
+                    line.el.style.boxShadow = 'none';
                 }
 
-                lines.forEach(l => {
-                    const r = l.el.getBoundingClientRect();
-                    if (r.top > window.innerHeight || r.bottom < 0) return;
+                // Ховаємо під лого
+                if (lx > logoRect.left && lx < logoRect.right && ly > logoRect.top && ly < logoRect.bottom) {
+                    line.el.style.opacity = 0;
+                }
+            });
 
-                    const dx = mouse.x - (r.left + r.width / 2);
-                    const dy = mouse.y - (r.top + r.height / 2);
-                    const d = Math.sqrt(dx*dx + dy*dy);
+            requestAnimationFrame(animate);
+        }
 
-                    const angle = Math.atan2(dy, dx) * (180 / Math.PI) + 90;
-                    l.angle += (angle - l.angle) * 0.15;
 
-                    // Для рідкої сітки збільшуємо радіус реакції (250 замість 150)
-                    const radius = isWhiteTheme ? 250 : 150;
-                    const prox = Math.max(0, 1 - d / radius);
 
-                    l.el.style.transform = `rotate(${l.angle}deg) scaleY(${1 + prox * 0.5})`;
-                    l.el.style.opacity = 0.2 + (prox * 0.8);
-                    l.el.style.background = prox > 0.1 ? activeCol : baseCol;
-                });
-                requestAnimationFrame(animate);
-            }
 
-            init();
-            animate();
-            window.addEventListener('resize', init);
-        });
+        window.addEventListener('resize', init);
+        init();
+        animate();
     });
 </script>
+
+
 
 </body>
 </html>
