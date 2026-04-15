@@ -1739,33 +1739,134 @@ summary::marker {
   margin-bottom: 50px;
 }
 
-.section-banner_anim {
-  background-color: #E84923;
-}
-
-.banner__thumb {
-  width: 100%;
-  height: 444px;
-  overflow: hidden;
+.section-banner {
   position: relative;
+  height: 443px;
+  background-position: center right;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
 
-.svg-wrapper {
+.section-banner img,
+.section-banner iframe {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.section-banner_anim {
+  position: relative;
+  height: 444px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.section-banner_anim .container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.section-banner_anim .part_right {
+  width: 50%;
+}
+
+.section-banner_anim .img-wrap {
+  position: relative;
+  max-width: 313px;
+  width: 100%;
+  margin-left: auto;
+  min-width: 198px;
+  background-color: #fff;
+  z-index: 1;
+}
+
+.section-banner_anim img {
+  width: 100%;
+  height: auto;
+}
+
+.red-theme {
+  background: #E84923;
+  --line-color: rgba(255, 255, 255, 0.4);
+  --active-color: #ffffff;
+  padding-bottom: 150px;
+  align-items: flex-end;
+}
+
+.red-theme .part_right {
+  padding-left: 130px;
+}
+
+.white-theme {
+  background: #ffffff;
+  --line-color: rgba(211, 47, 47, 0.4);
+  --active-color: #E84923;
+}
+
+.white-theme .part_right {
+  padding-top: 50px;
+  padding-right: 122px;
+}
+
+.white-theme {
+  height: 430px;
+  margin-top: 20px;
+}
+
+.magnetic-grid {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 1;
+  display: grid;
+  pointer-events: none;
 }
 
-.svg-wrapper svg {
-  width: 1441px;
-  height: 444px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  vector-effect: non-scaling-stroke;
+.line-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.line {
+  width: 4px;
+  height: 40px;
+  background: var(--line-color);
+  border-radius: 2px;
+  will-change: transform;
+}
+
+.section-banner_anim .container {
+  display: flex;
+}
+
+.section-banner_anim h1 {
+  position: relative;
+  z-index: 1;
+  font-size: 35px;
+  line-height: 1.15;
+  color: #FFFFFF;
+  display: inline-block;
 }
 
 .catalog .breadcrumb {
@@ -2282,6 +2383,10 @@ address {
     max-width: 1200px;
     margin: 0 auto;
   }
+
+  .red-theme .part_right {
+    padding-left: 58px;
+  }
 }
 
 @media only screen and (max-width: 1439px) {
@@ -2292,6 +2397,10 @@ address {
   .section-hero .form__group {
     width: 21%;
     max-width: 210px;
+  }
+
+  .section-banner_anim .img-wrap {
+    width: 60%;
   }
 }
 
@@ -2322,6 +2431,18 @@ address {
 
   .section-hero .filter .choices__list--single .choices__item {
     font-size: 14px !important;
+  }
+
+  .section-banner_anim .white-theme .part_right {
+    padding-right: 44px;
+  }
+
+  .section-banner_anim h1 {
+    font-size: 26px;
+  }
+
+  .white-theme .part_right {
+    padding-right: 40px;
   }
 
   .catalog .btn-submit {
@@ -2503,12 +2624,6 @@ address {
 
   .section-hero .filter .choices__list--single .choices__item {
     font-size: 16px !important;
-  }
-
-  .svg-wrapper svg {
-    width: 150%;
-    max-width: none;
-    margin-left: -25%;
   }
 
   .section__title {
@@ -2726,8 +2841,26 @@ address {
     margin-bottom: 26px;
   }
 
-  .section-banner {
-    background-size: 200% auto;
+  .section-banner_anim {
+    height: 452px;
+  }
+
+  .section-banner_anim .part_right {
+    padding-right: 0;
+    padding-top: 100px;
+    width: 100%;
+  }
+
+  .section-banner_anim .img-wrap {
+    max-width: 198px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .red-theme .part_right {
+    padding-left: 0;
+    display: flex;
+    justify-content: flex-end;
   }
 
   .product-specs {
@@ -2800,6 +2933,12 @@ address {
   .block-intro {
     padding: 24px;
     margin-bottom: 35px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .section-banner_anim h1 {
+    font-size: 28px;
   }
 }
 
@@ -2948,6 +3087,18 @@ address {
 
   .section-banner {
     height: 452px;
+  }
+
+  .section-banner_anim.red-theme {
+    padding-bottom: 140px;
+  }
+
+  .section-banner_anim.red-theme .part_right {
+    padding-right: 38px;
+  }
+
+  .section-banner_anim h1 {
+    font-size: 22px;
   }
 
   .swiper-slide.card_offers {

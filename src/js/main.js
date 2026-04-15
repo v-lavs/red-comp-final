@@ -235,88 +235,153 @@ if (document.querySelector('.glightbox')) {
 }
 
 //BANNER-ANIM
-// const lines = document.querySelectorAll('.line');
-//
-// document.addEventListener('mousemove', (e) => {
-//     const mouseX = e.clientX;
-//     const mouseY = e.clientY;
-//     lines.forEach(line => {
-//         const rect = line.getBoundingClientRect();
-//         const centerX = rect.left + rect.width / 2;
-//         const centerY = rect.top + rect.height / 2;
-//
-//         const dx = mouseX - centerX;
-//         const dy = mouseY - centerY;
-//         const distance = Math.sqrt(dx * dx + dy * dy);
-//
-//         if (distance < 20) return;
-//
-//         if (distance < 450) {
-//             let angle = Math.atan2(dy, dx) * (180 / Math.PI);
-//             const maxTilt = 35;
-//             const limitedAngle = Math.max(-maxTilt, Math.min(maxTilt, angle));
-//
-//             line.style.transform = `rotate(${limitedAngle}deg)`;
-//         } else {
-//             line.style.transform = `rotate(0deg)`;
-//         }
-//     });
-// });
+window.addEventListener('DOMContentLoaded', () => {
+    const grids = document.querySelectorAll('.magnetic-grid');
+    let mouse = { x: -2000, y: -2000 };
+    let isAuto = true;
+    let time = 0;
 
-const lines = document.querySelectorAll('.line');
-let mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-const isTouch = window.matchMedia("(pointer: coarse)").matches;
+    // Функція перевірки, чи миша всередині будь-якого банера
+    const checkMouseInBanner = (x, y) => {
+        let inside = false;
+        document.querySelectorAll('.section-banner_anim').forEach(section => {
+            const rect = section.getBoundingClientRect();
+            if (x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom) {
+                inside = true;
+            }
+        });
+        return inside;
+    };
 
-// Масив для збереження поточного кута кожної лінії (для плавності)
-const currentAngles = new Array(lines.length).fill(0);
-const baseAngles = [];
+    const updateMouse = (e) => {
+        const x = e.touches ? e.touches[0].clientX : e.clientX;
+        const y = e.touches ? e.touches[0].clientY : e.clientY;
 
-// Ініціалізація початкових кутів
-lines.forEach(line => {
-    const rect = line.getBoundingClientRect();
-    const angle = (rect.width || rect.height)
-        ? Math.atan2(rect.height, rect.width) * (180 / Math.PI)
-        : 0;
-    baseAngles.push(angle);
-});
-
-if (!isTouch) {
-    window.addEventListener('mousemove', e => {
-        mouse.x = e.clientX;
-        mouse.y = e.clientY;
-    });
-}
-
-let time = 0;
-function animate() {
-    time += 0.02;
-
-    lines.forEach((line, i) => {
-        let targetAngle;
-
-        if (isTouch) {
-            // Мобільна версія: плавне погойдування
-            const swing = Math.sin(time * (0.5 + i * 0.08)) * 20;
-            targetAngle = baseAngles[i] + swing;
+        // Вмикаємо мишу тільки якщо вона всередині банера
+        if (checkMouseInBanner(x, y)) {
+            mouse.x = x;
+            mouse.y = y;
+            isAuto = false;
         } else {
-            // Десктоп: слідування за курсором
-            const rect = line.getBoundingClientRect();
-            const dx = mouse.x - (rect.left + rect.width / 2);
-            const dy = mouse.y - (rect.top + rect.height / 2);
-            targetAngle = Math.atan2(dy, dx) * (180 / Math.PI);
+            isAuto = true;
         }
+    };
 
-        // Плавність (LERP): 0.1 — це швидкість (чим менше, тим плавніше)
-        const diff = targetAngle - currentAngles[i];
-        currentAngles[i] += diff * 0.1;
+    window.addEventListener('mousemove', updateMouse);
+    window.addEventListener('touchmove', updateMouse, { passive: true });
+    // Якщо миша зовсім покинула вікно браузера — вмикаємо авто
+    document.addEventListener('mouseleave', () => { isAuto = true; });
 
-        line.style.transform = `rotate(${currentAngles[i]}deg)`;
+    let gridData = [];
+
+    function initGrid(data) {
+        const { grid, section } = data;
+        grid.innerHTML = '';
+        data.lines = [];
+
+        const isMobile = window.innerWidth < 768;
+        const isWhite = section.classList.contains('white-theme');
+
+        // КРОК: 75 для мобайлу (щоб не було занадто густо), 100/60 для десктопа
+        const step = isMobile ? 75 : (isWhite ? 100 : 60);
+
+        const cols = Math.ceil(window.innerWidth / step) + 1;
+        const rows = Math.ceil(section.offsetHeight / step) + 1;
+
+        const fragment = document.createDocumentFragment();
+        for (let i = 0; i < cols * rows; i++) {
+            const line = document.createElement('div');
+            line.className = 'line';
+            const wrap = document.createElement('div');
+            wrap.className = 'line-wrapper';
+            wrap.style.width = wrap.style.height = step + 'px';
+            wrap.appendChild(line);
+            fragment.appendChild(wrap);
+            data.lines.push({ el: line, angle: 0 });
+        }
+        grid.appendChild(fragment);
+        grid.style.gridTemplateColumns = `repeat(${cols}, ${step}px)`;
+    }
+
+    function animate() {
+        const isMobile = window.innerWidth < 768;
+        time += 0.008;
+
+        gridData.forEach(data => {
+            const { section, lines } = data;
+            const isWhite = section.classList.contains('white-theme');
+            const title = section.querySelector('h1');
+            const titleRect = title ? title.getBoundingClientRect() : null;
+            const sectionRect = section.getBoundingClientRect();
+
+            const radius = isMobile ? 150 : (isWhite ? 220 : 160);
+            const baseCol = getComputedStyle(section).getPropertyValue('--line-color').trim();
+            const activeCol = getComputedStyle(section).getPropertyValue('--active-color').trim();
+
+            let targetX, targetY;
+
+            if (isAuto) {
+
+                targetX = sectionRect.left + (section.offsetWidth / 2) + Math.cos(time) * (isMobile ? 100 : 250);
+                targetY = sectionRect.top + (section.offsetHeight / 2) + Math.sin(time * 0.8) * 80;
+            } else {
+                targetX = mouse.x;
+                targetY = mouse.y;
+            }
+
+            lines.forEach(l => {
+                const rect = l.el.getBoundingClientRect();
+                if (rect.top > window.innerHeight + 50 || rect.bottom < -50) return;
+
+                const cx = rect.left + rect.width / 2;
+                const cy = rect.top + rect.height / 2;
+
+                let isUnderText = false;
+                if (titleRect) {
+                    isUnderText = (
+                        cx > titleRect.left - 20 && cx < titleRect.right + 20 &&
+                        cy > titleRect.top - 15 && cy < titleRect.bottom + 15
+                    );
+                }
+
+                const dx = targetX - cx;
+                const dy = targetY - cy;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+
+                const angle = Math.atan2(dy, dx) * (180 / Math.PI) + 90;
+                l.angle += (angle - l.angle) * 0.12;
+
+                const prox = Math.max(0, 1 - dist / radius);
+                const scaleAmount = isWhite ? 0.6 : 0.4;
+
+                l.el.style.transform = `rotate(${l.angle}deg) scaleY(${1 + prox * scaleAmount})`;
+                l.el.style.opacity = isUnderText ? 0 : (0.22 + prox * 0.78);
+                l.el.style.background = prox > 0.1 ? activeCol : baseCol;
+            });
+        });
+
+        requestAnimationFrame(animate);
+    }
+
+    grids.forEach(grid => {
+        gridData.push({
+            grid,
+            section: grid.closest('.section-banner_anim'),
+            lines: []
+        });
     });
 
-    requestAnimationFrame(animate);
-}
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            gridData.forEach(initGrid);
+        }, 250);
+    });
 
-animate();
+    gridData.forEach(initGrid);
+    animate();
+});
 
 // $(document).ready(function () {
 //
