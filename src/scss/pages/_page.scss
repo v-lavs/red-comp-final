@@ -68,6 +68,7 @@
     margin-left: auto;
     min-width: 198px;
     background-color: #fff;
+    border: 10px solid #FFF;
     z-index: 1;
   }
 
@@ -87,6 +88,10 @@
 
   .part_right {
     padding-left: 130px;
+  }
+  h1{
+    display: inline;
+    background-color: #E84923;
   }
 }
 

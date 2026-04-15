@@ -241,7 +241,6 @@ window.addEventListener('DOMContentLoaded', () => {
     let isAuto = true;
     let time = 0;
 
-    // Функція перевірки, чи миша всередині будь-якого банера
     const checkMouseInBanner = (x, y) => {
         let inside = false;
         document.querySelectorAll('.section-banner_anim').forEach(section => {
@@ -257,7 +256,6 @@ window.addEventListener('DOMContentLoaded', () => {
         const x = e.touches ? e.touches[0].clientX : e.clientX;
         const y = e.touches ? e.touches[0].clientY : e.clientY;
 
-        // Вмикаємо мишу тільки якщо вона всередині банера
         if (checkMouseInBanner(x, y)) {
             mouse.x = x;
             mouse.y = y;
@@ -282,7 +280,7 @@ window.addEventListener('DOMContentLoaded', () => {
         const isMobile = window.innerWidth < 768;
         const isWhite = section.classList.contains('white-theme');
 
-        // КРОК: 75 для мобайлу (щоб не було занадто густо), 100/60 для десктопа
+
         const step = isMobile ? 75 : (isWhite ? 100 : 60);
 
         const cols = Math.ceil(window.innerWidth / step) + 1;
@@ -314,7 +312,7 @@ window.addEventListener('DOMContentLoaded', () => {
             const titleRect = title ? title.getBoundingClientRect() : null;
             const sectionRect = section.getBoundingClientRect();
 
-            const radius = isMobile ? 150 : (isWhite ? 220 : 160);
+            const radius = isMobile ? 200 : (isWhite ? 220 : 160);
             const baseCol = getComputedStyle(section).getPropertyValue('--line-color').trim();
             const activeCol = getComputedStyle(section).getPropertyValue('--active-color').trim();
 

@@ -223,21 +223,11 @@
 }
   .section-hero .service {
     justify-content: center;
-    max-width: 370px;
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
   }
   .section-hero  .card_service{
     max-width: 270px;
-    width: 65%;
+    width: 100%;
     flex-basis: 290px;
-    margin-right: auto;
-
-    &:first-child,
-    &:last-child{
-      margin-left: auto;
-      margin-right: 0;
-    }
   }
 }

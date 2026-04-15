@@ -1793,6 +1793,7 @@ summary::marker {
   margin-left: auto;
   min-width: 198px;
   background-color: #fff;
+  border: 10px solid #FFF;
   z-index: 1;
 }
 
@@ -1811,6 +1812,11 @@ summary::marker {
 
 .red-theme .part_right {
   padding-left: 130px;
+}
+
+.red-theme h1 {
+  display: inline;
+  background-color: #E84923;
 }
 
 .white-theme {
@@ -3052,23 +3058,13 @@ address {
 
   .section-hero .service {
     justify-content: center;
-    max-width: 370px;
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .section-hero .card_service {
     max-width: 270px;
-    width: 65%;
+    width: 100%;
     flex-basis: 290px;
-    margin-right: auto;
-  }
-
-  .section-hero .card_service:first-child,
-  .section-hero .card_service:last-child {
-    margin-left: auto;
-    margin-right: 0;
   }
 
   .card_offers {
@@ -3103,6 +3099,14 @@ address {
 
   .swiper-slide.card_offers {
     max-width: 100%;
+  }
+
+  .filter__active-tags .btn_reset-all {
+    margin-left: 0;
+  }
+
+  .filter__active-tags .wrap-reset {
+    width: 100%;
   }
 
   .product-header {
@@ -3197,6 +3201,7 @@ address {
   .block-map {
     padding: 15px 24px 24px;
     margin-bottom: 24px;
+    margin-top: 44px;
   }
 
   .section-product-details .btn_primary {

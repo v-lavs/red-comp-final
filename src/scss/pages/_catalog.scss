@@ -133,4 +133,12 @@
   .swiper-slide.card_offers{
     max-width: 100%;
   }
+  .filter__active-tags {
+    .btn_reset-all{
+      margin-left: 0;
+    }
+    .wrap-reset {
+      width: 100%;
+    }
+  }
 }
