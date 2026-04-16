@@ -18,7 +18,7 @@
 
 .section-banner {
   position: relative;
-  height: 443px;
+  height: 543px;
   background-position: center right;
   background-size: cover;
   background-repeat: no-repeat;
@@ -155,7 +155,11 @@
     padding-left: 58px;
   }
 }
-
+@media screen and (max-width: 1600px) {
+  .section-banner{
+    height: 443px;
+  }
+}
 @include mixins.respond-to(variables.$xl) {
   .section-banner_anim {
     .img-wrap {

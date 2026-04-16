@@ -1741,7 +1741,7 @@ summary::marker {
 
 .section-banner {
   position: relative;
-  height: 443px;
+  height: 543px;
   background-position: center right;
   background-size: cover;
   background-repeat: no-repeat;
@@ -2392,6 +2392,12 @@ address {
 
   .red-theme .part_right {
     padding-left: 58px;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .section-banner {
+    height: 443px;
   }
 }
 
