@@ -1385,7 +1385,7 @@ summary::marker {
 
 .footer_bottom span {
   display: inline-block;
-  margin-left: 20px;
+  margin: 0 20px;
 }
 
 .social-list {
@@ -2635,6 +2635,10 @@ address {
     width: 100%;
     text-align: center;
     padding: 0;
+  }
+
+  .footer_bottom .menu__item:last-child {
+    margin-right: 0;
   }
 
   .footer_bottom .menu__item a {

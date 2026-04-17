@@ -68,7 +68,7 @@
 
 .footer_bottom span {
   display: inline-block;
-  margin-left: 20px;
+  margin: 0 20px;
 }
 
 .social-list {
@@ -135,8 +135,13 @@
     padding: 0;
   }
   .footer_bottom {
-    .menu__item a {
-      text-decoration: underline;
+    .menu__item {
+      &:last-child{
+        margin-right: 0;
+      }
+      a {
+        text-decoration: underline;
+      }
     }
 
     .container {
