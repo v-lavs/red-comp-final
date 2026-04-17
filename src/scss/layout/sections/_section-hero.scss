@@ -9,19 +9,21 @@
   min-height: 1470px;
   padding-top: 64vh;
   padding-bottom: 178px;
-&:before{
-  position: absolute;
-  content: '';
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  //background: linear-gradient(180deg, rgba(0, 60, 118, 0.4) 5.94%, rgba(102, 102, 102, 0) 39.82%),
-  //linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-  linear-gradient(180deg, rgba(0, 60, 118, 0.4) 5.94%, rgba(102, 102, 102, 0) 39.82%);
 
-}
+  &:before {
+    position: absolute;
+    content: '';
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    //background: linear-gradient(180deg, rgba(0, 60, 118, 0.4) 5.94%, rgba(102, 102, 102, 0) 39.82%),
+    //linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    linear-gradient(180deg, rgba(0, 60, 118, 0.4) 5.94%, rgba(102, 102, 102, 0) 39.82%);
+
+  }
+
   &__inner {
     flex-wrap: wrap;
     max-width: 1380px;
@@ -57,7 +59,8 @@
     width: 20%;
     max-width: 210px;
   }
-  .container{
+
+  .container {
     position: relative;
   }
 }
@@ -132,38 +135,22 @@
     padding-top: 50vh;
     padding-bottom: 122px;
 
-    .part_left {
-      padding-right: 12px;
-    }
-
     .filter {
       flex-wrap: wrap;
       justify-content: space-around;
       gap: 16px;
     }
 
-    .form__group {
-      width: 45%;
-      max-width: 100%;
-    }
-
-    .card_service {
-      width: 46%;
-      padding: 18px 16px;
-    }
-
     .filter .choices__list--single .choices__item {
       font-size: 16px !important;
     }
   }
-}
-
-@include mixins.respond-to(variables.$sm) {
   .section-hero {
-    .filter{
-      margin-bottom: 50px;
+    .filter {
+      margin-bottom: 150px;
       padding: 50px 36px;
     }
+
     .btn_mob {
       display: inline-block;
       margin: 50px auto 0;
@@ -173,6 +160,7 @@
       width: 41%;
       flex-grow: 1;
       flex-basis: 210px;
+      max-width: 100%;
     }
 
     .part_right,
@@ -193,7 +181,6 @@
       padding: 36px 22px;
       transform: none;
       flex-grow: 1;
-      flex-basis: 210px;
     }
   }
   .section-offers .btn_desk,
@@ -203,15 +190,20 @@
 }
 
 @include mixins.respond-to(variables.$xs) {
-.section-hero{
-  padding-top: 162px;
-  padding-bottom: 62px;
-}
+  .section-hero {
+    padding-top: 162px;
+    padding-bottom: 62px;
+  }
+  .section-hero {
+    .filter {
+      margin-bottom: 50px;
+    }
+  }
   .section-hero .service {
     justify-content: center;
     width: 100%;
   }
-  .section-hero  .card_service{
+  .section-hero .card_service {
     max-width: 270px;
     width: 100%;
     flex-basis: 290px;

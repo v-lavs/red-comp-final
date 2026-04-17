@@ -2632,28 +2632,56 @@ address {
     padding-bottom: 122px;
   }
 
-  .section-hero .part_left {
-    padding-right: 12px;
-  }
-
   .section-hero .filter {
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 16px;
   }
 
+  .section-hero .filter .choices__list--single .choices__item {
+    font-size: 16px !important;
+  }
+
+  .section-hero .filter {
+    margin-bottom: 150px;
+    padding: 50px 36px;
+  }
+
+  .section-hero .btn_mob {
+    display: inline-block;
+    margin: 50px auto 0;
+  }
+
   .section-hero .form__group {
-    width: 45%;
+    width: 41%;
+    flex-grow: 1;
+    flex-basis: 210px;
     max-width: 100%;
   }
 
-  .section-hero .card_service {
-    width: 46%;
-    padding: 18px 16px;
+  .section-hero .part_right,
+  .section-hero .part_left {
+    width: 100%;
   }
 
-  .section-hero .filter .choices__list--single .choices__item {
-    font-size: 16px !important;
+  .section-hero .part_left {
+    padding: 0;
+  }
+
+  .section-hero .filter .btn {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .section-hero .card_service {
+    padding: 36px 22px;
+    transform: none;
+    flex-grow: 1;
+  }
+
+  .section-offers .btn_desk,
+  .section-hero .btn_desk {
+    display: none;
   }
 
   .section__title {
@@ -2796,48 +2824,6 @@ address {
 
   .container {
     max-width: 580px;
-  }
-
-  .section-hero .filter {
-    margin-bottom: 50px;
-    padding: 50px 36px;
-  }
-
-  .section-hero .btn_mob {
-    display: inline-block;
-    margin: 50px auto 0;
-  }
-
-  .section-hero .form__group {
-    width: 41%;
-    flex-grow: 1;
-    flex-basis: 210px;
-  }
-
-  .section-hero .part_right,
-  .section-hero .part_left {
-    width: 100%;
-  }
-
-  .section-hero .part_left {
-    padding: 0;
-  }
-
-  .section-hero .filter .btn {
-    width: 100%;
-    margin-top: 30px;
-  }
-
-  .section-hero .card_service {
-    padding: 36px 22px;
-    transform: none;
-    flex-grow: 1;
-    flex-basis: 210px;
-  }
-
-  .section-offers .btn_desk,
-  .section-hero .btn_desk {
-    display: none;
   }
 
   .post-list {
@@ -3086,6 +3072,10 @@ address {
   .section-hero {
     padding-top: 162px;
     padding-bottom: 62px;
+  }
+
+  .section-hero .filter {
+    margin-bottom: 50px;
   }
 
   .section-hero .service {
