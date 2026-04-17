@@ -1180,6 +1180,7 @@ summary::marker {
   max-width: 128px;
   width: 100%;
   display: inline-block;
+  line-height: 0;
 }
 
 .header__logo svg {
@@ -1886,6 +1887,11 @@ summary::marker {
   line-height: 1.15;
   color: #FFFFFF;
   display: inline-block;
+}
+
+.page-about .section-banner__img {
+  -o-object-position: center top;
+  object-position: center top;
 }
 
 .catalog .breadcrumb {
@@ -2610,10 +2616,18 @@ address {
     color: #222222;
   }
 
+  .header.header_home .header__logo {
+    max-width: 111px;
+  }
+
   .header__lang {
     padding: 12px 0;
     margin-top: 30px;
     font-size: 20px;
+  }
+
+  .header_home.is-pinned .header__logo {
+    max-width: 111px;
   }
 
   .container {
@@ -3059,6 +3073,18 @@ address {
   }
 
   .header__logo {
+    max-width: 86px;
+  }
+
+  .header.header_home .header__inner {
+    padding: 8px 16px;
+  }
+
+  .header.header_home .header__logo {
+    max-width: 90px;
+  }
+
+  .header.header_home.is-pinned .header__logo {
     max-width: 86px;
   }
 

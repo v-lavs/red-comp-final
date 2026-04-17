@@ -21,6 +21,7 @@
     max-width: 128px;
     width: 100%;
     display: inline-block;
+    line-height: 0;
 
     svg {
       display: inline-block;
@@ -50,7 +51,8 @@
     margin-right: auto;
     margin-top: auto;
     padding-top: 50px;
-    img{
+
+    img {
       max-width: 100%;
     }
   }
@@ -214,6 +216,10 @@
       .menu {
         color: #222222;
       }
+
+      .header__logo {
+        max-width: 111px;
+      }
     }
 
     &__lang {
@@ -221,6 +227,9 @@
       margin-top: 30px;
       font-size: 20px;
     }
+  }
+  .header_home.is-pinned .header__logo {
+    max-width: 111px;
   }
 }
 
@@ -233,6 +242,18 @@
     }
 
     &__logo {
+      max-width: 86px;
+    }
+  }
+  .header.header_home {
+    .header__inner {
+      padding: 8px 16px;
+    }
+
+    .header__logo {
+      max-width: 90px;
+    }
+    &.is-pinned .header__logo {
       max-width: 86px;
     }
   }

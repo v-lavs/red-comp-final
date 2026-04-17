@@ -149,7 +149,9 @@
   color: #FFFFFF;
   display: inline-block;
 }
-
+.page-about .section-banner__img{
+  object-position: center top;
+}
 @include mixins.respond-to(variables.$xxl) {
   .red-theme .part_right {
     padding-left: 58px;
