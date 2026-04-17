@@ -43,6 +43,18 @@
     display: flex;
   }
 
+  &__nav-logo {
+    display: none;
+    max-width: 140px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    padding-top: 50px;
+    img{
+      max-width: 100%;
+    }
+  }
+
   &__lang {
     font-weight: 400;
     font-size: 16px;
@@ -80,10 +92,30 @@
   }
 }
 
+
 .btn_burger {
   background-image: url(../assets/img/svg/symbols_menu.svg);
   background-size: contain;
   filter: invert(1);
+}
+
+.btn_close {
+  background-image: url(../assets/img/svg/cancel.svg);
+  background-size: 20px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.btn_close,
+.btn_burger {
+  display: none;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .header_home {
@@ -125,25 +157,6 @@
   }
 }
 
-.btn_close {
-  background-image: url(../assets/img/svg/cancel.svg);
-  background-size: 20px;
-  position: absolute;
-  right: 20px;
-  top: 20px;
-}
-
-.btn_close,
-.btn_burger {
-  display: none;
-  width: 32px;
-  height: 32px;
-  border: none;
-  background-color: transparent;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
 .backdrop {
   position: fixed;
   left: 0;
@@ -163,6 +176,7 @@
 }
 
 @include mixins.respond-to(variables.$md) {
+  .header__nav-logo,
   .btn_close,
   .btn_burger {
     display: block;
@@ -181,14 +195,14 @@
       bottom: 0;
       min-width: 390px;
       background-color: #FFFFFF;
-      padding: 60px 30px 40px;
-      display: block;
+      padding: 60px 30px 100px;
       height: 100%;
       max-height: 100vh;
       overflow: auto;
       transform: translateX(-100%);
       transition: .35s;
       z-index: 15;
+      flex-direction: column;
 
       &.is-open {
         transform: translateX(0);
@@ -196,6 +210,7 @@
     }
 
     &.header_home {
+      .header__lang,
       .menu {
         color: #222222;
       }
