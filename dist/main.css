@@ -1455,20 +1455,20 @@ summary::marker {
 }
 
 .section-hero__slogan {
-  font-size: 30px;
-  line-height: 1.1;
+  font-size: 28px;
+  line-height: 1.37;
   letter-spacing: -0.02em;
   margin-bottom: 50px;
 }
 
 .section-hero .part_left {
-  width: 38.5%;
+  width: 43.5%;
   color: #FFFFFF;
   padding-right: 36px;
 }
 
 .section-hero .part_right {
-  width: 61.5%;
+  width: 56.5%;
 }
 
 .section-hero .filter {
@@ -1490,7 +1490,6 @@ summary::marker {
   gap: 25px;
   max-width: 755px;
   margin-left: auto;
-  padding-right: 25px;
   width: 100%;
 }
 
@@ -1504,12 +1503,6 @@ summary::marker {
 
 .card_service:hover {
   border: none;
-}
-
-.card_service:nth-child(2),
-.card_service:nth-child(5n+1),
-.card_service:nth-child(4n+1) {
-  transform: translateX(25px);
 }
 
 .card_service .card__icon {
@@ -2401,7 +2394,7 @@ address {
   }
 
   .section-hero__slogan {
-    font-size: 28px;
+    font-size: 24px;
   }
 
   .section-hero__inner {
@@ -2634,10 +2627,6 @@ address {
     max-width: 768px;
   }
 
-  .section-hero__slogan {
-    font-size: 24px;
-  }
-
   .section-hero {
     padding-top: 50vh;
     padding-bottom: 122px;
@@ -2837,10 +2826,6 @@ address {
   .section-hero .filter .btn {
     width: 100%;
     margin-top: 30px;
-  }
-
-  .section-hero .service {
-    padding-right: 0;
   }
 
   .section-hero .card_service {

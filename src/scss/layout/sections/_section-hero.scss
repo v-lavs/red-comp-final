@@ -33,20 +33,20 @@
   }
 
   &__slogan {
-    font-size: 30px;
-    line-height: 1.1;
+    font-size: 28px;
+    line-height: 1.37;
     letter-spacing: -0.02em;
     margin-bottom: 50px;
   }
 
   .part_left {
-    width: 38.5%;
+    width: 43.5%;
     color: #FFFFFF;
     padding-right: 36px;
   }
 
   .part_right {
-    width: 61.5%;
+    width: 56.5%;
   }
 
   .filter {
@@ -68,7 +68,6 @@
   gap: 25px;
   max-width: 755px;
   margin-left: auto;
-  padding-right: 25px;
   width: 100%;
 }
 
@@ -81,12 +80,6 @@
 
   &:hover {
     border: none;
-  }
-
-  &:nth-child(2),
-  &:nth-child(5n+1),
-  &:nth-child(4n+1) {
-    transform: translateX(25px);
   }
 
   .card__icon {
@@ -106,7 +99,7 @@
 
 @include mixins.respond-to(variables.$xxl) {
   .section-hero__slogan {
-    font-size: 28px;
+    font-size: 24px;
   }
   .section-hero__inner {
     max-width: 1200px;
@@ -135,9 +128,6 @@
 }
 
 @include mixins.respond-to(variables.$md) {
-  .section-hero__slogan {
-    font-size: 24px;
-  }
   .section-hero {
     padding-top: 50vh;
     padding-bottom: 122px;
@@ -197,10 +187,6 @@
     .filter .btn {
       width: 100%;
       margin-top: 30px;
-    }
-
-    .service {
-      padding-right: 0;
     }
 
     .card_service {
