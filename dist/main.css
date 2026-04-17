@@ -1383,6 +1383,11 @@ summary::marker {
   align-items: center;
 }
 
+.footer_bottom span {
+  display: inline-block;
+  margin-left: 20px;
+}
+
 .social-list {
   display: flex;
   gap: 10px;
@@ -1532,7 +1537,6 @@ summary::marker {
 
 .card_offers {
   width: 32%;
-  max-width: 421px;
   flex-grow: 1;
 }
 
@@ -1676,7 +1680,6 @@ summary::marker {
 .members__name,
 .members__activity {
   width: 100%;
-  letter-spacing: -0.68px;
   text-align: center;
   line-height: 35px;
 }
@@ -1684,6 +1687,10 @@ summary::marker {
 .members__name a,
 .members__activity a {
   display: inline-block;
+}
+
+.mail {
+  letter-spacing: -0.4px;
 }
 
 .members__name {
@@ -1701,7 +1708,6 @@ summary::marker {
   font-weight: 300;
   font-size: 16px;
   line-height: 35px;
-  letter-spacing: -0.4px;
 }
 
 .members__contacts a {
@@ -2625,6 +2631,21 @@ address {
     max-width: 111px;
   }
 
+  .copyright {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+  }
+
+  .footer_bottom .menu__item a {
+    text-decoration: underline;
+  }
+
+  .footer_bottom .container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   .container {
     max-width: 768px;
   }
@@ -2794,24 +2815,9 @@ address {
     width: 50%;
   }
 
-  .copyright {
-    width: 100%;
-    text-align: center;
-    padding: 0;
-  }
-
   .footer_top {
     padding-top: 54px;
     padding-bottom: 50px;
-  }
-
-  .footer_bottom .menu__item a {
-    text-decoration: underline;
-  }
-
-  .footer_bottom .container {
-    flex-wrap: wrap;
-    justify-content: center;
   }
 
   .footer__col {

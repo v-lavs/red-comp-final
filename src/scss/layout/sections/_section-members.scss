@@ -87,7 +87,6 @@
 .members__name,
 .members__activity {
   width: 100%;
-  letter-spacing: -0.68px;
   text-align: center;
   line-height: 35px;
 
@@ -95,7 +94,9 @@
     display: inline-block;
   }
 }
-
+.mail{
+  letter-spacing: -0.4px;
+}
 .members__name {
   font-weight: 700;
   font-size: 18px;
@@ -105,7 +106,6 @@
 .members__activity {
   font-weight: 300;
   font-size: 16px;
-
   margin-bottom: 18px;
 }
 
@@ -113,7 +113,6 @@
   font-weight: 300;
   font-size: 16px;
   line-height: 35px;
-  letter-spacing: -0.4px;
 
   a {
     display: inline-block;

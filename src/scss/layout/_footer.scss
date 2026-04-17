@@ -17,8 +17,6 @@
     &:focus {
       color: variables.$primary-color;
     }
-
-
   }
 
   &_top {
@@ -66,6 +64,11 @@
       align-items: center;
     }
   }
+}
+
+.footer_bottom span {
+  display: inline-block;
+  margin-left: 20px;
 }
 
 .social-list {
@@ -125,7 +128,23 @@
     padding: 0 24px;
   }
 }
+@include mixins.respond-to(variables.$md) {
+  .copyright {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+  }
+  .footer_bottom {
+    .menu__item a {
+      text-decoration: underline;
+    }
 
+    .container {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}
 @include mixins.respond-to(variables.$sm) {
   .social {
     margin: 0 auto;
@@ -139,24 +158,10 @@
   .footer__col:nth-child(3) {
     width: 50%;
   }
-  .copyright {
-    width: 100%;
-    text-align: center;
-    padding: 0;
-  }
+
   .footer_top {
     padding-top: 54px;
     padding-bottom: 50px;
-  }
-  .footer_bottom {
-    .menu__item a {
-      text-decoration: underline;
-    }
-
-    .container {
-      flex-wrap: wrap;
-      justify-content: center;
-    }
   }
   .footer__col {
     padding-left: 0;
