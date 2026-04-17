@@ -850,6 +850,10 @@ input[type=radio]:checked + .filter-switch__btn {
   display: none !important;
 }
 
+.choices__item.choices__placeholder.choices__item--selectable {
+  color: rgba(30, 30, 30, 0.5);
+}
+
 .choices__list--dropdown {
   margin-top: 8px !important;
   z-index: 999;
@@ -1924,7 +1928,7 @@ summary::marker {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   grid-row-gap: 24px;
-  grid-column-gap: 24px;
+  grid-column-gap: 40px;
 }
 
 .catalog .field__group_price {
@@ -1938,7 +1942,6 @@ summary::marker {
 }
 
 .catalog .form__group {
-  max-width: 210px;
   width: 100%;
 }
 
@@ -1948,7 +1951,6 @@ summary::marker {
 
 .filter-widget .search-input {
   width: 100%;
-  max-width: 1210px;
   height: 48px;
   border-radius: 50px;
   border: 1px solid #2C2C2C;
@@ -2690,11 +2692,6 @@ address {
 
   .catalog .btn-submit {
     margin-left: 0;
-  }
-
-  .catalog .form__group {
-    max-width: 280px;
-    width: 100%;
   }
 
   .catalog .breadcrumb {

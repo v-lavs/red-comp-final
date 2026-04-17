@@ -40,6 +40,9 @@
 .choices__list--dropdown .choices__placeholder {
   display: none !important;
 }
+.choices__item.choices__placeholder.choices__item--selectable {
+  color: rgba(30, 30, 30, .5);
+}
 .choices__list--dropdown {
   margin-top: 8px !important;
   z-index: 999;
@@ -69,6 +72,7 @@
   transform: translateY(-50%) rotate(180deg);
   margin-top: 0;
 }
+
 .choices.is-open .choices__list--single .choices__item {
   color: #222222!important;
 }
