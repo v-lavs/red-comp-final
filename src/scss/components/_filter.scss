@@ -100,6 +100,10 @@ input[type="radio"]:checked + .filter-switch__btn {
   }
 }
 
+.wrap-reset {
+  display: inline-block;
+}
+
 .btn_reset-all {
   background-color: #FFFFFF;
   border: 1px solid transparent;
@@ -140,7 +144,6 @@ input[type="radio"]:checked + .filter-switch__btn {
   cursor: pointer;
   z-index: 100;
   box-shadow: 0 4px 14px 0 rgba(0, 0, 0, .1);
-
   border: 1px solid #C9C9C9;
   border-radius: 10px;
   background-color: #FFFFFF;
@@ -177,12 +180,20 @@ input[type="radio"]:checked + .filter-switch__btn {
     text-align: center;
     padding-left: 0;
   }
+  .wrap-reset {
+    width: 100%;
+  }
+  .btn_reset-all {
+    margin-left: 0;
+  }
 }
+
 @include mixins.respond-to(variables.$sm) {
-.catalog .btn-submit{
-  width: 100%;
+  .catalog .btn-submit {
+    width: 100%;
+  }
 }
-}
+
 @include mixins.respond-to(variables.$xs) {
   .section-hero .card_service {
     min-height: 185px;
@@ -229,5 +240,4 @@ input[type="radio"]:checked + .filter-switch__btn {
     max-width: 100%;
     margin-bottom: 12px;
   }
-
 }

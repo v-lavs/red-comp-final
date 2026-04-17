@@ -482,6 +482,10 @@ input[type=radio]:checked + .filter-switch__btn {
   display: inline-block;
 }
 
+.wrap-reset {
+  display: inline-block;
+}
+
 .btn_reset-all {
   background-color: #FFFFFF;
   border: 1px solid transparent;
@@ -2567,6 +2571,14 @@ address {
   .catalog .filter-switch {
     text-align: center;
     padding-left: 0;
+  }
+
+  .wrap-reset {
+    width: 100%;
+  }
+
+  .btn_reset-all {
+    margin-left: 0;
   }
 
   .bento-grid {
