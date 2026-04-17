@@ -262,10 +262,6 @@
   flex-shrink: 0;
 }
 
-@include mixins.respond-to(variables.$screen-md) {
-
-}
-
 @include mixins.respond-to(variables.$md) {
   .slider-product .swiper-slide a {
     padding-top: 60%;
@@ -295,11 +291,7 @@
   .spec_1 {
     width: 100%;
   }
-  .general-details {
-    .product-spec__value {
 
-    }
-  }
   .general-details .product-specs {
     justify-content: flex-start;
     gap: 24px;

@@ -68,31 +68,29 @@
   }
 }
 
-@include mixins.respond-to(variables.$xl) {
-
-}
 @include mixins.respond-to(variables.$sm) {
-  .post-list{
+  .post-list {
     padding-bottom: 32px;
   }
-  .card_offers .card__body{
+  .card_offers .card__body {
     padding-left: 0;
     padding-right: 0;
   }
-  .section-offers{
+  .section-offers {
     padding-top: 35px;
   }
   .section-hero {
     padding-bottom: 35px;
   }
 }
+
 @include mixins.respond-to(variables.$xs) {
   .card_offers {
     max-width: 421px;
     width: 100%;
     margin: 0 auto;
   }
-  .post-list{
+  .post-list {
     gap: 24px;
   }
 }

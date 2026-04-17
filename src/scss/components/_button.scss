@@ -1,7 +1,7 @@
 @use "../utils/mixins";
 @use "../utils/variables";
 
-.btn{
+.btn {
   border: none;
   font-family: variables.$main-font;
   border-radius: 50px;
@@ -12,39 +12,45 @@
   font-size: 16px;
   line-height: 1;
   text-align: center;
-  &_primary{
+
+  &_primary {
     color: #FFFFFF;
     background-color: variables.$primary-color;
+
     &:hover,
     &:focus {
       background-color: variables.$dark;
     }
   }
-  &_outline{
+
+  &_outline {
     border: 1px solid variables.$primary-color;
     background-color: #FFFFFF;
     color: variables.$primary-color;
     padding: 15px 45px;
     font-weight: 700;
+
     &:hover,
     &:focus {
       background-color: variables.$primary-color;
       color: #FFFFFF;
     }
   }
-  &_light{
+
+  &_light {
     color: #222222;
     background-color: #FFFFFF;
     padding: 10px 16px;
     box-shadow: 0 10px 31px 0 #E8492312;
+
     &:hover,
-    &:focus{
+    &:focus {
       color: variables.$primary-color;
     }
   }
 }
 
-.btn_call{
+.btn_call {
   display: block;
   position: fixed;
   right: 48px;
@@ -55,13 +61,15 @@
   border-radius: 50%;
   background-color: variables.$primary-color;
   z-index: 600;
-  &:hover{
-    img{
+
+  &:hover {
+    img {
       animation: pulse 1s infinite;
       transition: .35s;
     }
   }
-  img{
+
+  img {
     width: 100%;
     height: auto;
     display: inline-block;
@@ -81,13 +89,14 @@
   }
 }
 
-@include mixins.respond-to(variables.$md){
-  .btn_call{
+@include mixins.respond-to(variables.$md) {
+  .btn_call {
     width: 60px;
     height: 60px;
     padding: 14px;
   }
 }
+
 @include mixins.respond-to(variables.$xs) {
   .btn_call {
     right: 16px;

@@ -15,7 +15,6 @@
   }
 }
 
-
 .section-banner {
   position: relative;
   height: 543px;
@@ -89,7 +88,8 @@
   .part_right {
     padding-left: 130px;
   }
-  h1{
+
+  h1 {
     display: inline;
     background-color: #E84923;
   }
@@ -136,7 +136,6 @@
   will-change: transform;
 }
 
-
 .section-banner_anim .container {
   display: flex;
 }
@@ -149,19 +148,23 @@
   color: #FFFFFF;
   display: inline-block;
 }
-.page-about .section-banner__img{
+
+.page-about .section-banner__img {
   object-position: center top;
 }
+
 @include mixins.respond-to(variables.$xxl) {
   .red-theme .part_right {
     padding-left: 58px;
   }
 }
+
 @media screen and (max-width: 1600px) {
-  .section-banner{
+  .section-banner {
     height: 443px;
   }
 }
+
 @include mixins.respond-to(variables.$xl) {
   .section-banner_anim {
     .img-wrap {
@@ -186,7 +189,6 @@
     }
   }
 }
-
 
 @media screen and (max-width: 767px) {
   .section-banner_anim h1 {

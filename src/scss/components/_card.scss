@@ -52,12 +52,14 @@
     }
   }
 }
+
 .location {
   left: 14px;
   color: #FFFFFF;
   padding-left: 28px;
   bottom: 15px;
   position: absolute;
+
   &:before {
     position: absolute;
     content: url('../assets/img/svg/location.svg');
@@ -68,6 +70,7 @@
     left: 0;
   }
 }
+
 .wrap-label {
   position: absolute;
   top: 17px;
@@ -76,6 +79,7 @@
   text-align: right;
   z-index: 1;
 }
+
 .label {
   padding: 3px 10px 5px;
   border-radius: 12px;
@@ -83,13 +87,15 @@
   background-color: #FFFFFF;
   margin-left: 5px;
   font-size: 13px;
+
   &_selling {
     background-color: variables.$primary-color;
     color: #FFFFFF;
   }
 }
+
 @include mixins.respond-to(variables.$xs) {
-  .card__thumb{
+  .card__thumb {
     padding-top: 77%;
   }
 }

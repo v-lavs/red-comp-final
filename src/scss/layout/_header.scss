@@ -89,11 +89,8 @@
       background-color: transparent;
       padding: 0;
     }
-
-
   }
 }
-
 
 .btn_burger {
   background-image: url(../assets/img/svg/symbols_menu.svg);
@@ -123,10 +120,6 @@
 .header_home {
   .btn_burger {
     filter: invert(0);
-  }
-
-  .is-pinned {
-
   }
 
   &.is-pinned {

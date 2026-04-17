@@ -81,27 +81,6 @@ body {
     }
   }
 
-
-  h1, h2,
-  h3, h4, h5, h6 {
-  }
-
-  h3, h4, h5, h6 {
-
-  }
-
-  h1, h2 {
-
-  }
-
-  h3 {
-
-  }
-
-  h4 {
-
-  }
-
   ul, ol {
     margin: 0 0 5px 0;
 
@@ -153,29 +132,9 @@ body {
       margin-bottom: 0;
     }
   }
-
-  a {
-
-    &:hover,
-    &:focus {
-
-    }
-  }
 }
 strong{
   color: #000000;
-}
-
-@include mixins.respond-to(variables.$xl) {
-
-}
-
-@include mixins.respond-to(variables.$lg) {
-
-}
-
-@include mixins.respond-to(variables.$md) {
-
 }
 
 @include mixins.respond-to(variables.$sm) {
@@ -190,12 +149,4 @@ strong{
   .section__header {
     margin-bottom: 24px;
   }
-}
-
-@include mixins.respond-to(variables.$xs) {
-
-}
-
-@include mixins.respond-to(variables.$xxs) {
-
 }

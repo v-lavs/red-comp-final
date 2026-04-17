@@ -1,6 +1,3 @@
-/*
- * to include js file write: `//= include ./path-to-file`
- */
 
 'use strict'
 //MOB-MENU
@@ -120,7 +117,6 @@ filters.forEach((select) => {
 });
 
 //CUSTOM SORT
-
 const sortBtn = document.getElementById('sortBtn');
 const sortList = document.querySelector('.sort-list');
 const sortItems = document.querySelectorAll('.sort-list li');
@@ -267,7 +263,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('mousemove', updateMouse);
     window.addEventListener('touchmove', updateMouse, { passive: true });
-    // Якщо миша зовсім покинула вікно браузера — вмикаємо авто
     document.addEventListener('mouseleave', () => { isAuto = true; });
 
     let gridData = [];
@@ -399,5 +394,3 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-//# sourceMappingURL=main.js.map
