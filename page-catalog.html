@@ -13,7 +13,7 @@
     <title>Каталог</title>
 
     <!--    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+    <link rel="stylesheet" href="./lib/choices/choices.min.css">
 
     <link rel="stylesheet" href="./lib/noUiSlider/nouislider.min.css">
 
@@ -22,7 +22,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
           rel="stylesheet">
-    <!--    <link rel="stylesheet" href="./fonts/fonts.css">-->
     <link rel="stylesheet" href="./dist/main.css">
 </head>
 
@@ -57,14 +56,14 @@
                         <a href="#" class="header__lang-link active">УКР</a>
                     </div>
                     <a href="index.html" class="header__nav-logo">
-                        <img src="assets/img/logo.svg" alt="">
+                        <img src="assets/img/logo.svg" alt="logo  Compass Realty">
                     </a>
                 </div>
                 <button type="button" class="btn_burger" aria-label="Відкрити меню"></button>
             </div>
         </div>
+        <div class="backdrop"></div>
     </header>
-    <div class="backdrop"></div>
 
     <main class="main  page catalog">
         <section class="section-banner_anim white-theme">
@@ -77,6 +76,7 @@
                 </div>
             </div>
         </section>
+
         <div class="catalog-filters">
             <div class="container">
                 <form action="#" method="GET" class="form form-filter" id="formFilter">
@@ -87,6 +87,7 @@
                         <input type="radio" name="category" id="rent" value="rent">
                         <label for="rent" class="btn filter-switch__btn">Оренда</label>
                     </div>
+
                     <div class="filter">
                         <div class="filter-widget">
                             <div class="search-wrap">
@@ -94,8 +95,10 @@
                                 <span class="search-icon"></span>
                             </div>
                         </div>
+
                         <div class="field__group field__group_details">
                             <!--              розмітка  під    Select2      -->
+
                             <!--                            <div class="form__group">-->
                             <!--                                <label for="locality">Населений пункт</label>-->
                             <!--                                <select class="js-choice" data-placeholder="Оберіть місто/смт..." id="locality"-->
@@ -192,6 +195,7 @@
                                 </select>
                             </div>
                         </div>
+
                         <div class="field__group field__group_price">
                             <div class="filter-price">
                                 <div class="custom-inputs">
@@ -210,6 +214,7 @@
                             </div>
                             <button type="submit" class="btn btn_primary btn-submit">Застосувати фільтри</button>
                         </div>
+
                         <div class="filter__active-tags">
                             <div class="filter__tag">
                                 <span class="filter__tag-text">Львів</span>
@@ -239,11 +244,11 @@
                                 <button class="btn btn_reset-all">Відмінити усі фільтри</button>
                             </div>
                         </div>
-
                     </div>
                 </form>
             </div>
         </div>
+
         <div class="container">
             <nav aria-label="Шлях до сторінки" class="breadcrumb">
                 <ul>
@@ -252,6 +257,7 @@
                 </ul>
             </nav>
         </div>
+
         <section class="section-catalog">
             <div class="container">
                 <div class="section__header d-flex">
@@ -500,6 +506,7 @@
                     </li>
                 </ul>
             </div>
+
             <div class="pagination">
                 <div class="pagination__item">
                             <span class="pagination__nav-item pagination__nav_prev">
@@ -804,7 +811,6 @@
                 </div>
                 <div class="footer__col">
                     <h4 class="footer__title">Меню</h4>
-
                     <ul class="menu">
                         <li class="menu__item">
                             <a href="index.html" class="menu__link">Головна</a>
@@ -822,7 +828,6 @@
                             <a href="page-contacts.html" class="menu__link">Контакти</a>
                         </li>
                     </ul>
-
                 </div>
                 <div class="footer__col">
                     <h4 class="footer__title">Контакти</h4>
@@ -868,21 +873,15 @@
                 </ul>
             </div>
         </div>
-
-
     </footer>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"></script>
-
 <!--<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>-->
-<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+<script src="./lib/choices/choices.min.js"></script>
 
 <script src="./lib/noUiSlider/nouislider.min.js"></script>
 <script src="./lib/swiper/swiper-bundle.min.js"></script>
+<script src="./lib/lightBox/glightbox.min.js"></script>
 <script src="dist/main.js"></script>
 </body>
 </html>

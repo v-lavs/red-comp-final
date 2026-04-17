@@ -13,7 +13,7 @@
     <title>Про нас</title>
 
     <!--    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+    <link rel="stylesheet" href="./lib/choices/choices.min.css">
     <link rel="stylesheet" href="./lib/noUiSlider/nouislider.min.css">
     <link rel="stylesheet" href="./lib/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="./lib/lightBox/glightbox.css">
@@ -56,14 +56,14 @@
                         <a href="#" class="header__lang-link active">УКР</a>
                     </div>
                     <a href="index.html" class="header__nav-logo">
-                        <img src="assets/img/logo.svg" alt="">
+                        <img src="assets/img/logo.svg" alt="logo  Compass Realty">
                     </a>
                 </div>
                 <button type="button" class="btn_burger" aria-label="Відкрити меню"></button>
             </div>
         </div>
+        <div class="backdrop"></div>
     </header>
-    <div class="backdrop"></div>
 
     <main class="main  page page-about">
         <section class="section-banner">
@@ -72,9 +72,8 @@
                 <source srcset="assets/img/banner-about-tab.png" media="(max-width: 991px)">
                 <img class="section-banner__img" src="assets/img/banner-about.png" alt="">
             </picture>
-
-            <div class="container"></div>
         </section>
+
         <div class="container">
             <nav aria-label="Шлях до сторінки" class="breadcrumb">
                 <ul>
@@ -86,7 +85,6 @@
 
         <section class="section-about">
             <div class="container">
-
                 <div class="block-intro">
                     <p>Знайдіть свій дім разом із <strong class="color-red">Compass Realty</strong>.</p>
                     <p>Ми не просто продаємо квартири - ми допомагаємо людям знайти місце , де починається нова
@@ -98,6 +96,7 @@
                         районах , цінах і юридичних нюансах. Ми беремо на себе всі клопоти , щоб Ви просто відчинили
                         двері свого нового дому.</p>
                 </div>
+
                 <div class="section__header">
                     <h2 class="page__title">Наші послуги</h2>
                 </div>
@@ -535,7 +534,9 @@
                                             <li>Купівля для перепродажу (фліппінг)</li>
                                             <li>Купівля для здачі в оренду</li>
                                             <li>Визначаємо терміни переїзду</li>
-                                            <li>Інвестиції в новобудови на етапі котловану (маємо підписані договори про співпрацю із забудовниками у Львові та Ужгороді)</li>
+                                            <li>Інвестиції в новобудови на етапі котловану (маємо підписані договори про
+                                                співпрацю із забудовниками у Львові та Ужгороді)
+                                            </li>
                                             <li>Комерційна нерухомість</li>
                                         </ul>
                                     </div>
@@ -556,17 +557,27 @@
                                     <div class="card-1 card-service card-large dynamic-content">
                                         <h4>Для покупців:</h4>
                                         <ul>
-                                            <li>Підбираємо об’єкти під чіткі бізнес-критерії: локація, площа, клас будівлі, інфраструктура та юридична чистота</li>
-                                            <li>Проводимо порівняльний аналіз ринку — ви платите справедливу ціну, а не ту, що хоче продавець</li>
-                                            <li>Перевіряємо правовстановлювальні документи, обтяження та ризики до підписання будь-яких угод</li>
+                                            <li>Підбираємо об’єкти під чіткі бізнес-критерії: локація, площа, клас
+                                                будівлі, інфраструктура та юридична чистота
+                                            </li>
+                                            <li>Проводимо порівняльний аналіз ринку — ви платите справедливу ціну, а не
+                                                ту, що хоче продавець
+                                            </li>
+                                            <li>Перевіряємо правовстановлювальні документи, обтяження та ризики до
+                                                підписання будь-яких угод
+                                            </li>
                                             <li>Ведемо переговори від вашого імені — економимо час, нерви та гроші</li>
                                         </ul>
                                     </div>
                                     <div class="card-2 card-service card-small dynamic-content">
                                         <h4>Для продавців</h4>
                                         <ul>
-                                            <li>Готуємо об’єкт до продажу: оцінка, позиціонування, маркетингова стратегія</li>
-                                            <li>Виходимо на кваліфікованих покупців через власну базу та партнерську мережу</li>
+                                            <li>Готуємо об’єкт до продажу: оцінка, позиціонування, маркетингова
+                                                стратегія
+                                            </li>
+                                            <li>Виходимо на кваліфікованих покупців через власну базу та партнерську
+                                                мережу
+                                            </li>
                                             <li>Закриваємо угоду у строки, що відповідають вашим фінансовим цілям</li>
                                         </ul>
                                     </div>
@@ -587,9 +598,15 @@
                                     <div class="card-1 card-service card-large dynamic-content">
                                         <h4>Для орендарів (бізнес):</h4>
                                         <ul>
-                                            <li>Знаходимо приміщення, що відповідає операційним потребам бізнесу — трафік, паркінг, технічні умови, планування</li>
-                                            <li>Аналізуємо орендні ставки по ринку — ви не переплачуєте та знаєте реальну вартість кожного квадратного метра</li>
-                                            <li>Переглядаємо умови договору оренди до підписання: індексація, канікули, відповідальність сторін, умови виходу</li>
+                                            <li>Знаходимо приміщення, що відповідає операційним потребам бізнесу —
+                                                трафік, паркінг, технічні умови, планування
+                                            </li>
+                                            <li>Аналізуємо орендні ставки по ринку — ви не переплачуєте та знаєте
+                                                реальну вартість кожного квадратного метра
+                                            </li>
+                                            <li>Переглядаємо умови договору оренди до підписання: індексація, канікули,
+                                                відповідальність сторін, умови виходу
+                                            </li>
                                             <li>Супроводжуємо від першого перегляду до передачі ключів</li>
                                         </ul>
                                     </div>
@@ -597,7 +614,9 @@
                                         <h4>Для власників (орендодавці):</h4>
                                         <ul>
                                             <li>Заповнюємо вакантні площі швидко та з перевіреними орендарями</li>
-                                            <li>Розробляємо комерційні умови, що захищають ваші інтереси на весь термін оренди</li>
+                                            <li>Розробляємо комерційні умови, що захищають ваші інтереси на весь термін
+                                                оренди
+                                            </li>
                                             <li>Мінімізуємо простій об’єкта між орендарями</li>
                                         </ul>
                                     </div>
@@ -627,21 +646,21 @@
                 <div class="footer__col">
                     <h4 class="footer__title">Меню</h4>
                     <ul class="menu">
-                            <li class="menu__item">
-                                <a href="index.html" class="menu__link">Головна</a>
-                            </li>
-                            <li class="menu__item">
-                                <a href="page-catalog.html" class="menu__link">Каталог</a>
-                            </li>
-                            <li class="menu__item">
-                                <a href="page-about.html" class="menu__link">Про нас</a>
-                            </li>
-                            <li class="menu__item">
-                                <a href="page-blog.html" class="menu__link">Блог</a>
-                            </li>
-                            <li class="menu__item">
-                                <a href="page-contacts.html" class="menu__link">Контакти</a>
-                            </li>
+                        <li class="menu__item">
+                            <a href="index.html" class="menu__link">Головна</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="page-catalog.html" class="menu__link">Каталог</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="page-about.html" class="menu__link">Про нас</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="page-blog.html" class="menu__link">Блог</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="page-contacts.html" class="menu__link">Контакти</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="footer__col">
@@ -677,7 +696,8 @@
         </div>
         <div class="footer_bottom">
             <div class="container d-flex">
-                <div class="copyright"> Compass. All Rights Reserved 2026. <span>Created by <a href="https://profi-creative.com/">Profi Creative</a></span></div>
+                <div class="copyright"> Compass. All Rights Reserved 2026. <span>Created by <a
+                        href="https://profi-creative.com/">Profi Creative</a></span></div>
                 <ul class="menu">
                     <li class="menu__item">
                         <a href="#" class="menu__link">Terms of Use</a>
@@ -693,7 +713,7 @@
 
 
 <!--<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>-->
-<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+<script src="./lib/choices/choices.min.js"></script>
 
 <script src="./lib/noUiSlider/nouislider.min.js"></script>
 <script src="./lib/swiper/swiper-bundle.min.js"></script>

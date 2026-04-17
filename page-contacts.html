@@ -13,11 +13,10 @@
     <title>Контакти</title>
 
     <!--    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+    <link rel="stylesheet" href="./lib/choices/choices.min.css">
     <link rel="stylesheet" href="./lib/noUiSlider/nouislider.min.css">
     <link rel="stylesheet" href="./lib/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="./lib/lightBox/glightbox.css">
-    <!--    <link rel="stylesheet" href="./fonts/fonts.css">-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
@@ -56,14 +55,14 @@
                         <a href="#" class="header__lang-link active">УКР</a>
                     </div>
                     <a href="index.html" class="header__nav-logo">
-                        <img src="assets/img/logo.svg" alt="">
+                        <img src="assets/img/logo.svg" alt="logo  Compass Realty">
                     </a>
                 </div>
                 <button type="button" class="btn_burger" aria-label="Відкрити меню"></button>
             </div>
         </div>
+        <div class="backdrop"></div>
     </header>
-    <div class="backdrop"></div>
 
     <main class="main  page page-contacts">
         <section class="section-banner_anim white-theme">
@@ -179,25 +178,23 @@
                 </div>
                 <div class="footer__col">
                     <h4 class="footer__title">Меню</h4>
-
-                        <ul class="menu">
-                            <li class="menu__item">
-                                <a href="index.html" class="menu__link">Головна</a>
-                            </li>
-                            <li class="menu__item">
-                                <a href="page-catalog.html" class="menu__link">Каталог</a>
-                            </li>
-                            <li class="menu__item">
-                                <a href="page-about.html" class="menu__link">Про нас</a>
-                            </li>
-                            <li class="menu__item">
-                                <a href="page-blog.html" class="menu__link">Блог</a>
-                            </li>
-                            <li class="menu__item">
-                                <a href="page-contacts.html" class="menu__link">Контакти</a>
-                            </li>
-                        </ul>
-
+                    <ul class="menu">
+                        <li class="menu__item">
+                            <a href="index.html" class="menu__link">Головна</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="page-catalog.html" class="menu__link">Каталог</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="page-about.html" class="menu__link">Про нас</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="page-blog.html" class="menu__link">Блог</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="page-contacts.html" class="menu__link">Контакти</a>
+                        </li>
+                    </ul>
                 </div>
                 <div class="footer__col">
                     <h4 class="footer__title">Контакти</h4>
@@ -232,7 +229,8 @@
         </div>
         <div class="footer_bottom">
             <div class="container d-flex">
-                <div class="copyright"> Compass. All Rights Reserved 2026. <span>Created by <a href="https://profi-creative.com/">Profi Creative</a></span></div>
+                <div class="copyright"> Compass. All Rights Reserved 2026. <span>Created by <a
+                        href="https://profi-creative.com/">Profi Creative</a></span></div>
                 <ul class="menu">
                     <li class="menu__item">
                         <a href="#" class="menu__link">Terms of Use</a>
@@ -243,18 +241,11 @@
                 </ul>
             </div>
         </div>
-
-
     </footer>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"></script>
-
 <!--<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>-->
-<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+<script src="./lib/choices/choices.min.js"></script>
 
 <script src="./lib/noUiSlider/nouislider.min.js"></script>
 <script src="./lib/swiper/swiper-bundle.min.js"></script>

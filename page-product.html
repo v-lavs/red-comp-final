@@ -13,11 +13,10 @@
     <title>Сторінка продукту</title>
 
     <!--    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css">
+    <link rel="stylesheet" href="./lib/choices/choices.min.css">
     <link rel="stylesheet" href="./lib/noUiSlider/nouislider.min.css">
     <link rel="stylesheet" href="./lib/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="./lib/lightBox/glightbox.css">
-    <!--    <link rel="stylesheet" href="./fonts/fonts.css">-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
@@ -56,21 +55,22 @@
                         <a href="#" class="header__lang-link active">УКР</a>
                     </div>
                     <a href="index.html" class="header__nav-logo">
-                        <img src="assets/img/logo.svg" alt="">
+                        <img src="assets/img/logo.svg" alt="logo  Compass Realty">
                     </a>
                 </div>
                 <button type="button" class="btn_burger" aria-label="Відкрити меню"></button>
             </div>
         </div>
+        <div class="backdrop"></div>
     </header>
-    <div class="backdrop"></div>
+
     <main class="main  page single-product">
         <section id="container_anim" class="section-banner_anim red-theme no-print">
             <div class="magnetic-grid"></div>
             <div class="container">
                 <div class="part_right">
                     <h1>Свої серед хаосу <br> нерухомості!</h1>
-<!--                    <h1>Trusted allies in <br> real estate chaos</h1>-->
+<!--                <h1>Trusted allies in <br> real estate chaos</h1>  - переклад -->
                 </div>
             </div>
         </section>
@@ -685,48 +685,6 @@
         </section>
     </main>
 
-    <div style="display: none">
-        <div class="form-container">
-            <h4>Продаж квартири на вул. Величковського (Рясне-2)</h4>
-            <p>Хочете дізнатися більше?</p>
-            <form class="form viewing-form">
-
-                <div class="field__group d-flex">
-                    <label class="label-form">
-                                    <span class="form-control-wrap">
-                                        <input type="text" name="contact_name" class="form-control input"
-                                               placeholder="Ім'я">
-                                    </span>
-                    </label>
-
-                    <label class="label-form">
-                                    <span class="form-control-wrap">
-                                        <input type="email" name="email" class="form-control input" placeholder="Email">
-                                    </span>
-                    </label>
-
-                    <label class="label-form">
-                                    <span class="form-control-wrap">
-                                        <input type="tel" name="phone" class="form-control input" placeholder="Телефон">
-                                    </span>
-                    </label>
-
-                    <label class="label-form label-form--full">
-                                    <span class="form-control-wrap">
-                                        <textarea name="message" class="form-control textarea"
-                                                  placeholder="Ваш коментар..."></textarea>
-                                    </span>
-                    </label>
-                </div>
-
-                <button type="submit" class="btn btn_primary btn-submit">Відправити Email</button>
-            </form>
-            <a class="btn btn_outline" href="#"><img src="assets/img/svg/whatsapp.svg" class="icon" alt="">WhatsApp</a>
-            <a class="btn btn_outline" href="#"><img src="assets/img/svg/red-phone.svg" class="icon"
-                                                     alt="">Подзвонити</a>
-        </div>
-    </div>
-
     <footer class="footer">
         <div class="footer_top">
             <div class="container d-flex">
@@ -743,7 +701,6 @@
                 </div>
                 <div class="footer__col">
                     <h4 class="footer__title">Меню</h4>
-
                     <ul class="menu">
                         <li class="menu__item">
                             <a href="index.html" class="menu__link">Головна</a>
@@ -761,7 +718,6 @@
                             <a href="page-contacts.html" class="menu__link">Контакти</a>
                         </li>
                     </ul>
-
                 </div>
                 <div class="footer__col">
                     <h4 class="footer__title">Контакти</h4>
@@ -807,17 +763,11 @@
                 </ul>
             </div>
         </div>
-
     </footer>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"></script>
-
 <!--<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>-->
-<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+<script src="./lib/choices/choices.min.js"></script>
 
 <script src="./lib/noUiSlider/nouislider.min.js"></script>
 <script src="./lib/swiper/swiper-bundle.min.js"></script>
