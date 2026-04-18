@@ -1,3 +1,6 @@
+/*
+ * to include js file write: `//= include ./path-to-file`
+ */
 
 'use strict'
 //MOB-MENU
@@ -394,3 +397,5 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+//# sourceMappingURL=main.js.map

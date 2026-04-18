@@ -2,14 +2,7 @@
 @use "../utils/variables";
 
 @media print {
-  header, footer, nav, aside, .btn, .label, .location, .no-print {
-    display: none !important;
-  }
-  .main {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
+
   body {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
@@ -19,46 +12,70 @@
   .swiper-container {
     height: auto !important;
     overflow: visible !important;
+    display: block !important;
   }
 
   .swiper-wrapper {
     display: block !important;
     height: auto !important;
-    transform: none !important;
     width: 100% !important;
+    transform: none !important;
   }
-
 
   .swiper-slide {
     display: block !important;
     width: 100% !important;
     height: auto !important;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    break-inside: avoid;
     page-break-inside: avoid;
-
-    a, picture, div {
-      display: block !important;
-      width: 100% !important;
-      height: auto !important;
-      aspect-ratio: auto !important;
-      position: static !important;
-    }
+    padding: 0 !important;
 
     img {
       display: block !important;
       width: 100% !important;
       height: auto !important;
       max-width: 100% !important;
+      max-height: 90vh;
       object-fit: contain !important;
+      position: static !important;
+
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    a {
+      padding: 0 !important;
+      min-height: 0!important;
+    }
+
+    a,
+    picture,
+    div {
+      display: block !important;
+      width: 100% !important;
+      height: auto !important;
+      aspect-ratio: auto !important;
       position: static !important;
     }
   }
 
   .swiper-pagination,
-  .swiper-notification {
+  .slider__arrow,
+  .swiper-notification,
+  header,
+  footer,
+  nav,
+  aside,
+  .btn,
+  .label,
+  .location,
+  .no-print {
     display: none !important;
   }
-  .slider__arrow {
+
+  [style*="visibility: hidden"],
+  [style*="opacity: 0"] {
     display: none !important;
   }
 }
